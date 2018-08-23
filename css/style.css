@@ -1,530 +1,729 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
-.stand_wrapp {
-    position: relative;
-    width: 1080px;
-    height: 100%;
-    min-height: 1920px;
-    top: 0;
-    background-color: white;
-    margin: 0 auto;
-    border: 1px solid #333;
-    overflow: hidden;
-}
-
-.zastavka {
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    position: absolute;
-    visibility: hidden;
-}
-
-.ar {
-    position: absolute;
-    background: url(../img/ar.svg) no-repeat;
-    width: 1080px;
-    height: 123px;
-}
-
-.ar_v {
-    top: 0;
-}
-
-.ar_n {
-    bottom: 0;
-}
-
-.zastavka .ar_v {
-    top: auto;
-    bottom: 123px;
-}
-
-.stand {
-    position: relative;
-    width: 333px;
-    height: 872px;
-    background: url(../img/stand.png) no-repeat;
-    margin: 0 auto;
-    top: 88px;
-    opacity: 0;
-}
-
-.logo {
-    position: absolute;
-    background: url(../img/pytnashki.svg)no-repeat;
-    width: 908px;
-    height: 110px;
-    left: 85px;
-    top: 1013px;
-    opacity: 0;
-}
-
-.msk {
-    position: absolute;
-    width: 818px;
-    height: 100px;
-    left: 131px;
-    top: 1182px;
-    background: url(../img/label1.png)no-repeat;
-    opacity: 0;
-}
-
-.fishka {
-    position: absolute;
-    background: url(../img/fishka.png)no-repeat;
-    width: 271px;
-    height: 271px;
-    left: 405px;
-    /* top: 1343px; */
-}
-
-.global_window,
-.block_info,
-.block_game {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    /* visibility: hidden; */
-}
-
-.block_window {
-    visibility: hidden;
-}
-
-.block_logo {
-    top: 190px;
-}
-
-.block_fishka {
-    position: absolute;
-    background: url(../img/block_fishka.png)no-repeat;
-    background-size: contain;
-    width: 848px;
-    height: 485px;
-    left: 112px;
-    top: 370px;
-}
-
-.block_txt1 {
-    position: absolute;
-    width: 885px;
-    height: 229px;
-    left: 102px;
-    top: 922px;
-    background: url(../img/block_txt1.svg)no-repeat;
-    background-size: contain;
-}
-
-.block_txt2 {
-    position: absolute;
-    width: 715px;
-    height: 284px;
-    left: 178px;
-    top: 1217px;
-    background: url(../img/block_txt_2.svg)no-repeat;
-    background-size: contain;
-}
-
-.block_txt3 {
-    position: absolute;
-    width: 866px;
-    height: 215px;
-    left: 106px;
-    top: 1535px;
-    background: url(../img/block_txt_3.svg)no-repeat;
-    background-size: contain;
-}
-
-.hi_works_btn {
-    position: absolute;
-    bottom: 0;
-    background: url(../img/bas_btn_wtf.png)no-repeat;
-    background-size: contain;
-    width: 100%;
-    height: 97px;
-    cursor: pointer;
-}
-
-.glw .ar_n {
-    bottom: 90px;
-}
-
-.glw .selection_games {
-    position: absolute;
-    width: 100%;
-    height: 335px;
-    bottom: 213px;
-}
-
-.guest_games_btn {
-    position: absolute;
-    width: 500px;
-    height: 115px;
-    left: 26px;
-    top: 0;
-    background: url(../img/btn_guest_.png)no-repeat;
-    background-size: contain;
-    cursor: pointer;
-}
-
-.resaul_game_btn {
-    position: absolute;
-    width: 500px;
-    height: 115px;
-    left: 553px;
-    top: 0;
-    background: url(../img/btn_game_result.png)no-repeat;
-    background-size: contain;
-    cursor: pointer;
-}
-
-.geest_txt {
-    position: relative;
-    background: url(../img/txt_test_game.png)no-repeat;
-    background-size: contain;
-    width: 428px;
-    height: 113px;
-    left: 60px;
-    top: 150px;
-}
-
-.resault_txt {
-    position: relative;
-    background: url(../img/text_game_result.png)no-repeat;
-    background-size: contain;
-    width: 456px;
-    height: 153px;
-    left: 577px;
-    top: 38px;
-}
-
-.logo-glw {
-    width: 653px;
-    height: 118px;
-    background-size: contain;
-    top: 120px;
-    left: 226px;
-    top: 147px;
-    opacity: 1;
-}
-
-.search-glw {
-    position: absolute;
-    width: 969px;
-    height: 108px;
-    left: 40px;
-    top: 283px;
-    background: url(../img/poisk.png)no-repeat;
-    background-size: contain;
-}
-
-.lain_block_glw {
-    position: absolute;
-    width: 100%;
-    height: 928px;
-    top: 442px;
-}
-
-.glw .lb {
-    width: 100%;
-    height: 185px;
-}
-
-.lain1 {
-    background: url(../img/lain1.png)no-repeat;
-}
-
-.lain2 {
-    background: url(../img/lain2.png)no-repeat;
-}
-
-.lain3 {
-    background: url(../img/lain3.png)no-repeat;
-}
-
-.block_info {
-    opacity: 0;
-}
-
-.glw {
-    opacity: 0;
-}
-
-.info_za {
-    position: absolute;
-    width: 962px;
-    height: 120px;
-    left: 55px;
-    top: 205px;
-    background: url(../img/inf_zag1.png)no-repeat;
-}
-
-.info_txt_1 {
-    position: absolute;
-    width: 1018px;
-    height: 138px;
-    left: 33px;
-    top: 373px;
-    background: url(../img/inf_txt_1.png)no-repeat;
-}
-
-.info_txt_2 {
-    position: absolute;
-    width: 935px;
-    height: 358px;
-    left: 64px;
-    top: 554px;
-    background: url(../img/inf_txt_2.png)no-repeat;
-}
-
-.qr_android {
-    position: absolute;
-    width: 291px;
-    height: 330px;
-    left: 216px;
-    top: 943px;
-    background: url(../img/qr_android.png)no-repeat;
-}
-
-.qr_ios {
-    position: absolute;
-    width: 291px;
-    height: 330px;
-    left: 586px;
-    top: 943px;
-    background: url(../img/qr_ios.png)no-repeat;
-}
-
-.qr_stand {
-    position: absolute;
-    width: 608px;
-    height: 340px;
-    left: 234px;
-    top: 1329px;
-    background: url(../img/qr_stand.png)no-repeat;
-}
-
-.btn_bac {
-    position: absolute;
-    bottom: 1px;
-    width: 100%;
-    height: 90px;
-    cursor: pointer;
-    background: url(../img/bac.png)no-repeat;
-}
-
-.block_info .ar_n,
-.bloc_user_id .ar_n,
-.block_game .ar_n {
-    bottom: 90px;
-}
-
-.user_z1 {
-    position: absolute;
-    background: url(../img/user_z1.png)no-repeat;
-    background-size: contain;
-    width: 943px;
-    height: 118px;
-    left: 64px;
-    top: 204px;
-}
-
-.bloc_user_id {
-    opacity: 0;
-}
-
-.user_bloc_inf {
-    position: absolute;
-    background: url(../img/user_blocs.png)no-repeat;
-    background-size: contain;
-    width: 607px;
-    height: 419px;
-    left: 219px;
-    top: 387px;
-}
-
-.user_to_game {
-    position: absolute;
-    background: url(../img/user_btn1.png)no-repeat;
-    background-size: contain;
-    width: 100%;
-    height: 196px;
-    top: 895px;
-}
-
-.user_to_exit {
-    position: absolute;
-    background: url(../img/user-btn_2.png)no-repeat;
-    background-size: contain;
-    width: 100%;
-    height: 196px;
-    top: 1091px;
-}
-
-.game_user_block {
-    position: absolute;
-    background: url(../img/game_user_block.png)no-repeat;
-    background-size: contain;
-    width: 779px;
-    height: 158px;
-    left: 35px;
-    top: 156px;
-}
-
-.user_btn_back {
-    position: absolute;
-    background: url(../img/game_btn_back.png)no-repeat;
-    background-size: contain;
-    width: 540px;
-    height: 111px;
-    left: 863px;
-    top: 181px;
-    cursor: pointer;
-    z-index: 999;
-}
-
-.game {
-    position: absolute;
-    background: url(../img/game.png)no-repeat;
-    background-size: contain;
-    width: 100%;
-    height: 1080px;
-    top: 349px;
-    visibility: hidden;
-}
-
-.user_btn_wtf {
-    position: absolute;
-    background: url(../img/game_btn_it_worck.png)no-repeat;
-    background-size: contain;
-    width: 542px;
-    height: 97px;
-    bottom: 1px;
-    cursor: pointer;
-}
-
-.user_btn_bac_zadach {
-    position: absolute;
-    background: url(../img/game_btn_back_zadacha.png)no-repeat;
-    background-size: contain;
-    width: 542px;
-    height: 97px;
-    left: 542px;
-    top: 1823px;
-    cursor: pointer;
-}
-
-.game_quest_block {
-    position: absolute;
-    width: 100%;
-    height: 466px;
-    top: 1225px;
-    background: #fff;
-    visibility: hidden;
-}
-
-.game_puzzle {
-    position: absolute;
-    width: 452px;
-    height: 87px;
-    left: 161px;
-    top: 100px;
-    background: url(../img/txt_puzzle.png)no-repeat;
-    background-size: contain;
-}
-
-.game_timer {
-    position: absolute;
-    width: 187px;
-    height: 187px;
-    left: 789px;
-    top: 28px;
-    background: url(../img/timer.png)no-repeat;
-    background-size: contain;
-}
-
-.game_quest_btn {
-    position: relative;
-    width: 532px;
-    height: 98px;
-    margin: 4px;
-    top: 265px;
-    float: left;
-    background: #bbd8f2;
-    cursor: pointer;
-    z-index: 999;
-}
-
-.splash_game {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    background: rgba(255, 255, 255, 0.8);
-    visibility: hidden;
-}
-
-.game_win_icon {
-    position: relative;
-    width: 98px;
-    height: 98px;
-    left: 91px;
-    top: 30%;
-    background: url(../img/yes_icon.png)no-repeat;
-    background-size: contain;
-}
-
-.za_vin {
-    position: absolute;
-    width: 748px;
-    height: 90px;
-    left: 240px;
-    top: 32%;
-    background: url(../img/zd_vin.png)no-repeat;
-    background-size: contain;
-}
-
-.push_block {
-    position: absolute;
-    width: 880px;
-    height: 337px;
-    left: 100px;
-    top: calc(50% - 168px);
-    background: #bbd8f2;
-    visibility: hidden;
-}
-
-.tex_push {
-    position: relative;
-    width: 464px;
-    height: 127px;
-    left: calc(50% - 232px);
-    top: 75px;
-    background: url(../img/txt_push.png)no-repeat;
-    background-size: contain;
-}
-
-.btn_push_y {
-    position: absolute;
-    width: 441px;
-    height: 108px;
-    left: 0;
-    bottom: 0;
-    background: url(../img/apruw_exit.png)no-repeat;
-}
-
-.btn_push_n {
-    position: absolute;
-    width: 441px;
-    height: 108px;
-    left: 50%;
-    bottom: 0;
-    float: left;
-    background: url(../img/cacel.png)no-repeat;
-}
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .stand_wrapp {
+        position: relative;
+        width: 1080px;
+        height: 100%;
+        min-height: 1920px;
+        top: 0;
+        background-color: white;
+        margin: 0 auto;
+        border: 1px solid #333;
+        overflow: hidden;
+    }
+    
+    .zastavka {
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        position: absolute;
+        visibility: hidden;
+    }
+    
+    .ar {
+        position: absolute;
+        background: url(../img/ar.svg) no-repeat;
+        width: 1080px;
+        height: 123px;
+    }
+    
+    .ar_v {
+        top: 0;
+    }
+    
+    .ar_n {
+        bottom: 0;
+    }
+    
+    .zastavka .ar_v {
+        top: auto;
+        bottom: 123px;
+    }
+    
+    .stand {
+        position: relative;
+        width: 333px;
+        height: 872px;
+        background: url(../img/stand.png) no-repeat;
+        margin: 0 auto;
+        top: 88px;
+        visibility: hidden;
+    }
+    
+    .logo {
+        position: absolute;
+        background: url(../img/pytnashki.svg)no-repeat;
+        width: 908px;
+        height: 110px;
+        left: 85px;
+        top: 1013px;
+    }
+    
+    .msk {
+        position: absolute;
+        width: 818px;
+        height: 100px;
+        left: 131px;
+        top: 1182px;
+        background: url(../img/label1.png)no-repeat;
+        visibility: hidden;
+    }
+    
+    .fishka {
+        position: absolute;
+        background: url(../img/fishka.png)no-repeat;
+        width: 271px;
+        height: 271px;
+        left: 405px;
+        /* top: 1343px; */
+    }
+    
+    .zadanie_block,
+    .global_window,
+    .block_info,
+    .block_game {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        /* visibility: hidden; */
+    }
+    
+    .block_window {
+        visibility: hidden;
+    }
+    
+    .block_logo {
+        top: 190px;
+    }
+    
+    .block_fishka {
+        position: absolute;
+        background: url(../img/block_fishka.png)no-repeat;
+        background-size: contain;
+        width: 848px;
+        height: 485px;
+        left: 112px;
+        top: 370px;
+    }
+    
+    .block_txt1 {
+        position: absolute;
+        width: 885px;
+        height: 229px;
+        left: 102px;
+        top: 922px;
+        background: url(../img/block_txt1.svg)no-repeat;
+        background-size: contain;
+    }
+    
+    #search {
+        position: absolute;
+        left: 132px;
+        width: 737px;
+        height: 91px;
+        top: 8px;
+        font-size: 75px;
+        font-family: "Kelson Sans RU";
+        color: rgb(39, 28, 93);
+        line-height: 1.2;
+        text-align: left;
+    }
+    
+    .block_txt2 {
+        position: absolute;
+        width: 715px;
+        height: 284px;
+        left: 178px;
+        top: 1217px;
+        background: url(../img/block_txt_2.svg)no-repeat;
+        background-size: contain;
+    }
+    
+    .block_txt3 {
+        position: absolute;
+        width: 866px;
+        height: 215px;
+        left: 106px;
+        top: 1535px;
+        background: url(../img/block_txt_3.svg)no-repeat;
+        background-size: contain;
+    }
+    
+    .hi_works_btn {
+        position: absolute;
+        bottom: 0;
+        background: url(../img/bas_btn_wtf.png)no-repeat;
+        background-size: contain;
+        width: 100%;
+        height: 97px;
+        cursor: pointer;
+    }
+    
+    .glw .ar_n {
+        bottom: 90px;
+    }
+    
+    .glw .selection_games {
+        position: absolute;
+        width: 100%;
+        height: 335px;
+        bottom: 213px;
+    }
+    
+    .guest_games_btn {
+        position: absolute;
+        width: 500px;
+        height: 115px;
+        left: 26px;
+        top: 0;
+        background: url(../img/btn_guest_.png)no-repeat;
+        background-size: contain;
+        cursor: pointer;
+    }
+    
+    .resaul_game_btn {
+        position: absolute;
+        width: 500px;
+        height: 115px;
+        left: 553px;
+        top: 0;
+        background: url(../img/btn_game_result.png)no-repeat;
+        background-size: contain;
+        cursor: pointer;
+    }
+    
+    .geest_txt {
+        position: relative;
+        background: url(../img/txt_test_game.png)no-repeat;
+        background-size: contain;
+        width: 428px;
+        height: 113px;
+        left: 60px;
+        top: 150px;
+    }
+    
+    .resault_txt {
+        position: relative;
+        background: url(../img/text_game_result.png)no-repeat;
+        background-size: contain;
+        width: 456px;
+        height: 153px;
+        left: 577px;
+        top: 38px;
+    }
+    
+    .logo-glw {
+        width: 653px;
+        height: 118px;
+        background-size: contain;
+        top: 120px;
+        left: 226px;
+        top: 162px;
+        opacity: 1;
+    }
+    
+    .search-glw {
+        position: absolute;
+        width: 969px;
+        height: 108px;
+        left: 40px;
+        top: 283px;
+        background: url(../img/poisk.png)no-repeat;
+        background-size: contain;
+    }
+    
+    .lain_block_glw {
+        position: absolute;
+        width: 100%;
+        height: 928px;
+        top: 442px;
+    }
+    
+    .glw .lb {
+        position: relative;
+        width: 100%;
+        height: 185px;
+    }
+    
+    .lain1 {
+        background: #D00338;
+    }
+    
+    .lain1 .icon {
+        position: relative;
+        background: url(../img/icon_1.png)no-repeat;
+        width: 80px;
+        height: 83px;
+        top: 50px;
+        left: 53px;
+    }
+    
+    .us_phptp {
+        position: absolute;
+        background: url(../img/user_photo.png)no-repeat;
+        background-size: contain;
+        width: 152px;
+        height: 152px;
+        left: 191px;
+        top: 20px;
+    }
+    
+    .us_name {
+        position: absolute;
+        background: url(../img/fio.png)no-repeat;
+        background-size: contain;
+        width: 220px;
+        height: 110px;
+        left: 407px;
+        top: 40px;
+    }
+    
+    .time {
+        position: absolute;
+        background: url(../img/time.png)no-repeat;
+        background-size: contain;
+        width: 98px;
+        height: 39px;
+        left: 734px;
+        top: 50px;
+    }
+    
+    .steps {
+        position: absolute;
+        background: url(../img/shag.png)no-repeat;
+        background-size: contain;
+        width: 96px;
+        height: 37px;
+        top: 50px;
+        left: 899px;
+    }
+    
+    .lain4 .time,
+    .lain5 .time {
+        position: absolute;
+        background: url(../img/time.png)no-repeat;
+        background-size: contain;
+        width: 98px;
+        height: 39px;
+        left: 734px;
+        top: 50px;
+        filter: invert(100%);
+    }
+    
+    .lain4 .steps,
+    .lain5 .steps {
+        position: absolute;
+        background: url(../img/shag.png)no-repeat;
+        background-size: contain;
+        width: 96px;
+        height: 37px;
+        top: 50px;
+        left: 899px;
+        filter: invert(100%);
+    }
+    
+    .lain4 .icon,
+    .lain5 .icon {
+        font-size: 85px;
+        font-family: "Kelson Sans RU";
+        color: rgb(210, 5, 54);
+        font-weight: bold;
+        line-height: 1;
+        text-align: center;
+        -moz-transform: matrix( 0.6775185850539, 0, 0, 0.6450595271035, 0, 0);
+        -webkit-transform: matrix( 0.6775185850539, 0, 0, 0.6450595271035, 0, 0);
+        -ms-transform: matrix( 0.6775185850539, 0, 0, 0.6450595271035, 0, 0);
+        position: absolute;
+        top: 50px;
+        left: 65px;
+    }
+    
+    .lain2 .icon {
+        position: relative;
+        background: url(../img/icon_2.png)no-repeat;
+        width: 80px;
+        height: 83px;
+        top: calc(50% - 40px);
+        left: 53px;
+    }
+    
+    .lain3 .icon {
+        position: relative;
+        background: url(../img/icon_3.png)no-repeat;
+        width: 80px;
+        height: 83px;
+        top: calc(50% - 40px);
+        left: 53px;
+    }
+    
+    .lain2 {
+        background: #DC4369;
+    }
+    
+    .lain3 {
+        background: #E7819B;
+    }
+    
+    .block_info {
+        visibility: hidden;
+    }
+    
+    .lain4 .us_name,
+    .lain5 .us_name {
+        filter: invert(100%);
+        -webkit-filter: invert(100%);
+    }
+    
+    .glw {
+        visibility: hidden;
+    }
+    
+    .info_za {
+        position: absolute;
+        width: 962px;
+        height: 120px;
+        left: 55px;
+        top: 205px;
+        background: url(../img/inf_zag1.png)no-repeat;
+    }
+    
+    .info_txt_1 {
+        position: absolute;
+        width: 1018px;
+        height: 138px;
+        left: 33px;
+        top: 373px;
+        background: url(../img/inf_txt_1.png)no-repeat;
+    }
+    
+    .info_txt_2 {
+        position: absolute;
+        width: 935px;
+        height: 358px;
+        left: 64px;
+        top: 554px;
+        background: url(../img/inf_txt_2.png)no-repeat;
+    }
+    
+    .qr_android {
+        position: absolute;
+        width: 291px;
+        height: 330px;
+        left: 216px;
+        top: 943px;
+        background: url(../img/qr_android.png)no-repeat;
+    }
+    
+    .qr_ios {
+        position: absolute;
+        width: 291px;
+        height: 330px;
+        left: 586px;
+        top: 943px;
+        background: url(../img/qr_ios.png)no-repeat;
+    }
+    
+    .qr_stand {
+        position: absolute;
+        width: 608px;
+        height: 340px;
+        left: 234px;
+        top: 1329px;
+        background: url(../img/qr_stand.png)no-repeat;
+    }
+    
+    .btn_bac {
+        position: absolute;
+        bottom: 1px;
+        width: 100%;
+        height: 90px;
+        cursor: pointer;
+        background: url(../img/bac.png)no-repeat;
+    }
+    
+    .block_info .ar_n,
+    .bloc_user_id .ar_n,
+    .block_game .ar_n {
+        bottom: 90px;
+    }
+    
+    .user_z1 {
+        position: absolute;
+        background: url(../img/user_z1.png)no-repeat;
+        background-size: contain;
+        width: 943px;
+        height: 118px;
+        left: 64px;
+        top: 204px;
+    }
+    
+    .bloc_user_id {
+        visibility: hidden;
+    }
+    
+    .user_bloc_inf {
+        position: absolute;
+        background: url(../img/user_blocs.png)no-repeat;
+        background-size: contain;
+        width: 607px;
+        height: 419px;
+        left: 219px;
+        top: 387px;
+    }
+    
+    .user_to_game {
+        position: absolute;
+        background: url(../img/user_btn1.png)no-repeat;
+        background-size: contain;
+        width: 100%;
+        height: 196px;
+        top: 895px;
+    }
+    
+    .user_to_exit {
+        position: absolute;
+        background: url(../img/user-btn_2.png)no-repeat;
+        background-size: contain;
+        width: 100%;
+        height: 196px;
+        top: 1091px;
+    }
+    
+    .game_user_block {
+        position: absolute;
+        background: url(../img/game_user_block.png)no-repeat;
+        background-size: contain;
+        width: 779px;
+        height: 158px;
+        left: 35px;
+        top: 156px;
+    }
+    
+    .user_btn_back {
+        position: absolute;
+        background: url(../img/game_btn_back.png)no-repeat;
+        background-size: contain;
+        width: 540px;
+        height: 111px;
+        left: 863px;
+        top: 181px;
+        cursor: pointer;
+        z-index: 999;
+    }
+    
+    .game {
+        position: absolute;
+        background: url(../img/game.png)no-repeat;
+        background-size: contain;
+        width: 100%;
+        height: 1080px;
+        top: 349px;
+        /* -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    filter: blur(5px); */
+    }
+    
+    .block_game {
+        visibility: hidden;
+    }
+    
+    .user_btn_wtf {
+        position: absolute;
+        background: url(../img/game_btn_it_worck.png)no-repeat;
+        background-size: contain;
+        width: 542px;
+        height: 97px;
+        bottom: 1px;
+        cursor: pointer;
+    }
+    
+    .user_btn_bac_zadach {
+        position: absolute;
+        background: url(../img/game_btn_back_zadacha.png)no-repeat;
+        background-size: contain;
+        width: 542px;
+        height: 97px;
+        left: 542px;
+        top: 1823px;
+        cursor: pointer;
+    }
+    
+    .game_quest_block {
+        position: absolute;
+        width: 100%;
+        height: 466px;
+        top: 1225px;
+        background: #fff;
+        visibility: hidden;
+    }
+    
+    .game_puzzle {
+        position: absolute;
+        width: 452px;
+        height: 87px;
+        left: 161px;
+        top: 100px;
+        background: url(../img/txt_puzzle.png)no-repeat;
+        background-size: contain;
+    }
+    
+    .game_timer {
+        position: absolute;
+        width: 187px;
+        height: 187px;
+        left: 789px;
+        top: 28px;
+        background: url(../img/timer.png)no-repeat;
+        background-size: contain;
+    }
+    
+    .game_quest_btn {
+        position: relative;
+        width: 532px;
+        height: 98px;
+        margin: 4px;
+        top: 265px;
+        float: left;
+        background: #bbd8f2;
+        cursor: pointer;
+        z-index: 999;
+    }
+    
+    .splash_game {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background: rgba(255, 255, 255, 0.8);
+        visibility: hidden;
+    }
+    
+    .game_win_icon {
+        position: relative;
+        width: 98px;
+        height: 98px;
+        left: 91px;
+        top: 30%;
+        background: url(../img/yes_icon.png)no-repeat;
+        background-size: contain;
+    }
+    
+    .za_vin {
+        position: absolute;
+        width: 748px;
+        height: 90px;
+        left: 240px;
+        top: 32%;
+        background: url(../img/zd_vin.png)no-repeat;
+        background-size: contain;
+    }
+    
+    .push_block {
+        position: absolute;
+        width: 880px;
+        height: 337px;
+        left: 100px;
+        top: calc(50% - 168px);
+        background: #bbd8f2;
+        visibility: hidden;
+    }
+    
+    .tex_push {
+        position: relative;
+        width: 464px;
+        height: 127px;
+        left: calc(50% - 232px);
+        top: 75px;
+        background: url(../img/txt_push.png)no-repeat;
+        background-size: contain;
+    }
+    
+    .btn_push_y {
+        position: absolute;
+        width: 441px;
+        height: 108px;
+        left: 0;
+        bottom: 0;
+        background: url(../img/apruw_exit.png)no-repeat;
+    }
+    
+    .btn_push_n {
+        position: absolute;
+        width: 441px;
+        height: 108px;
+        left: 50%;
+        bottom: 0;
+        float: left;
+        background: url(../img/cacel.png)no-repeat;
+    }
+    
+    .zadanie_block .ar_n {
+        bottom: 91px;
+        margin-top: 90px;
+    }
+    
+    .user_bloc_zad {
+        position: absolute;
+        background: url(../img/uswr_zadanie.png)no-repeat;
+        background-size: contain;
+        width: 979px;
+        height: 158px;
+        left: 52px;
+        top: 379px;
+    }
+    
+    .zag_zadanie {
+        position: absolute;
+        background: url(../img/zag_zadanie.png)no-repeat;
+        width: 943px;
+        height: 118px;
+        left: 64px;
+        top: 204px;
+    }
+    
+    .wrapp_zadach {
+        position: relative;
+        top: 30%;
+        width: 100%;
+        height: 59%;
+        overflow: hidden;
+    }
+    
+    .zadach {
+        width: 50%;
+        height: 475px;
+        display: block;
+        float: left;
+        background: url(../img/grup_zadacha.png);
+    }
+    
+    .z2 {
+        background-position: 0 -485px;
+    }
+    
+    .z3 {
+        background-position: -540px 0;
+    }
+    
+    .zadach .fon {
+        width: 100%;
+        height: 100%;
+        background: url(../img/sp15.jpg);
+        background-size: 100%;
+        -webkit-filter: blur(15px);
+        -moz-filter: blur(15px);
+        filter: blur(15px);
+    }
+    
+    .lain_z {
+        position: absolute;
+        height: 197px;
+        top: 380px;
+        width: 100%;
+        background: #EB305A;
+    }

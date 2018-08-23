@@ -32,4 +32,11 @@ $(function() {
      }*/
     /*Конец вступления*/
 
+    /*возможный блюр эффект*/
+
+    // $('.game').backgroundBlur({
+    //     imageURL: 'img/game.png',
+    //     blurAmount: 10,
+    //     imageClass: 'bg-blur'
+    // });
 });
