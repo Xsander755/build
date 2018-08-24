@@ -2,7 +2,6 @@ $(function() {
     $("#start").on("click", function() {
         $(this).hide();
         $("#image").css('background', 'transparent');
-        $("#counter, #clock").show();
         startGame();
         var fiveMinutes = 60 * 10,
             display = document.querySelector('#time');
@@ -15,8 +14,9 @@ function startGame() {
     moves = 0;
     window.moves = 0;
 
-    // Reorder squares to pre-dermined positions (must be the same for each image to make it fair for all players)
-    var arr = new Array(14, 2, 10, 6, 12, 13, 9, 7, 15, 8, 5, 11, 4, 1, 3, 16);
+    // massiv
+    // var arr = new Array(14, 2, 10, 6, 12, 13, 9, 7, 15, 8, 5, 11, 4, 1, 3, 16);
+    var arr = new Array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16);
     var strClass = "";
 
     for (i = 0; i < arr.length; i++) {
@@ -25,16 +25,11 @@ function startGame() {
 
         $("#image").append('<div id="pos' + (i + 1) + '" class=" sq' + arr[i] + strClass + '"></div>');
     }
-    $("#counter span").html("0");
-    $("#clock span").html("00:00");
+    // $("#counter span").html("0");
+    // $("#clock span").html("10:00");
 
-    var index;
+
     window.index = 0;
-    var obj
-    window.obj = new Timer();
-    window.obj.Interval = 1000
-    window.obj.Tick = timer_tick;
-    window.obj.Start();
 
     movePiece();
 }
@@ -56,8 +51,9 @@ function movePiece() {
                 b.removeClass(bClass).addClass(aClass);
 
                 window.moves++;
-                $("#counter span").html(window.moves);
-
+                $("#hod").html(window.moves);
+                if (window.moves > TotallSteps)
+                    isGameStop();
                 // Check if the puzzle is complete
                 if (parseInt($moveTo) == 16)
                     isGameOver();
@@ -107,70 +103,43 @@ function validMove(id, move) {
 
 // Work out if game is over
 function isGameOver() {
+
     for (i = 1; i <= 16; i++) {
         if (!$("#image #pos" + i).hasClass("sq" + i)) {
+
             break;
         } else {
             if (i == 16) {
+                clearInterval(times_val);
                 $("#pos16").removeClass("pointer");
                 $("#image div").off("click");
-                window.obj.Stop();
+                console.log('победа');
+                console.log("Потрченно времени:" + dr);
+                console.log("Количество шагов:" + moves);
             }
         }
     }
 }
 
-// Declaring class "Timer"
-var Timer = function() {
-    // Property: Frequency of elapse event of the timer in millisecond
-    this.Interval = 1000;
-
-    // Property: Whether the timer is enable or not
-    this.Enable = new Boolean(false);
-
-    // Event: Timer tick
-    this.Tick;
-
-    // Member variable: Hold interval id of the timer
-    var timerId = 0;
-
-    // Member variable: Hold instance of this class
-    var thisObject;
-
-    // Function: Start the timer
-    this.Start = function() {
-        this.Enable = new Boolean(true);
-
-        thisObject = this;
-        if (thisObject.Enable) {
-            thisObject.timerId = setInterval(
-                function() {
-                    // thisObject.Tick();
-                }, thisObject.Interval);
-        }
-    };
-
-    // Function: Stops the timer
-    this.Stop = function() {
-        thisObject.Enable = new Boolean(false);
-        clearInterval(thisObject.timerId);
-    };
-
-};
-
-// Timer
-function timer_tick() {
-    window.index = window.index + 1;
-    $("#clock span").html(secondsTimeSpanToHMS(window.index));
+function isGameStop() {
+    clearInterval(times_val);
+    $("#image div").off("click");
+    console.log("Не победа");
+    console.log("Потрченно времени:" + dr);
+    console.log("Количество шагов:" + moves);
+    $("#image").addClass('fiasco');
 }
+
 //time
 var dr = 0;
-var TotallTime = 600; //всего времени на игру
+var TotallTime = 20; //всего времени на игру
+var TotallSteps = 500; //Шагов
+var times_val;
 
 function startTimer(duration, display) {
     var timer = duration,
         minutes, seconds;
-    var times_val = setInterval(function() {
+    times_val = setInterval(function() {
         minutes = parseInt(timer / 60, 10)
         seconds = parseInt(timer % 60, 10);
 
@@ -186,7 +155,7 @@ function startTimer(duration, display) {
             dr++;
         } else {
             clearInterval(times_val);
-            console.log('затраченно времени:' + dr);
+            isGameStop();
         }
     }, 1000);
 }
