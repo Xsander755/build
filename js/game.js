@@ -145,7 +145,7 @@ var Timer = function() {
         if (thisObject.Enable) {
             thisObject.timerId = setInterval(
                 function() {
-                    thisObject.Tick();
+                    // thisObject.Tick();
                 }, thisObject.Interval);
         }
     };
@@ -163,10 +163,9 @@ function timer_tick() {
     window.index = window.index + 1;
     $("#clock span").html(secondsTimeSpanToHMS(window.index));
 }
-
-
 //time
 var dr = 0;
+var TotallTime = 600; //всего времени на игру
 
 function startTimer(duration, display) {
     var timer = duration,
@@ -183,7 +182,7 @@ function startTimer(duration, display) {
         if (--timer < 0) {
             timer = duration;
         }
-        if (dr < 10) {
+        if (dr < TotallTime) {
             dr++;
         } else {
             clearInterval(times_val);

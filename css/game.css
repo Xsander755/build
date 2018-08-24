@@ -24,6 +24,28 @@
     position: absolute;
 }
 
+.vremy,
+.shag {
+    width: 84px;
+    height: 40px;
+    color: #271c5e;
+    font-family: "Kelson Sans";
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 50px;
+}
+
+.vremy span,
+.shag span {
+    width: 84px;
+    height: 40px;
+    color: #271c5e;
+    font-family: "Kelson Sans";
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 50px;
+}
+
 #image div {
     width: 265px;
     height: 265px;
@@ -50,10 +72,15 @@
 
 #time {
     position: absolute;
-    left: 1200px;
     top: 200px;
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 65px;
+    width: 84px;
+    height: 40px;
+    color: #271c5e;
+    font-family: "Kelson Sans";
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 50px;
 }
 
 #counter span,

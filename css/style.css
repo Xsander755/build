@@ -29,6 +29,7 @@
         background: url(../img/ar.svg) no-repeat;
         width: 1080px;
         height: 123px;
+        visibility: hidden;
     }
     
     .ar_v {
@@ -61,6 +62,7 @@
         height: 110px;
         left: 85px;
         top: 1013px;
+        opacity: 0;
     }
     
     .msk {
@@ -667,6 +669,10 @@
         margin-top: 90px;
     }
     
+    .zadanie_block {
+        visibility: hidden;
+    }
+    
     .user_bloc_zad {
         position: absolute;
         background: url(../img/uswr_zadanie.png)no-repeat;
@@ -703,7 +709,7 @@
     }
     
     .z2 {
-        background-position: 0 -485px;
+        background-position: 0 -477px;
     }
     
     .z3 {
