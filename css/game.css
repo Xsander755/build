@@ -30,13 +30,14 @@
     width: 1080px;
     height: 1080px;
 }
+
 #images {
-  position: relative;
-  top: -1080px;
+    position: relative;
+    top: -1080px;
     width: 1080px;
     height: 1080px;
     position: relative;
-    visibility:hidden;
+    visibility: hidden;
 }
 
 p {
@@ -64,7 +65,7 @@ p {
     width: 250px;
     height: auto;
     left: 0;
-  bottom: -500px;
+    bottom: -500px;
 }
 
 
@@ -116,8 +117,9 @@ p {
     font-size: 52px;
 }
 
-#counter span,
-#clock span {}
+
+/* #counter span,
+#clock span {} */
 
 .sq1 {
     background-position: 0 0;

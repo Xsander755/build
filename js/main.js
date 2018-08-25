@@ -1,16 +1,18 @@
 $(function() {
     /*Сравнение даты*/
-    /* var date = moment("2018-09-10")
-     var now = moment();
+    /*
+
      var za = new TimelineMax({
          onComplete: stArtApp
      });
-     var start = new TimelineMax({ onStart: pars });
+
      if (now < date) {
          TweenMax.to(".zastavka", 1, {
              autoAlpha: 1
          });
-
+ var start = new TimelineMax({
+     onStart: pars
+ });
          za.add('st')
              .to('.fishka', 5, {
                  rotation: 7200,
@@ -61,25 +63,4 @@ $(function() {
         function pars() {
             console.log("load");
         }*/
-
-
-
-
-    $('.guest_games_btn').click(function() { console.log('guest_game'); });
-    $('.resaul_game_btn').click(function() { console.log("resaul_game"); });
-    $('.hi_works_btn').click(function() { console.log('Как это работает?'); });
-    $('.user_btn_wtf').click(function() { console.log('Как это работает?'); });
-    $('.user_btn_bac_zadach').click(function() { console.log('К списку задач'); });
-    $('.user_btn_back').click(function() { console.log('Заново ИГРУ'); });
-    $('.btn_bac').click(function() { console.log('Назад'); });
-
-    $('.user_to_game').click(function() {
-        console.log('Начать игру на стенде');
-    });
-    $('.user_to_exit').click(function() {
-        console.log('Отменить и выйти');
-    });
-
-
-
 });

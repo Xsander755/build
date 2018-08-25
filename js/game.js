@@ -2,7 +2,7 @@ var dr;
 var TotallTime = 15; //всего времени на игру
 var TotallSteps = 15; //Шагов
 var times_val;
-var fiveMinutes, display, stat;
+var fiveMinutes, display, stat, pos_z = 0;
 
 $(function() {
     var b_zadach;
@@ -10,8 +10,6 @@ $(function() {
         url: 'https://api.msk-day.ru/puzzle/poi-task/14391be72342662f13306081dd13c699.json',
         success: function(data) {
             b_zadach = data;
-            console.log(data.length);
-            console.log(data);
             for (var i = 0; i < data.length; i++) {
                 $('.btn_box').append('<div class="nz" id="' + data[i].taskNumber + '"><p>Номер задачи' + data[i].taskNumber + '</p></div>');
             }
@@ -26,34 +24,37 @@ $(function() {
     });
 
     function vOiData(n) {
-        TweenMax.to("#images", 0.5, {autoAlpha:1, delay:0.5});
-        TweenMax.from("#image", 0.5, {autoAlpha:0, delay:2});
-        if(stat == 0){
+        TweenMax.to("#images", 0.5, { autoAlpha: 1, delay: 0.5 });
+        TweenMax.from("#image", 0.5, { autoAlpha: 0, delay: 2 });
+        if (stat == 0) {
             $("#image").removeClass('fiasco');
         }
         appGame();
         var way_topics = b_zadach[n].imageUrl;
-        console.log(way_topics);
         $('#images').css('background-image', `url(${way_topics})`);
         $('#image div').css('background-image', `url(${way_topics})`);
-TweenMax.to('.rex', 0.6, { autoAlpha: 1, delay: 4, ease: Back.easeOut});
-TweenMax.to(".btn_box", 0.5, {autoAlpha:0});
+        TweenMax.to('.rex', 0.6, { autoAlpha: 1, delay: 4, ease: Back.easeOut });
+        TweenMax.to(".btn_box", 0.5, { autoAlpha: 0 });
+        if (pos_z == 0) {
 
+        } else {
+            $("#time").html("10:00");
+        }
+        pos_z = 1;
     }
 
     // конец получения данных
     $(".rex").on("click", function() {
-            TweenMax.to('.rex', 0.6, { autoAlpha: 0});
-            fiveMinutes = 60 * 10,
-            display = document.querySelector('#time');
-            startTimer(fiveMinutes, display);
-            //$("#images").css('background', 'transparent');
-            TweenMax.to("#images", 0.5, {autoAlpha:0});
+        TweenMax.to('.rex', 0.6, { autoAlpha: 0 });
+        fiveMinutes = 60 * 10;
+        display = document.querySelector('#time');
+        startTimer(fiveMinutes, display);
+        TweenMax.to("#images", 0.5, { autoAlpha: 0 });
 
-            dr = 0;
+        dr = 0;
     });
 
-    function appGame(){
+    function appGame() {
         //Start game
 
         startGame();
@@ -63,9 +64,10 @@ TweenMax.to(".btn_box", 0.5, {autoAlpha:0});
             moves = 0;
             window.moves = 0;
             $("#hod").html(window.moves);
+
             // massiv
-             var arr = new Array(14, 2, 10, 6, 12, 13, 9, 7, 15, 8, 5, 11, 4, 1, 3, 16);
-            //var arr = new Array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16);
+            //var arr = new Array(14, 2, 10, 6, 12, 13, 9, 7, 15, 8, 5, 11, 4, 1, 3, 16);
+            var arr = new Array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16);
             var strClass = "";
             for (i = 0; i < arr.length; i++) {
                 if (i == (arr.length - 1))
@@ -160,7 +162,7 @@ TweenMax.to(".btn_box", 0.5, {autoAlpha:0});
                         stat = 1;
                         $("#pos16").removeClass("pointer");
                         $("#image div").off("click");
-                        TweenMax.to(".btn_box", 0.5, {autoAlpha:1});
+                        TweenMax.to(".btn_box", 0.5, { autoAlpha: 1 });
                         console.log('победа');
                         console.log("Потрченно времени:" + dr);
                         console.log("Количество шагов:" + moves);
@@ -170,10 +172,11 @@ TweenMax.to(".btn_box", 0.5, {autoAlpha:0});
         }
     }
 });
+
 function startTimer(duration, display) {
     var timer = duration,
         minutes, seconds;
-        times_val = setInterval(function() {
+    times_val = setInterval(function() {
         minutes = parseInt(timer / 60, 10)
         seconds = parseInt(timer % 60, 10);
 
@@ -193,6 +196,7 @@ function startTimer(duration, display) {
         }
     }, 1000);
 }
+
 function isGameStop() {
     stat = 0;
     clearInterval(times_val);
@@ -201,5 +205,5 @@ function isGameStop() {
     console.log("Потрченно времени:" + dr);
     console.log("Количество шагов:" + moves);
     $("#image").addClass('fiasco');
-        TweenMax.to(".btn_box", 0.5, {autoAlpha:1});
+    TweenMax.to(".btn_box", 0.5, { autoAlpha: 1 });
 }
