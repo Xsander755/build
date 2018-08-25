@@ -519,7 +519,6 @@
     
     .game {
         position: absolute;
-        background: url(../img/game.png)no-repeat;
         background-size: contain;
         width: 100%;
         height: 1080px;
@@ -530,7 +529,7 @@
     }
     
     .block_game {
-        visibility: hidden;
+        /* visibility: hidden; */
     }
     
     .user_btn_wtf {
@@ -675,7 +674,7 @@
     
     .user_bloc_zad {
         position: absolute;
-        background: url(../img/uswr_zadanie.png)no-repeat;
+        /* background: url(../img/uswr_zadanie.png)no-repeat; */
         background-size: contain;
         width: 979px;
         height: 158px;

@@ -1,34 +1,87 @@
 #start {
-    color: #fff;
-    font-family: Arial, Helvetica, sans-serif;
-    position: absolute;
-    font-size: 300%;
-    z-index: 9999;
     text-decoration: none;
-    width: 1090px;
+    width: 600px;
+    height: 84px;
+    top: 45px;
+    margin: 0 auto;
+    color: #d20536;
+    font-family: "Kelson Sans";
+    font-size: 105px;
+    font-weight: 400;
+    line-height: 24.86px;
+    position: relative;
+    text-transform: uppercase;
+    z-index: 99999;
+}
+
+.rex {
+    width: 600px;
+    height: 120px;
+    background-color: #bbd8f2;
+    left: 256px;
+    top: 885px;
+    position: absolute;
+    z-index: 9999;
     text-align: center;
-    top: 175px;
-    text-shadow: 1px 1px 1px #000;
+    visibility: hidden;
 }
 
 #image {
     width: 1080px;
     height: 1080px;
-    background-position: contain;
+}
+#images {
+  position: relative;
+  top: -1080px;
+    width: 1080px;
+    height: 1080px;
     position: relative;
-    background: url(../img/test_pics.png);
-    background-size: cover;
+    visibility:hidden;
 }
 
-.kub {
-    position: absolute;
+p {
+    position: relative;
+    font-size: 17px;
+    text-align: center;
+    top: 15px;
 }
+
+.nz {
+    width: 230px;
+    height: 55px;
+    margin-left: 15px;
+    margin-top: 15px;
+    top: 90px;
+    background: cornflowerblue;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 11111999;
+    right: 20px;
+}
+
+.btn_box {
+    position: absolute;
+    width: 250px;
+    height: auto;
+    left: 0;
+  bottom: -500px;
+}
+
+
+/* .sq1 {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 45px;
+    height: 45px;
+    background: url(../img/fish/f1.svg);
+} */
 
 .shag,
 .vremy {
     color: #271c5e;
     font-family: "Kelson Sans";
-    font-size: 50px;
+    font-size: 38px;
     font-weight: 400;
     line-height: 50px;
 }
@@ -43,28 +96,28 @@
 
 #counter {
     position: absolute;
-    left: 1200px;
+    left: 717px;
     top: 10px;
-    top: 100px;
+    top: -170px;
 }
 
 #clock {
     position: absolute;
-    left: 1200px;
-    top: 500px;
+    left: 567px;
+    top: 10px;
+    top: -170px;
 }
 
 #time,
 #hod {
     position: absolute;
-    left: 200px;
-    top: 0;
+    left: 10px;
+    top: 62px;
+    font-size: 52px;
 }
 
 #counter span,
-#clock span {
-    font-size: 300%;
-}
+#clock span {}
 
 .sq1 {
     background-position: 0 0;

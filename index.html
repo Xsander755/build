@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/game.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.0/moment.min.js"></script>
@@ -83,6 +85,23 @@
             <div class="game_user_block"></div>
             <div class="user_btn_back"></div>
             <div class="game">
+
+                <div class="btn_box"></div>
+                <div class="rex">
+                    <a href="#" id="start">НАЧАТЬ?</a>
+                </div>
+                <div id="image"></div>
+                <div id="images"></div>
+                <div class="shag" id="counter">
+                    Ходов
+                    <span id="hod">0</span>
+                </div>
+                <div class="vremy" id="clock">
+                    Время
+                    <br>
+                    <span id="time">10:00</span>
+                </div>
+
                 <div class="splash_game">
                     <div class="game_win_icon"></div>
                     <div class="za_vin"></div>
@@ -173,6 +192,7 @@
     </div>
     <script src="js/main.js">
     </script>
+    <script src="js/game.js"></script>
 </body>
 
 </html>

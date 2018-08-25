@@ -1,145 +1,179 @@
-$(function() {
-    $("#start").on("click", function() {
-        $(this).hide();
-        $("#image").css('background', 'transparent');
-        startGame();
-        var fiveMinutes = 60 * 10,
-            display = document.querySelector('#time');
-        startTimer(fiveMinutes, display);
-    });
-});
-
-//Start game
-function startGame() {
-    moves = 0;
-    window.moves = 0;
-
-    // massiv
-    // var arr = new Array(14, 2, 10, 6, 12, 13, 9, 7, 15, 8, 5, 11, 4, 1, 3, 16);
-    var arr = new Array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16);
-    var strClass = "";
-
-    for (i = 0; i < arr.length; i++) {
-        if (i == (arr.length - 1))
-            strClass = " pointer";
-
-        $("#image").append('<div id="pos' + (i + 1) + '" class=" sq' + arr[i] + strClass + '"></div>');
-    }
-    // $("#counter span").html("0");
-    // $("#clock span").html("10:00");
-
-
-    window.index = 0;
-
-    movePiece();
-}
-
-// Move square
-function movePiece() {
-    $("#image div").on("click", function() {
-        if (!$(this).hasClass("pointer")) {
-            var $moveTo = $(this).attr("id").replace("pos", "");
-            var $pointer = $(".pointer").attr("id").replace("pos", "");
-
-            if (validMove($pointer, $moveTo)) {
-                // Swap classes
-                var a = $(this);
-                var b = $(".pointer");
-                var aClass = a.attr("class");
-                var bClass = b.attr("class");
-                a.removeClass(aClass).addClass(bClass);
-                b.removeClass(bClass).addClass(aClass);
-
-                window.moves++;
-                $("#hod").html(window.moves);
-                if (window.moves > TotallSteps)
-                    isGameStop();
-                // Check if the puzzle is complete
-                if (parseInt($moveTo) == 16)
-                    isGameOver();
-            }
-        }
-    });
-}
-
-// Validate user's move
-function validMove(id, move) {
-    if (id == 1)
-        var arr = new Array(2, 5);
-    else if (id == 2)
-        var arr = new Array(1, 3, 6);
-    else if (id == 3)
-        var arr = new Array(2, 4, 7);
-    else if (id == 4)
-        var arr = new Array(3, 8);
-    else if (id == 5)
-        var arr = new Array(1, 6, 9);
-    else if (id == 6)
-        var arr = new Array(2, 5, 7, 10);
-    else if (id == 7)
-        var arr = new Array(3, 6, 8, 11);
-    else if (id == 8)
-        var arr = new Array(4, 7, 12);
-    else if (id == 9)
-        var arr = new Array(5, 10, 13);
-    else if (id == 10)
-        var arr = new Array(6, 9, 11, 14);
-    else if (id == 11)
-        var arr = new Array(7, 10, 12, 15);
-    else if (id == 12)
-        var arr = new Array(8, 11, 16);
-    else if (id == 13)
-        var arr = new Array(9, 14);
-    else if (id == 14)
-        var arr = new Array(10, 13, 15);
-    else if (id == 15)
-        var arr = new Array(11, 14, 16);
-    else if (id == 16)
-        var arr = new Array(12, 15);
-
-    if ($.inArray(parseInt(move), arr) > -1)
-        return true;
-}
-
-// Work out if game is over
-function isGameOver() {
-
-    for (i = 1; i <= 16; i++) {
-        if (!$("#image #pos" + i).hasClass("sq" + i)) {
-
-            break;
-        } else {
-            if (i == 16) {
-                clearInterval(times_val);
-                $("#pos16").removeClass("pointer");
-                $("#image div").off("click");
-                console.log('победа');
-                console.log("Потрченно времени:" + dr);
-                console.log("Количество шагов:" + moves);
-            }
-        }
-    }
-}
-
-function isGameStop() {
-    clearInterval(times_val);
-    $("#image div").off("click");
-    console.log("Не победа");
-    console.log("Потрченно времени:" + dr);
-    console.log("Количество шагов:" + moves);
-    $("#image").addClass('fiasco');
-}
-
-//time
-var dr = 0;
-var TotallTime = 20; //всего времени на игру
-var TotallSteps = 500; //Шагов
+var dr;
+var TotallTime = 15; //всего времени на игру
+var TotallSteps = 15; //Шагов
 var times_val;
+var fiveMinutes, display, stat;
 
+$(function() {
+    var b_zadach;
+    var tt = $.ajax({
+        url: 'https://api.msk-day.ru/puzzle/poi-task/14391be72342662f13306081dd13c699.json',
+        success: function(data) {
+            b_zadach = data;
+            console.log(data.length);
+            console.log(data);
+            for (var i = 0; i < data.length; i++) {
+                $('.btn_box').append('<div class="nz" id="' + data[i].taskNumber + '"><p>Номер задачи' + data[i].taskNumber + '</p></div>');
+            }
+        }
+    });
+
+    $(document).on('click', '.nz', function() {
+        var im = Number.parseInt($(this).attr('id') - 1);
+        vOiData(im);
+        console.log(im);
+
+    });
+
+    function vOiData(n) {
+        TweenMax.to("#images", 0.5, {autoAlpha:1, delay:0.5});
+        TweenMax.from("#image", 0.5, {autoAlpha:0, delay:2});
+        if(stat == 0){
+            $("#image").removeClass('fiasco');
+        }
+        appGame();
+        var way_topics = b_zadach[n].imageUrl;
+        console.log(way_topics);
+        $('#images').css('background-image', `url(${way_topics})`);
+        $('#image div').css('background-image', `url(${way_topics})`);
+TweenMax.to('.rex', 0.6, { autoAlpha: 1, delay: 4, ease: Back.easeOut});
+TweenMax.to(".btn_box", 0.5, {autoAlpha:0});
+
+    }
+
+    // конец получения данных
+    $(".rex").on("click", function() {
+            TweenMax.to('.rex', 0.6, { autoAlpha: 0});
+            fiveMinutes = 60 * 10,
+            display = document.querySelector('#time');
+            startTimer(fiveMinutes, display);
+            //$("#images").css('background', 'transparent');
+            TweenMax.to("#images", 0.5, {autoAlpha:0});
+
+            dr = 0;
+    });
+
+    function appGame(){
+        //Start game
+
+        startGame();
+
+
+        function startGame() {
+            moves = 0;
+            window.moves = 0;
+            $("#hod").html(window.moves);
+            // massiv
+             var arr = new Array(14, 2, 10, 6, 12, 13, 9, 7, 15, 8, 5, 11, 4, 1, 3, 16);
+            //var arr = new Array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16);
+            var strClass = "";
+            for (i = 0; i < arr.length; i++) {
+                if (i == (arr.length - 1))
+                    strClass = " pointer";
+
+                $("#image").append('<div id="pos' + (i + 1) + '" class=" sq' + arr[i] + strClass + '"></div>');
+            }
+            // $("#counter span").html("0");
+            // $("#clock span").html("10:00");
+
+            window.index = 0;
+            movePiece();
+        }
+
+        // Move square
+        function movePiece() {
+            $("#image div").on("click", function() {
+                if (!$(this).hasClass("pointer")) {
+                    var $moveTo = $(this).attr("id").replace("pos", "");
+                    var $pointer = $(".pointer").attr("id").replace("pos", "");
+                    //console.log($(this).attr("id").replace("pos", ""));
+                    if (validMove($pointer, $moveTo)) {
+                        // Swap classes
+                        var a = $(this);
+                        var b = $(".pointer");
+                        var aClass = a.attr("class");
+                        var bClass = b.attr("class");
+                        a.removeClass(aClass).addClass(bClass);
+                        b.removeClass(bClass).addClass(aClass);
+
+                        window.moves++;
+                        $("#hod").html(window.moves);
+                        if (window.moves > TotallSteps)
+                            isGameStop();
+                        // Check if the puzzle is complete
+                        if (parseInt($moveTo) == 16)
+                            isGameOver();
+                    }
+                }
+            });
+        }
+
+        // Validate user's move
+        function validMove(id, move) {
+            if (id == 1)
+                var arr = new Array(2, 5);
+            else if (id == 2)
+                var arr = new Array(1, 3, 6);
+            else if (id == 3)
+                var arr = new Array(2, 4, 7);
+            else if (id == 4)
+                var arr = new Array(3, 8);
+            else if (id == 5)
+                var arr = new Array(1, 6, 9);
+            else if (id == 6)
+                var arr = new Array(2, 5, 7, 10);
+            else if (id == 7)
+                var arr = new Array(3, 6, 8, 11);
+            else if (id == 8)
+                var arr = new Array(4, 7, 12);
+            else if (id == 9)
+                var arr = new Array(5, 10, 13);
+            else if (id == 10)
+                var arr = new Array(6, 9, 11, 14);
+            else if (id == 11)
+                var arr = new Array(7, 10, 12, 15);
+            else if (id == 12)
+                var arr = new Array(8, 11, 16);
+            else if (id == 13)
+                var arr = new Array(9, 14);
+            else if (id == 14)
+                var arr = new Array(10, 13, 15);
+            else if (id == 15)
+                var arr = new Array(11, 14, 16);
+            else if (id == 16)
+                var arr = new Array(12, 15);
+
+            if ($.inArray(parseInt(move), arr) > -1)
+                return true;
+        }
+
+        // Work out if game is over
+        function isGameOver() {
+
+            for (i = 1; i <= 16; i++) {
+                if (!$("#image #pos" + i).hasClass("sq" + i)) {
+
+                    break;
+                } else {
+                    if (i == 16) {
+                        clearInterval(times_val);
+                        stat = 1;
+                        $("#pos16").removeClass("pointer");
+                        $("#image div").off("click");
+                        TweenMax.to(".btn_box", 0.5, {autoAlpha:1});
+                        console.log('победа');
+                        console.log("Потрченно времени:" + dr);
+                        console.log("Количество шагов:" + moves);
+                    }
+                }
+            }
+        }
+    }
+});
 function startTimer(duration, display) {
     var timer = duration,
         minutes, seconds;
-    times_val = setInterval(function() {
+        times_val = setInterval(function() {
         minutes = parseInt(timer / 60, 10)
         seconds = parseInt(timer % 60, 10);
 
@@ -158,4 +192,14 @@ function startTimer(duration, display) {
             isGameStop();
         }
     }, 1000);
+}
+function isGameStop() {
+    stat = 0;
+    clearInterval(times_val);
+    $("#image div").off("click");
+    console.log("Не победа");
+    console.log("Потрченно времени:" + dr);
+    console.log("Количество шагов:" + moves);
+    $("#image").addClass('fiasco');
+        TweenMax.to(".btn_box", 0.5, {autoAlpha:1});
 }
