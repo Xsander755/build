@@ -1,0 +1,47 @@
+###
+# Получить список заданий
+
+GET https://api.msk-day.ru/puzzle/poi-task/1c4396dcb47e766484cfa10fa6b246ed.json
+content-type: application/json
+
+###
+
+POST https://api.msk-day.ru/puzzle/poi-task/1c4396dcb47e766484cfa10fa6b246ed.json
+content-type: application/json
+
+{
+  "device_id": 614,
+  "task_id": 6,
+  "turns": 50,
+  "seconds": 100,
+  "answer_id": 15
+}
+
+{
+  "device_id": 614,
+  "task_id": 6,
+  "turns": 50,
+  "seconds": 100,
+  "answer_id": null
+}
++----+----------------------------------+
+| id | token                            |
++----+----------------------------------+
+|  9 | 14391be72342662f13306081dd13c699 |
+| 10 | 8a55bf69cf5fb46b8d40f11daca0390a |
+| 11 | 7f6edace1ec23919401cfe6012654161 |
+| 12 | 8e08f29980d54010e345e7feec269216 |
++----+----------------------------------+
+###
+# Получить турнирную таблицу
+
+GET https://api.msk-day.ru/puzzle/poi-rating/1c4396dcb47e766484cfa10fa6b246ed.json
+content-type: application/json
+
+###
+# Проверка активации стенда
+
+GET https://api.msk-day.ru/puzzle/poi-poi/1c4396dcb47e766484cfa10fa6b246ed/check-activation.json
+content-type: application/json
+
+###
