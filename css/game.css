@@ -1,157 +1,114 @@
-#start
-{
+#start {
     font-family: 'Kelson Sans';
     font-size: 105px;
     font-weight: 400;
     line-height: 24.86px;
-
     position: relative;
     z-index: 99999;
     top: 45px;
-
     width: 600px;
     height: 84px;
     margin: 0 auto;
-
     text-decoration: none;
     text-transform: uppercase;
-
     color: #d20536;
 }
 
-.rex
-{
+.rex {
     position: absolute;
     z-index: 9999;
     top: 885px;
     left: 256px;
-
     visibility: hidden;
-
     width: 600px;
     height: 120px;
-
     text-align: center;
-
     background-color: #bbd8f2;
 }
-.fon_zad
-{
+
+.fon_zad {
     position: absolute;
     top: 0;
     left: 0;
-
     width: 100%;
     height: 100%;
-
     background-size: contain;
 }
-#image
-{
+
+#image {
     width: 1080px;
     height: 1080px;
 }
 
-#images
-{
+#images {
     position: relative;
     position: relative;
     top: -1080px;
-
     visibility: hidden;
-
     width: 1080px;
     height: 1080px;
 }
 
-p
-{
+p {
     font-size: 17px;
-
     position: relative;
     top: 15px;
-
     text-align: center;
 }
 
-.nz
-{
+.nz {
     position: relative;
-
     float: left;
-
     width: 50%;
     height: 475px;
-
     cursor: pointer;
 }
 
-.btn_box
-{
+.btn_box {
     position: absolute;
     top: 470px;
     left: 0;
-
     overflow-x: hidden;
     overflow-y: scroll;
-
     width: 100%;
     height: 1107px;
 }
 
-.btn_box::-webkit-scrollbar
-{
+.btn_box::-webkit-scrollbar {
     width: 0;
 }
-.fi
-{
-    position: relative;
 
+.fi {
+    position: relative;
     width: 100%;
     height: 100%;
 }
 
-/* .sq1 {
-    position: relative;
-    left: 0;
-    top: 0;
-    width: 45px;
-    height: 45px;
-    background: url(../img/fish/f1.svg);
-} */
-
 .shag,
-.vremy
-{
+.vremy {
     font-family: 'Kelson Sans';
     font-size: 38px;
     font-weight: 400;
     line-height: 50px;
-
     color: #271c5e;
 }
 
-#image div
-{
+#image div {
     position: absolute;
-
     width: 266px;
     height: 266px;
-
     background-image: url(../img/test_pics.png);
     background-repeat: no-repeat;
 }
 
-#counter
-{
+#counter {
     position: absolute;
     top: 10px;
     top: -170px;
     left: 717px;
 }
 
-#clock
-{
+#clock {
     position: absolute;
     top: 10px;
     top: -170px;
@@ -159,10 +116,8 @@ p
 }
 
 #time,
-#hod
-{
+#hod {
     font-size: 52px;
-
     position: absolute;
     top: 62px;
     left: 10px;
@@ -172,300 +127,252 @@ p
 /* #counter span,
 #clock span {} */
 
-.sq1
-{
+.sq1 {
     background-position: 0 0;
 }
 
-.sq2
-{
+.sq2 {
     background-position: 33% 0;
 }
 
-.sq3
-{
+.sq3 {
     background-position: 66% 0;
 }
 
-.sq4
-{
+.sq4 {
     background-position: 100% 0;
 }
 
-.sq5
-{
+.sq5 {
     background-position: 0 33%;
 }
 
-.sq6
-{
+.sq6 {
     background-position: 33% 33%;
 }
 
-.sq7
-{
+.sq7 {
     background-position: 66% 33%;
 }
 
-.sq8
-{
+.sq8 {
     background-position: 100% 33%;
 }
 
-.sq9
-{
+.sq9 {
     background-position: 0 66%;
 }
 
-.sq10
-{
+.sq10 {
     background-position: 33% 66%;
 }
 
-.sq11
-{
+.sq11 {
     background-position: 66% 66%;
 }
 
-.sq12
-{
+.sq12 {
     background-position: 100% 66%;
 }
 
-.sq13
-{
+.sq13 {
     background-position: 0 100%;
 }
 
-.sq14
-{
+.sq14 {
     background-position: 33% 100%;
 }
 
-.sq15
-{
+.sq15 {
     background-position: 66% 100%;
 }
 
-.sq16
-{
+.sq16 {
     background-position: 100% 100%;
 }
 
-#pos1
-{
+#pos1 {
     top: 0;
     left: 0;
 }
 
-#pos2
-{
+#pos2 {
     top: 0;
     left: 25%;
 }
 
-#pos3
-{
+#pos3 {
     top: 0;
     left: 50%;
 }
 
-#pos4
-{
+#pos4 {
     top: 0;
     left: 75%;
 }
 
-#pos5
-{
+#pos5 {
     top: 25%;
     left: 0;
 }
 
-#pos6
-{
+#pos6 {
     top: 25%;
     left: 25%;
 }
 
-#pos7
-{
+#pos7 {
     top: 25%;
     left: 50%;
 }
 
-#pos8
-{
+#pos8 {
     top: 25%;
     left: 75%;
 }
 
-#pos9
-{
+#pos9 {
     top: 50%;
     left: 0;
 }
 
-#pos10
-{
+#pos10 {
     top: 50%;
     left: 25%;
 }
 
-#pos11
-{
+#pos11 {
     top: 50%;
     left: 50%;
 }
 
-#pos12
-{
+#pos12 {
     top: 50%;
     left: 75%;
 }
 
-#pos13
-{
+#pos13 {
     top: 75%;
     left: 0;
 }
 
-#pos14
-{
+#pos14 {
     top: 75%;
     left: 25%;
 }
 
-#pos15
-{
+#pos15 {
     top: 75%;
     left: 50%;
 }
 
-#pos16
-{
+#pos16 {
     top: 75%;
     left: 75%;
 }
 
-.pointer
-{
+.pointer {
     background-color: #fff;
     background-image: none !important;
 }
 
-.fiasco
-{
+.fiasco {
     -webkit-transition: 2s;
-       -moz-transition: 2s;
-        -ms-transition: 2s;
-         -o-transition: 2s;
-            transition: 2s;
-
+    -moz-transition: 2s;
+    -ms-transition: 2s;
+    -o-transition: 2s;
+    transition: 2s;
     -webkit-filter: grayscale(100%);
-       -moz-filter: grayscale(100%);
-        -ms-filter: grayscale(100%);
-         -o-filter: grayscale(100%);
-            filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
 }
 
-.kz1
-{
+.kz1 {
     background-repeat: no-repeat;
     background-position: 175px 52px;
     background-size: 191px 191px;
 }
 
-.kz2
-{
+.kz2 {
     background-repeat: no-repeat;
     background-position: 175px 52px;
     background-size: 191px 191px;
 }
 
-.kz3
-{
+.kz3 {
     background-repeat: no-repeat;
     background-position: 175px 52px;
     background-size: 191px 191px;
 }
 
-.kz4
-{
+.kz4 {
     background-repeat: no-repeat;
     background-position: 175px 52px;
     background-size: 191px 191px;
 }
 
-.kz5
-{
+.kz5 {
     background-repeat: no-repeat;
     background-position: 175px 52px;
     background-size: 191px 191px;
 }
 
-.kz6
-{
+.kz6 {
     background-repeat: no-repeat;
     background-position: 175px 52px;
     background-size: 191px 191px;
 }
 
-.kz7
-{
+.kz7 {
     background-repeat: no-repeat;
     background-position: 175px 52px;
     background-size: 191px 191px;
 }
 
-.kz8
-{
+.kz8 {
     background-repeat: no-repeat;
     background-position: 175px 52px;
     background-size: 191px 191px;
 }
 
-
-.fon_zad
-{
+.fon_zad {
     position: absolute;
-
     width: 100%;
     height: 100%;
-
     background-repeat: no-repeat;
     background-size: cover;
 }
-.plash_bler
-{
+
+.plash_bler {
     position: absolute;
     bottom: 0;
-
     width: 100%;
     height: 197px;
-
     opacity: .75;
     background-color: #bbd4f0;
 }
-.plash_bler span
-{
+
+.plash_bler span {
     position: absolute;
-width: 218px;
-height: 83px;
-color: #271c5d;
-font-family: "Kelson Sans";
-font-size: 39px;
-font-weight: 400;
-text-align: left;
-left: 63px;
-top: 64px;
+    width: 218px;
+    height: 83px;
+    color: #271c5d;
+    font-family: "Kelson Sans";
+    font-size: 39px;
+    font-weight: 400;
+    text-align: left;
+    left: 63px;
+    top: 64px;
 }
-.plash_bler #icon{
+
+.plash_bler #icon {
     position: absolute;
-width: 98px;
-height: 98px;
-border:10px solid #271c5d;
-border-radius: 34px;
-right: 45px;
-top: 43px;
+    width: 98px;
+    height: 98px;
+    border: 10px solid #271c5d;
+    border-radius: 34px;
+    right: 45px;
+    top: 43px;
 }
