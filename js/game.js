@@ -3,15 +3,17 @@ var TotallTime = 15; //всего времени на игру
 var TotallSteps = 15; //Шагов
 var times_val;
 var fiveMinutes, display, stat, pos_z = 0;
-
+var way_topics;
+var b_zadach;
+var status_game = 'resaul';
 $(function() {
-    var b_zadach;
+
     var tt = $.ajax({
-        url: 'https://api.msk-day.ru/puzzle/poi-task/14391be72342662f13306081dd13c699.json',
+        url: 'https://api.msk-day.ru/puzzle/poi-task/8e08f29980d54010e345e7feec269216.json',
         success: function(data) {
             b_zadach = data;
             for (var i = 0; i < data.length; i++) {
-                $('.btn_box').append('<div class="nz" id="' + data[i].taskNumber + '"><p>Номер задачи' + data[i].taskNumber + '</p></div>');
+                $('.btn_box').append('<div class="nz nz' + data[i].taskNumber + '" id="' + data[i].taskNumber + '" ><div class="fon_zad blur" style="background-image:url(' + data[i].imageUrl + ')" ></div><div class="fi kz' + data[i].taskNumber + '"  style="background-image: url(../img/fish/f' + data[i].taskNumber + '.svg)"></div><div class="plash_bler"><span>ПРИСТУПИТЬ К ЗАДАНИЮ</span><div id="icon"></div></div></div>');
             }
         }
     });
@@ -20,6 +22,7 @@ $(function() {
         var im = Number.parseInt($(this).attr('id') - 1);
         vOiData(im);
         console.log(im);
+        console.log(status_game);
 
     });
 
@@ -30,11 +33,22 @@ $(function() {
             $("#image").removeClass('fiasco');
         }
         appGame();
-        var way_topics = b_zadach[n].imageUrl;
+        way_topics = b_zadach[n].imageUrl;
         $('#images').css('background-image', `url(${way_topics})`);
         $('#image div').css('background-image', `url(${way_topics})`);
-        TweenMax.to('.rex', 0.6, { autoAlpha: 1, delay: 4, ease: Back.easeOut });
-        TweenMax.to(".btn_box", 0.5, { autoAlpha: 0 });
+        TweenMax.fromTo('.rex', 0.6, {
+            autoAlpha: 0
+        }, {
+            autoAlpha: 1,
+            delay: 2,
+            ease: Back.easeOut
+        });
+        TweenMax.to(".zadanie_block", 0.5, {
+            autoAlpha: 0
+        });
+        TweenMax.to(".block_game", 0.5, {
+            autoAlpha: 1
+        });
         if (pos_z == 0) {
 
         } else {
