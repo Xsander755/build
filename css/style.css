@@ -245,6 +245,17 @@
       top: 310px;
       width: 100%;
       height: 928px;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      scroll-behavior: smooth;
+    }
+
+    .lain_block_glw::-webkit-scrollbar {
+      width: 0;
+    }
+
+    .lain_block_glw p {
+      font-size: 1em;
     }
 
     .glw .lb {
@@ -268,67 +279,85 @@
 
     .us_phptp {
       position: absolute;
-      top: 20px;
+      top: 16px;
       left: 191px;
       width: 152px;
       height: 152px;
-      background: url(../img/user_photo.png)no-repeat;
+      background-repeat: no-repeat;
       background-size: contain;
+      border-radius: 50%
     }
 
     .us_name {
       position: absolute;
-      top: 40px;
+      top: 15px;
       left: 407px;
       width: 220px;
       height: 110px;
-      background: url(../img/fio.png)no-repeat;
-      background-size: contain;
+    }
+
+    .us_name p {
+      color: #ffffff;
+      font-family: "Kelson Sans";
+      font-size: 55px;
+      font-weight: 400;
     }
 
     .time {
       position: absolute;
-      top: 50px;
-      left: 734px;
+      top: 36px;
+      left: 755px;
       width: 98px;
-      height: 39px;
-      background: url(../img/time.png)no-repeat;
-      background-size: contain;
+      height: 56px;
+      color: #ffffff;
+      font-family: "Kelson Sans";
+      font-size: 40px;
+      font-weight: 200;
+      line-height: 50px;
+      text-align: center;
+    }
+
+    .time span {
+      position: relative;
+      width: 84px;
+      height: 40px;
+      top: 70px;
+      color: #ffffff;
+      font-family: "Kelson Sans";
+      font-size: 50px;
+      font-weight: 400;
+      line-height: 50px;
+      left: -97px;
+    }
+
+    .steps span {
+      position: relative;
+      width: 72px;
+      height: 40px;
+      top: 70px;
+      color: #ffffff;
+      font-family: "Kelson Sans";
+      font-size: 50px;
+      font-weight: 400;
+      line-height: 50px;
+      left: -81px;
     }
 
     .steps {
       position: absolute;
-      top: 50px;
+      top: 36px;
       left: 899px;
       width: 96px;
       height: 37px;
-      background: url(../img/shag.png)no-repeat;
-      background-size: contain;
+      color: #ffffff;
+      font-family: "Kelson Sans";
+      font-size: 40px;
+      font-weight: 200;
+      line-height: 50px;
+      text-align: center;
     }
 
-    .lain4 .time, .lain5 .time {
-      position: absolute;
-      top: 50px;
-      left: 734px;
-      width: 98px;
-      height: 39px;
-      background: url(../img/time.png)no-repeat;
-      background-size: contain;
-      filter: invert(100%);
-    }
-
-    .lain4 .steps, .lain5 .steps {
-      position: absolute;
-      top: 50px;
-      left: 899px;
-      width: 96px;
-      height: 37px;
-      background: url(../img/shag.png)no-repeat;
-      background-size: contain;
-      filter: invert(100%);
-    }
-
-    .lain4 .icon, .lain5 .icon {
+    .icon {
       font-family: 'Kelson Sans';
       font-size: 55px;
       font-weight: bold;
@@ -370,13 +399,8 @@
       visibility: hidden;
     }
 
-    .lain4 .us_name, .lain5 .us_name {
-      filter: invert(100%);
-      -webkit-filter: invert(100%);
-    }
-
     .glw {
-      visibility: hidden;
+      /* visibility: hidden; */
     }
 
     .info_za {
@@ -730,4 +754,26 @@
       width: 100%;
       height: 197px;
       background: #eb305a;
+    }
+
+    .user_bloc_zad {
+      position: absolute;
+      top: 156px;
+      left: 35px;
+      width: 779px;
+      height: 158px;
+    }
+
+    .user_bloc_zad .us_phptp {
+      left: 0;
+      top: 60px;
+    }
+
+    .user_bloc_zad .us_name {
+      left: 200px;
+      top: 60px;
+    }
+
+    .block_game .user_bloc_zad {
+      top: 98px;
     }

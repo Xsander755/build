@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/font.css">
+</head>
+
+<body>
+  <div class="bloc_user_id">
+    <div class="user_bloc_zad">
+
+    </div>
+  </div>
+
+  <script>
+    var user_get;
+    var сount_aut = 0;
+
+    function aUtoRization() {
+      $.ajax({
+        type: 'get',
+        url: "https://api.msk-day.ru/puzzle/poi-poi/14391be72342662f13306081dd13c699/check-activation.json",
+        contentTaype: ' application/json',
+        success: function(data) {
+          $('.user_bloc_zad').append('</div><div class = "us_phptp" style = "background-image: url(' +
+            data.user.picture + '");></div><div class="us_name"><p>' + data.user.name +
+            '</p></div>');
+
+
+          console.log(data);
+          clearInterval(user_get);
+          console.log('т отключен');
+          $('.user_bloc_zad .us_name p').css('color', '#271c5d');
+
+        }
+      });
+      console.log("Запрос");
+    }
+    $(function() {
+      tImEruSer()
+    });
+
+    function tImEruSer() {
+      user_get = setInterval(function() {
+        if (сount_aut < 13) {
+          aUtoRization();
+          сount_aut++;
+        } else {
+          clearInterval(user_get);
+          console.log('т отключен');
+        }
+      }, 2000);
+    }
+  </script>
+</body>
+
+</html>
