@@ -18,7 +18,7 @@
             height: 70px;
             font-size: 66px;
         }
-        
+
         #errmsg {
             position: absolute;
             left: 250px;
@@ -40,7 +40,7 @@
             var Value = $('#quantity').val();
             $('#errmsg').empty();
             $('#errmsg').text(Value);
-            sech_url = " https://api.msk-day.ru/puzzle/poi-rating/14391be72342662f13306081dd13c699.json?expand=" + Value;
+            sech_url = " https://api.msk-day.ru/puzzle/poi-rating/14391be72342662f13306081dd13c699.json?expand=user&" + Value;
             sEch_Get(sech_url);
             console.log(sech_url);
 
