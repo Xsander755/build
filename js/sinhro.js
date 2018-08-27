@@ -1,50 +1,67 @@
-   var user_get;
-   var сount_aut = 0;
+var user_get;
+var сount_aut = 0;
+var user;
 
-   function aUtoRization() {
-     $.ajax({
-       type: 'get',
-       url: "https://api.msk-day.ru/puzzle/poi-poi/14391be72342662f13306081dd13c699/check-activation.json",
-       contentTaype: ' application/json',
-       success: function(data) {
-         $('.user_bloc_zad').append('</div><div class = "us_phptp" style = "background-image: url(' +
-           data.user.picture + '");></div><div class="us_name"><p>' + data.user.name +
-           '</p></div>');
-         $('.user_bloc_zad .us_name p').css('color', '#271c5d');
-         console.log(data);
-         clearInterval(user_get);
-         console.log('т отключен');
-         toGameResault();
-       }
-     });
-     console.log("Запрос");
-   }
 
-   function tImEruSer() {
-     user_get = setInterval(function() {
-       if (сount_aut < 13) {
-         aUtoRization();
-         сount_aut++;
-       } else {
-         clearInterval(user_get);
-         console.log('т отключен');
-       }
-     }, 2000);
-   }
+function aUtoRization() {
+    user = {
+        id: '',
+        name: '',
+        picture: '',
+        source: '',
+        step: '',
+        time: '',
+        oneEighth: ''
+    }
+    $.ajax({
+        type: 'get',
+        url: "https://api.msk-day.ru/puzzle/poi-poi/14391be72342662f13306081dd13c699/check-activation.json",
+        contentTaype: ' application/json',
+        success: function(data) {
+            user.id = data.user.id;
+            user.name = data.user.name;
+            user.picture = data.user.picture;
+            user.source = data.user.source;
+            user.step = data.userRating.turns;
+            user.time = data.userRating.seconds;
+            user.oneEighth = data.userRating.tasks;
 
-   function toGameResault() {
-     TweenMax.to(".block_info", 0.5, {
-       autoAlpha: 0
-     });
-     TweenMax.to(".zadanie_block", 0.5, {
-       autoAlpha: 1
-     });
-     TweenMax.staggerFrom([".nz1", ".nz2", ".nz3", ".nz4", ".nz5", ".nz6", ".nz7", ".nz8"], 0.5, {
-       autoAlpha: 0,
-       delay: 0.5
-     }, 0.25);
-     TweenMax.to(".global_window", 0.5, {
-       autoAlpha: 0,
-       delay: 0.2
-     });
-   }
+            console.log(user);
+            ///console.log(data);
+            console.log('т отключен');
+            clearInterval(user_get);
+            iNfIll();
+        }
+    });
+    console.log("Запрос");
+}
+
+
+function tImEruSer() {
+    user_get = setInterval(function() {
+        if (сount_aut < 13) {
+            aUtoRization();
+            сount_aut++;
+        } else {
+            clearInterval(user_get);
+            console.log('т отключен');
+        }
+    }, 2000);
+}
+
+function iNfIll() {
+    $('.user_bloc_zad_user_id').append('<div class="us_phptp" style="background-image: url(' + user.picture +
+        '");></div><div class="use_name"><p>' + user.name + '</p></div><div class="times">Время<br/><span>' + user.time +
+        '</span></div><div class="stepss">Шаги<br/><span>' + user.step +
+        '</span></div><div class="oneEighth">Задания:<br/><span>' + user.oneEighth + ' из 8</span></div>');
+    TweenMax.to(".block_info", 0.5, {
+        autoAlpha: 0
+    });
+    TweenMax.set(".global_window", {
+        autoAlpha: 0
+    });
+    TweenMax.to(".bloc_user_id", 0.5, {
+        autoAlpha: 1,
+        delay: 0.8
+    });
+}

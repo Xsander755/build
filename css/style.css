@@ -1,779 +1,894 @@
-    * {
-      margin: 0;
-      padding: 0;
-    }
-
-    .stand_wrapp {
-      position: relative;
-      top: 0;
-      overflow: hidden;
-      box-sizing: border-box;
-      width: 1080px;
-      height: 100%;
-      min-height: 1920px;
-      margin: 0 auto;
-      border: 1px solid red;
-      background-color: white;
-    }
-
-    .zastavka {
-      position: absolute;
-      top: 0;
-      left: 0;
-      visibility: hidden;
-      width: 100%;
-      height: 100%;
-    }
-
-    .ar_v {
-      position: absolute;
-      width: 1080px;
-      height: 123px;
-      background: url(../img/ar.svg) no-repeat;
-    }
-
-    .ar_n {
-      position: absolute;
-      bottom: 0;
-      width: 1080px;
-      height: 219px;
-      background: url(../img/ar.svg) repeat-y;
-    }
-
-    .stand {
-      position: relative;
-      top: 141px;
-      visibility: hidden;
-      width: 333px;
-      height: 850px;
-      margin: 0 auto;
-      background: url(../img/stand.png) no-repeat;
-      background-size: contain;
-    }
-
-    .logo {
-      position: absolute;
-      top: 1013px;
-      left: 85px;
-      width: 908px;
-      height: 110px;
-      opacity: 0;
-      background: url(../img/pytnashki.svg)no-repeat;
-    }
-
-    .msk {
-      position: absolute;
-      top: 1182px;
-      left: 131px;
-      visibility: hidden;
-      width: 818px;
-      height: 100px;
-      background: url(../img/label1.png)no-repeat;
-    }
-
-    .zadanie_block, .global_window, .block_info, .block_game {
-      position: absolute;
-      top: 123px;
-      left: 0;
-      width: 100%;
-      height: calc(100% - 123px);
-    }
-
-    .block_info {
-      top: 0;
-      top: 123px;
-      height: calc(100% - 124px);
-      background: #fff;
-    }
-
-    .block_info .btn_bac {
-      top: 1696px;
-    }
-
-    .block_window {
-      position: absolute;
-      top: 0;
-      left: 0;
-      visibility: hidden;
-      overflow: hidden;
-      width: 100%;
-      height: calc(100% - 123px);
-      background: #fff;
-    }
-
-    .block_logo {
-      top: 190px;
-    }
-
-    .block_fishka {
-      position: absolute;
-      top: 370px;
-      left: 112px;
-      width: 848px;
-      height: 485px;
-      background: url(../img/block_fishka.png)no-repeat;
-      background-size: contain;
-    }
-
-    .block_txt1 {
-      position: absolute;
-      top: 922px;
-      left: 102px;
-      width: 885px;
-      height: 229px;
-      background: url(../img/block_txt1.svg)no-repeat;
-      background-size: contain;
-    }
-
-    #search {
-      font-family: 'Kelson Sans RU';
-      font-size: 75px;
-      line-height: 1.2;
-      position: absolute;
-      top: 8px;
-      left: 132px;
-      width: 737px;
-      height: 91px;
-      text-align: left;
-      color: rgb(39, 28, 93);
-    }
-
-    .block_txt2 {
-      position: absolute;
-      top: 1217px;
-      left: 178px;
-      width: 715px;
-      height: 284px;
-      background: url(../img/block_txt_2.svg)no-repeat;
-      background-size: contain;
-    }
-
-    .block_txt3 {
-      position: absolute;
-      top: 1535px;
-      left: 106px;
-      width: 866px;
-      height: 215px;
-      background: url(../img/block_txt_3.svg)no-repeat;
-      background-size: contain;
-    }
-
-    .hi_works_btn {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      height: 99px;
-      cursor: pointer;
-      background: url(../img/bas_btn_wtf.png)no-repeat;
-      background-size: cover;
-    }
-
-    .glw .ar_n {
-      bottom: 90px;
-    }
-
-    .glw .selection_games {
-      position: absolute;
-      bottom: 213px;
-      width: 100%;
-      height: 335px;
-    }
-
-    .guest_games_btn {
-      position: absolute;
-      top: 0;
-      left: 26px;
-      width: 500px;
-      height: 115px;
-      cursor: pointer;
-      background: url(../img/btn_guest_.png)no-repeat;
-      background-size: contain;
-    }
-
-    .resaul_game_btn {
-      position: absolute;
-      top: 0;
-      left: 553px;
-      width: 500px;
-      height: 115px;
-      cursor: pointer;
-      background: url(../img/btn_game_result.png)no-repeat;
-      background-size: contain;
-    }
-
-    .geest_txt {
-      position: relative;
-      top: 150px;
-      left: 60px;
-      width: 428px;
-      height: 113px;
-      background: url(../img/txt_test_game.png)no-repeat;
-      background-size: contain;
-    }
-
-    .resault_txt {
-      position: relative;
-      top: 38px;
-      left: 577px;
-      width: 456px;
-      height: 153px;
-      background: url(../img/text_game_result.png)no-repeat;
-      background-size: contain;
-    }
-
-    .logo-glw {
-      top: 60px;
-      left: 226px;
-      width: 653px;
-      height: 118px;
-      opacity: 1;
-      background-size: contain;
-    }
-
-    .search-glw {
-      position: absolute;
-      top: 163px;
-      left: 40px;
-      width: 969px;
-      height: 108px;
-      background: url(../img/poisk.png)no-repeat;
-      background-size: contain;
-    }
-
-    .lain_block_glw {
-      position: absolute;
-      top: 310px;
-      width: 100%;
-      height: 928px;
-      overflow-x: hidden;
-      overflow-y: scroll;
-      scroll-behavior: smooth;
-    }
-
-    .lain_block_glw::-webkit-scrollbar {
-      width: 0;
-    }
-
-    .lain_block_glw p {
-      font-size: 1em;
-    }
-
-    .glw .lb {
-      position: relative;
-      width: 100%;
-      height: 185px;
-    }
-
-    .lain1 {
-      background: #d00338;
-    }
-
-    .lain1 .icon {
-      position: relative;
-      top: 50px;
-      left: 53px;
-      width: 80px;
-      height: 83px;
-      background: url(../img/icon_1.png)no-repeat;
-    }
-
-    .us_phptp {
-      position: absolute;
-      top: 16px;
-      left: 191px;
-      width: 152px;
-      height: 152px;
-      background-repeat: no-repeat;
-      background-size: contain;
-      border-radius: 50%
-    }
-
-    .us_name {
-      position: absolute;
-      top: 15px;
-      left: 407px;
-      width: 220px;
-      height: 110px;
-    }
-
-    .us_name p {
-      color: #ffffff;
-      font-family: "Kelson Sans";
-      font-size: 55px;
-      font-weight: 400;
-    }
-
-    .time {
-      position: absolute;
-      top: 36px;
-      left: 755px;
-      width: 98px;
-      height: 56px;
-      color: #ffffff;
-      font-family: "Kelson Sans";
-      font-size: 40px;
-      font-weight: 200;
-      line-height: 50px;
-      text-align: center;
-    }
-
-    .time span {
-      position: relative;
-      width: 84px;
-      height: 40px;
-      top: 70px;
-      color: #ffffff;
-      font-family: "Kelson Sans";
-      font-size: 50px;
-      font-weight: 400;
-      line-height: 50px;
-      left: -97px;
-    }
-
-    .steps span {
-      position: relative;
-      width: 72px;
-      height: 40px;
-      top: 70px;
-      color: #ffffff;
-      font-family: "Kelson Sans";
-      font-size: 50px;
-      font-weight: 400;
-      line-height: 50px;
-      left: -81px;
-    }
-
-    .steps {
-      position: absolute;
-      top: 36px;
-      left: 899px;
-      width: 96px;
-      height: 37px;
-      color: #ffffff;
-      font-family: "Kelson Sans";
-      font-size: 40px;
-      font-weight: 200;
-      line-height: 50px;
-      text-align: center;
-    }
-
-    .icon {
-      font-family: 'Kelson Sans';
-      font-size: 55px;
-      font-weight: bold;
-      line-height: 1;
-      position: absolute;
-      top: 70px;
-      left: 65px;
-      text-align: center;
-      color: rgb(210, 5, 54);
-    }
-
-    .lain2 .icon {
-      position: relative;
-      top: calc(50% - 40px);
-      left: 53px;
-      width: 80px;
-      height: 83px;
-      background: url(../img/icon_2.png)no-repeat;
-    }
-
-    .lain3 .icon {
-      position: relative;
-      top: calc(50% - 40px);
-      left: 53px;
-      width: 80px;
-      height: 83px;
-      background: url(../img/icon_3.png)no-repeat;
-    }
-
-    .lain2 {
-      background: #dc4369;
-    }
-
-    .lain3 {
-      background: #e7819b;
-    }
-
-    .block_info {
-      visibility: hidden;
-    }
-
-    .glw {
-      /* visibility: hidden; */
-    }
-
-    .info_za {
-      position: absolute;
-      top: 82px;
-      left: 55px;
-      width: 962px;
-      height: 120px;
-      background: url(../img/inf_zag1.png)no-repeat;
-    }
-
-    .info_txt_1 {
-      position: absolute;
-      top: 250px;
-      left: 33px;
-      width: 1018px;
-      height: 138px;
-      background: url(../img/inf_txt_1.png)no-repeat;
-    }
-
-    .info_txt_2 {
-      position: absolute;
-      top: 434px;
-      left: 64px;
-      width: 935px;
-      height: 358px;
-      background: url(../img/inf_txt_2.png)no-repeat;
-    }
-
-    .qr_android {
-      position: absolute;
-      top: 820px;
-      left: 216px;
-      width: 291px;
-      height: 330px;
-      background: url(../img/qr_android.png)no-repeat;
-    }
-
-    .qr_ios {
-      position: absolute;
-      top: 820px;
-      left: 586px;
-      width: 291px;
-      height: 330px;
-      background: url(../img/qr_ios.png)no-repeat;
-    }
-
-    .qr_stand {
-      position: absolute;
-      top: 1206px;
-      left: 234px;
-      width: 608px;
-      height: 340px;
-      background: url(../img/qr_stand.png)no-repeat;
-    }
-
-    .btn_bac {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      height: 98px;
-      cursor: pointer;
-      background: url(../img/bac.png)no-repeat;
-      background-size: cover;
-    }
-
-    .btn_bac_n {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      height: 98px;
-      cursor: pointer;
-      background: url(../img/bac.png)no-repeat;
-      background-size: cover;
-    }
-
-    .btn_bac_s {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      height: 98px;
-      cursor: pointer;
-      background: url(../img/bac.png)no-repeat;
-      background-size: cover;
-    }
-
-    .user_z1 {
-      position: absolute;
-      top: 204px;
-      left: 64px;
-      width: 943px;
-      height: 118px;
-      background: url(../img/user_z1.png)no-repeat;
-      background-size: contain;
-    }
-
-    .bloc_user_id {
-      visibility: hidden;
-    }
-
-    .user_bloc_inf {
-      position: absolute;
-      top: 387px;
-      left: 219px;
-      width: 607px;
-      height: 419px;
-      background: url(../img/user_blocs.png)no-repeat;
-      background-size: contain;
-    }
-
-    .user_to_game {
-      position: absolute;
-      top: 895px;
-      width: 100%;
-      height: 196px;
-      background: url(../img/user_btn1.png)no-repeat;
-      background-size: contain;
-    }
-
-    .user_to_exit {
-      position: absolute;
-      top: 1091px;
-      width: 100%;
-      height: 196px;
-      background: url(../img/user-btn_2.png)no-repeat;
-      background-size: contain;
-    }
-
-    .game_user_block {
-      position: absolute;
-      top: 156px;
-      left: 35px;
-      width: 779px;
-      height: 158px;
-      background: url(../img/game_user_block.png)no-repeat;
-      background-size: contain;
-    }
-
-    .user_btn_back {
-      position: absolute;
-      top: 181px;
-      left: 863px;
-      width: 540px;
-      height: 111px;
-      cursor: pointer;
-      background: url(../img/game_btn_back.png)no-repeat;
-      background-size: contain;
-    }
-
-    .game {
-      position: absolute;
-      top: 349px;
-      width: 100%;
-      height: 1080px;
-      background-size: contain;
-    }
-
-    .blur {
-      -webkit-filter: blur(10px);
-      -moz-filter: blur(10px);
-      filter: blur(10px);
-    }
-
-    .block_game {
-      top: 0;
-      visibility: hidden;
-      height: 100%;
-    }
-
-    .user_btn_wtf {
-      position: absolute;
-      bottom: 0;
-      width: 542px;
-      height: 97px;
-      cursor: pointer;
-      background: url(../img/game_btn_it_worck.png)no-repeat;
-      background-size: contain;
-    }
-
-    .user_btn_bac_zadach {
-      position: absolute;
-      top: 1821px;
-      left: 542px;
-      width: 542px;
-      height: 97px;
-      cursor: pointer;
-      background: url(../img/game_btn_back_zadacha.png)no-repeat;
-      background-size: contain;
-    }
-
-    .game_quest_block {
-      position: absolute;
-      top: 1225px;
-      visibility: hidden;
-      width: 100%;
-      height: 466px;
-      background: #fff;
-    }
-
-    .game_puzzle {
-      position: absolute;
-      top: 100px;
-      left: 161px;
-      width: 452px;
-      height: 87px;
-      background: url(../img/txt_puzzle.png)no-repeat;
-      background-size: contain;
-    }
-
-    .game_timer {
-      position: absolute;
-      top: 28px;
-      left: 789px;
-      width: 187px;
-      height: 187px;
-      background: url(../img/timer.png)no-repeat;
-      background-size: contain;
-    }
-
-    .game_quest_btn {
-      position: relative;
-      z-index: 999;
-      top: 265px;
-      float: left;
-      width: 532px;
-      height: 98px;
-      margin: 4px;
-      cursor: pointer;
-      background: #bbd8f2;
-    }
-
-    .splash_game {
-      position: absolute;
-      top: 0;
-      left: 0;
-      visibility: hidden;
-      width: 100%;
-      height: 100%;
-      background: rgba(255, 255, 255, .8);
-    }
-
-    .game_win_icon {
-      position: relative;
-      top: 30%;
-      left: 91px;
-      width: 98px;
-      height: 98px;
-      background: url(../img/yes_icon.png)no-repeat;
-      background-size: contain;
-    }
-
-    .za_vin {
-      position: absolute;
-      top: 32%;
-      left: 240px;
-      width: 748px;
-      height: 90px;
-      background: url(../img/zd_vin.png)no-repeat;
-      background-size: contain;
-    }
-
-    .push_block {
-      position: absolute;
-      top: calc(50% - 168px);
-      left: 100px;
-      visibility: hidden;
-      width: 880px;
-      height: 337px;
-      background: #bbd8f2;
-    }
-
-    .tex_push {
-      position: relative;
-      top: 75px;
-      left: calc(50% - 232px);
-      width: 464px;
-      height: 127px;
-      background: url(../img/txt_push.png)no-repeat;
-      background-size: contain;
-    }
-
-    .btn_push_y {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 441px;
-      height: 108px;
-      background: url(../img/apruw_exit.png)no-repeat;
-    }
-
-    .btn_push_n {
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      float: left;
-      width: 441px;
-      height: 108px;
-      background: url(../img/cacel.png)no-repeat;
-    }
-
-    .zadanie_block {
-      visibility: hidden;
-    }
-
-    .zag_zadanie {
-      position: absolute;
-      top: 80px;
-      left: 64px;
-      width: 943px;
-      height: 118px;
-      background: url(../img/zag_zadanie.png)no-repeat;
-    }
-
-    .wrapp_zadach {
-      position: relative;
-      top: 30%;
-      overflow: hidden;
-      width: 100%;
-      height: 59%;
-    }
-
-    .zadach {
-      display: block;
-      float: left;
-      width: 50%;
-      height: 475px;
-      background: url(../img/grup_zadacha.png);
-    }
-
-    .z2 {
-      background-position: 0 -477px;
-    }
-
-    .z3 {
-      background-position: -540px 0;
-    }
-
-    .zadach .fon {
-      width: 100%;
-      height: 100%;
-      background: url(../img/sp15.jpg);
-      background-size: 100%;
-      -webkit-filter: blur(15px);
-      -moz-filter: blur(15px);
-      filter: blur(15px);
-    }
-
-    .lain_z {
-      position: absolute;
-      top: 380px;
-      width: 100%;
-      height: 197px;
-      background: #eb305a;
-    }
-
-    .user_bloc_zad {
-      position: absolute;
-      top: 156px;
-      left: 35px;
-      width: 779px;
-      height: 158px;
-    }
-
-    .user_bloc_zad .us_phptp {
-      left: 0;
-      top: 60px;
-    }
-
-    .user_bloc_zad .us_name {
-      left: 200px;
-      top: 60px;
-    }
-
-    .block_game .user_bloc_zad {
-      top: 98px;
-    }
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.stand_wrapp {
+    position: relative;
+    top: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    width: 1080px;
+    height: 100%;
+    min-height: 1920px;
+    margin: 0 auto;
+    border: 1px solid red;
+    background-color: white;
+}
+
+.zastavka {
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.ar_v {
+    position: absolute;
+    width: 1080px;
+    height: 123px;
+    background: url(../img/ar.svg) no-repeat;
+}
+
+.ar_n {
+    position: absolute;
+    bottom: 0;
+    width: 1080px;
+    height: 219px;
+    background: url(../img/ar.svg) repeat-y;
+}
+
+.stand {
+    position: relative;
+    top: 141px;
+    visibility: hidden;
+    width: 333px;
+    height: 850px;
+    margin: 0 auto;
+    background: url(../img/stand.png) no-repeat;
+    background-size: contain;
+}
+
+.logo {
+    position: absolute;
+    top: 1013px;
+    left: 85px;
+    width: 908px;
+    height: 110px;
+    opacity: 0;
+    background: url(../img/pytnashki.svg)no-repeat;
+}
+
+.msk {
+    position: absolute;
+    top: 1182px;
+    left: 131px;
+    visibility: hidden;
+    width: 818px;
+    height: 100px;
+    background: url(../img/label1.png)no-repeat;
+}
+
+.zadanie_block,
+.global_window,
+.block_info,
+.block_game {
+    position: absolute;
+    top: 123px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 123px);
+}
+
+.block_info {
+    top: 0;
+    top: 123px;
+    height: calc(100% - 124px);
+    background: #fff;
+}
+
+.block_info .btn_bac {
+    top: 1696px;
+}
+
+.block_window {
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    overflow: hidden;
+    width: 100%;
+    height: calc(100% - 123px);
+    background: #fff;
+}
+
+.block_logo {
+    top: 190px;
+}
+
+.block_fishka {
+    position: absolute;
+    top: 370px;
+    left: 112px;
+    width: 848px;
+    height: 485px;
+    background: url(../img/block_fishka.png)no-repeat;
+    background-size: contain;
+}
+
+.block_txt1 {
+    position: absolute;
+    top: 922px;
+    left: 102px;
+    width: 885px;
+    height: 229px;
+    background: url(../img/block_txt1.svg)no-repeat;
+    background-size: contain;
+}
+
+#search {
+    font-family: 'Kelson Sans RU';
+    font-size: 75px;
+    line-height: 1.2;
+    position: absolute;
+    top: 8px;
+    left: 132px;
+    width: 737px;
+    height: 91px;
+    text-align: left;
+    color: rgb(39, 28, 93);
+}
+
+.block_txt2 {
+    position: absolute;
+    top: 1217px;
+    left: 178px;
+    width: 715px;
+    height: 284px;
+    background: url(../img/block_txt_2.svg)no-repeat;
+    background-size: contain;
+}
+
+.block_txt3 {
+    position: absolute;
+    top: 1535px;
+    left: 106px;
+    width: 866px;
+    height: 215px;
+    background: url(../img/block_txt_3.svg)no-repeat;
+    background-size: contain;
+}
+
+.hi_works_btn {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 99px;
+    cursor: pointer;
+    background: url(../img/bas_btn_wtf.png)no-repeat;
+    background-size: cover;
+}
+
+.glw .ar_n {
+    bottom: 90px;
+}
+
+.glw .selection_games {
+    position: absolute;
+    bottom: 213px;
+    width: 100%;
+    height: 335px;
+}
+
+.guest_games_btn {
+    position: absolute;
+    top: 0;
+    left: 26px;
+    width: 500px;
+    height: 115px;
+    cursor: pointer;
+    background: url(../img/btn_guest_.png)no-repeat;
+    background-size: contain;
+}
+
+.resaul_game_btn {
+    position: absolute;
+    top: 0;
+    left: 553px;
+    width: 500px;
+    height: 115px;
+    cursor: pointer;
+    background: url(../img/btn_game_result.png)no-repeat;
+    background-size: contain;
+}
+
+.geest_txt {
+    position: relative;
+    top: 150px;
+    left: 60px;
+    width: 428px;
+    height: 113px;
+    background: url(../img/txt_test_game.png)no-repeat;
+    background-size: contain;
+}
+
+.resault_txt {
+    position: relative;
+    top: 38px;
+    left: 577px;
+    width: 456px;
+    height: 153px;
+    background: url(../img/text_game_result.png)no-repeat;
+    background-size: contain;
+}
+
+.logo-glw {
+    top: 60px;
+    left: 226px;
+    width: 653px;
+    height: 118px;
+    opacity: 1;
+    background-size: contain;
+}
+
+.search-glw {
+    position: absolute;
+    top: 163px;
+    left: 40px;
+    width: 969px;
+    height: 108px;
+    background: url(../img/poisk.png)no-repeat;
+    background-size: contain;
+}
+
+.lain_block_glw {
+    position: absolute;
+    top: 310px;
+    width: 100%;
+    height: 928px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+.lain_block_glw::-webkit-scrollbar {
+    width: 0;
+}
+
+.lain_block_glw p {
+    font-size: 1em;
+}
+
+.glw .lb {
+    position: relative;
+    width: 100%;
+    height: 185px;
+}
+
+.lain1 {
+    background: #d00338;
+}
+
+.lain1 .icon {
+    position: relative;
+    top: 50px;
+    left: 53px;
+    width: 80px;
+    height: 83px;
+    background: url(../img/icon_1.png)no-repeat;
+}
+
+.us_phptp {
+    position: absolute;
+    top: 16px;
+    left: 191px;
+    width: 152px;
+    height: 152px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 50%
+}
+
+.us_name {
+    position: absolute;
+    top: 15px;
+    left: 407px;
+    width: 220px;
+    height: 110px;
+}
+
+.us_name p {
+    color: #ffffff;
+    font-family: "Kelson Sans";
+    font-size: 55px;
+    font-weight: 400;
+}
+
+.time {
+    position: absolute;
+    top: 36px;
+    left: 755px;
+    width: 98px;
+    height: 56px;
+    color: #ffffff;
+    font-family: "Kelson Sans";
+    font-size: 40px;
+    font-weight: 200;
+    line-height: 50px;
+    text-align: center;
+}
+
+.time span {
+    position: relative;
+    width: 84px;
+    height: 40px;
+    top: 70px;
+    color: #ffffff;
+    font-family: "Kelson Sans";
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 50px;
+    left: -97px;
+}
+
+.steps span {
+    position: relative;
+    width: 72px;
+    height: 40px;
+    top: 70px;
+    color: #ffffff;
+    font-family: "Kelson Sans";
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 50px;
+    left: -81px;
+}
+
+.steps {
+    position: absolute;
+    top: 36px;
+    left: 899px;
+    width: 96px;
+    height: 37px;
+    color: #ffffff;
+    font-family: "Kelson Sans";
+    font-size: 40px;
+    font-weight: 200;
+    line-height: 50px;
+    text-align: center;
+}
+
+.icon {
+    font-family: 'Kelson Sans';
+    font-size: 55px;
+    font-weight: bold;
+    line-height: 1;
+    position: absolute;
+    top: 70px;
+    left: 65px;
+    text-align: center;
+    color: rgb(210, 5, 54);
+}
+
+.lain2 .icon {
+    position: relative;
+    top: calc(50% - 40px);
+    left: 53px;
+    width: 80px;
+    height: 83px;
+    background: url(../img/icon_2.png)no-repeat;
+}
+
+.lain3 .icon {
+    position: relative;
+    top: calc(50% - 40px);
+    left: 53px;
+    width: 80px;
+    height: 83px;
+    background: url(../img/icon_3.png)no-repeat;
+}
+
+.lain2 {
+    background: #dc4369;
+}
+
+.lain3 {
+    background: #e7819b;
+}
+
+.block_info {
+    visibility: hidden;
+}
+
+.glw {
+    /* visibility: hidden; */
+}
+
+.info_za {
+    position: absolute;
+    top: 82px;
+    left: 55px;
+    width: 962px;
+    height: 120px;
+    background: url(../img/inf_zag1.png)no-repeat;
+}
+
+.info_txt_1 {
+    position: absolute;
+    top: 250px;
+    left: 33px;
+    width: 1018px;
+    height: 138px;
+    background: url(../img/inf_txt_1.png)no-repeat;
+}
+
+.info_txt_2 {
+    position: absolute;
+    top: 434px;
+    left: 64px;
+    width: 935px;
+    height: 358px;
+    background: url(../img/inf_txt_2.png)no-repeat;
+}
+
+.qr_android {
+    position: absolute;
+    top: 820px;
+    left: 216px;
+    width: 291px;
+    height: 330px;
+    background: url(../img/qr_android.png)no-repeat;
+}
+
+.qr_ios {
+    position: absolute;
+    top: 820px;
+    left: 586px;
+    width: 291px;
+    height: 330px;
+    background: url(../img/qr_ios.png)no-repeat;
+}
+
+.qr_stand {
+    position: absolute;
+    top: 1206px;
+    left: 234px;
+    width: 608px;
+    height: 340px;
+    background: url(../img/qr_stand.png)no-repeat;
+}
+
+.btn_bac {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 98px;
+    cursor: pointer;
+    background: url(../img/bac.png)no-repeat;
+    background-size: cover;
+}
+
+.btn_bac_n {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 98px;
+    cursor: pointer;
+    background: url(../img/bac.png)no-repeat;
+    background-size: cover;
+}
+
+.btn_bac_s {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 98px;
+    cursor: pointer;
+    background: url(../img/bac.png)no-repeat;
+    background-size: cover;
+}
+
+.user_z1 {
+    position: absolute;
+    top: 204px;
+    left: 64px;
+    width: 943px;
+    height: 118px;
+    background: url(../img/user_z1.png)no-repeat;
+    background-size: contain;
+}
+
+.bloc_user_id {
+    visibility: hidden;
+}
+
+.user_bloc_inf {
+    position: absolute;
+    top: 387px;
+    left: 219px;
+    width: 607px;
+    height: 419px;
+}
+
+.user_to_game {
+    position: absolute;
+    top: 895px;
+    width: 100%;
+    height: 196px;
+    background: url(../img/user_btn1.png)no-repeat;
+    background-size: contain;
+}
+
+.user_to_exit {
+    position: absolute;
+    top: 1091px;
+    width: 100%;
+    height: 196px;
+    background: url(../img/user-btn_2.png)no-repeat;
+    background-size: contain;
+}
+
+.game_user_block {
+    position: absolute;
+    top: 156px;
+    left: 35px;
+    width: 779px;
+    height: 158px;
+    background: url(../img/game_user_block.png)no-repeat;
+    background-size: contain;
+}
+
+.user_btn_back {
+    position: absolute;
+    top: 181px;
+    left: 863px;
+    width: 540px;
+    height: 111px;
+    cursor: pointer;
+    background: url(../img/game_btn_back.png)no-repeat;
+    background-size: contain;
+}
+
+.game {
+    position: absolute;
+    top: 349px;
+    width: 100%;
+    height: 1080px;
+    background-size: contain;
+}
+
+.blur {
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    filter: blur(10px);
+}
+
+.block_game {
+    top: 0;
+    visibility: hidden;
+    height: 100%;
+}
+
+.user_btn_wtf {
+    position: absolute;
+    bottom: 0;
+    width: 542px;
+    height: 97px;
+    cursor: pointer;
+    background: url(../img/game_btn_it_worck.png)no-repeat;
+    background-size: contain;
+}
+
+.user_btn_bac_zadach {
+    position: absolute;
+    top: 1821px;
+    left: 542px;
+    width: 542px;
+    height: 97px;
+    cursor: pointer;
+    background: url(../img/game_btn_back_zadacha.png)no-repeat;
+    background-size: contain;
+}
+
+.game_quest_block {
+    position: absolute;
+    top: 1225px;
+    visibility: hidden;
+    width: 100%;
+    height: 466px;
+    background: #fff;
+}
+
+.game_puzzle {
+    position: absolute;
+    top: 100px;
+    left: 161px;
+    width: 452px;
+    height: 87px;
+    background: url(../img/txt_puzzle.png)no-repeat;
+    background-size: contain;
+}
+
+.game_timer {
+    position: absolute;
+    top: 28px;
+    left: 789px;
+    width: 187px;
+    height: 187px;
+    background: url(../img/timer.png)no-repeat;
+    background-size: contain;
+}
+
+.game_quest_btn {
+    position: relative;
+    z-index: 999;
+    top: 265px;
+    float: left;
+    width: 532px;
+    height: 98px;
+    margin: 4px;
+    cursor: pointer;
+    background: #bbd8f2;
+}
+
+.splash_game {
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, .8);
+}
+
+.game_win_icon {
+    position: relative;
+    top: 30%;
+    left: 91px;
+    width: 98px;
+    height: 98px;
+    background: url(../img/yes_icon.png)no-repeat;
+    background-size: contain;
+}
+
+.za_vin {
+    position: absolute;
+    top: 32%;
+    left: 240px;
+    width: 748px;
+    height: 90px;
+    background: url(../img/zd_vin.png)no-repeat;
+    background-size: contain;
+}
+
+.push_block {
+    position: absolute;
+    top: calc(50% - 168px);
+    left: 100px;
+    visibility: hidden;
+    width: 880px;
+    height: 337px;
+    background: #bbd8f2;
+}
+
+.tex_push {
+    position: relative;
+    top: 75px;
+    left: calc(50% - 232px);
+    width: 464px;
+    height: 127px;
+    background: url(../img/txt_push.png)no-repeat;
+    background-size: contain;
+}
+
+.btn_push_y {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 441px;
+    height: 108px;
+    background: url(../img/apruw_exit.png)no-repeat;
+}
+
+.btn_push_n {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    float: left;
+    width: 441px;
+    height: 108px;
+    background: url(../img/cacel.png)no-repeat;
+}
+
+.zadanie_block {
+    visibility: hidden;
+}
+
+.zag_zadanie {
+    position: absolute;
+    top: 80px;
+    left: 64px;
+    width: 943px;
+    height: 118px;
+    background: url(../img/zag_zadanie.png)no-repeat;
+}
+
+.wrapp_zadach {
+    position: relative;
+    top: 30%;
+    overflow: hidden;
+    width: 100%;
+    height: 59%;
+}
+
+.zadach {
+    display: block;
+    float: left;
+    width: 50%;
+    height: 475px;
+    background: url(../img/grup_zadacha.png);
+}
+
+.z2 {
+    background-position: 0 -477px;
+}
+
+.z3 {
+    background-position: -540px 0;
+}
+
+.zadach .fon {
+    width: 100%;
+    height: 100%;
+    background: url(../img/sp15.jpg);
+    background-size: 100%;
+    -webkit-filter: blur(15px);
+    -moz-filter: blur(15px);
+    filter: blur(15px);
+}
+
+.lain_z {
+    position: absolute;
+    top: 380px;
+    width: 100%;
+    height: 197px;
+    background: #eb305a;
+}
+
+.user_bloc_zad {
+    position: absolute;
+    top: 156px;
+    left: 35px;
+    width: 779px;
+    height: 158px;
+}
+
+.user_bloc_zad .us_phptp {
+    left: 0;
+    top: 60px;
+}
+
+.user_bloc_zad .us_name {
+    left: 200px;
+    top: 60px;
+}
+
+.block_game .user_bloc_zad {
+    top: 98px;
+}
+
+.user_bloc_zad_user_id {
+    width: 607px;
+    height: 419px;
+    margin: 0 auto;
+}
+
+.user_bloc_zad_user_id .us_phptp {
+    position: relative;
+    width: 274px;
+    height: 274px;
+    left: 0;
+    top: 0;
+    display: block;
+    background-repeat: no-repeat;
+}
+
+.user_bloc_zad_user_id .use_name {
+    font-size: 110px;
+    font-family: "Kelson Sans";
+    color: rgb(39, 28, 93);
+    font-weight: 900;
+    line-height: 1.2;
+    text-align: left;
+    position: absolute;
+    left: 296px;
+    top: 54px;
+    width: 275px;
+}
+
+.user_bloc_zad_user_id .use_name p {
+    color: #271c5d;
+    font-family: "Kelson Sans";
+    font-size: 55px;
+    font-weight: 400;
+}
+
+.user_bloc_zad_user_id .oneEighth {
+    position: relative;
+    width: 155px;
+    height: 100px;
+    color: #271c5e;
+    font-family: "Kelson Sans";
+    font-size: 43px;
+    font-weight: 100;
+    line-height: 50px;
+    left: 0px;
+    float: right;
+    margin: 37px;
+}
+
+.user_bloc_zad_user_id .oneEighth span {
+    width: 321px;
+    height: 73px;
+    color: #cb0935;
+    font-family: "Kelson Sans";
+    font-size: 56px;
+    font-weight: 400;
+    line-height: 50px;
+    top: 15px;
+    position: relative;
+}
+
+.user_bloc_zad_user_id .times {
+    position: relative;
+    /* Style for "Время" */
+    width: 111px;
+    height: 100px;
+    color: #271c5e;
+    font-family: "Kelson Sans";
+    font-size: 43px;
+    font-weight: 100;
+    line-height: 50px;
+    float: right;
+    margin: 37px;
+}
+
+.user_bloc_zad_user_id .stepss {
+    position: relative;
+    height: 101px;
+    color: #271c5e;
+    font-family: "Kelson Sans";
+    font-size: 43px;
+    font-weight: 100;
+    line-height: 50px;
+    width: 120px;
+    float: right;
+    margin: 17px;
+    top: 23px;
+}
+
+.user_bloc_zad_user_id .times span {
+    width: 83px;
+    height: 40px;
+    color: #271c5e;
+    font-family: "Kelson Sans";
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 50px;
+    position: relative;
+    top: 15px;
+}
+
+.user_bloc_zad_user_id .stepss span {
+    width: 74px;
+    height: 40px;
+    color: #271c5e;
+    font-family: "Kelson Sans";
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 50px;
+    position: relative;
+    top: 14px;
+}
