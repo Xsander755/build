@@ -18,7 +18,7 @@
             height: 70px;
             font-size: 66px;
         }
-
+        
         #errmsg {
             position: absolute;
             left: 250px;
@@ -33,18 +33,31 @@
 
 <body>
     <input id="quantity" type="search">
-    <div id="errmsg"></div>
+
     <script>
         var sech_url;
-        $('#quantity').keyup(function() {
-            var Value = $('#quantity').val();
-            $('#errmsg').empty();
-            $('#errmsg').text(Value);
-            sech_url = " https://api.msk-day.ru/puzzle/poi-rating/14391be72342662f13306081dd13c699.json?expand=user&" + Value;
-            sEch_Get(sech_url);
-            console.log(sech_url);
+        var input = $('#quantity'),
+            timeOut;
+        input.on('keyup', function() {
+
+            clearTimeout(timeOut);
+
+            timeOut = setTimeout(poIsk, 900, $(this).val());
 
         });
+
+        input.on('keydown', function() {
+
+            clearTimeout(timeOut);
+
+        });
+
+        function poIsk(value) {
+
+            sech_url = " https://api.msk-day.ru/puzzle/poi-rating/8a55bf69cf5fb46b8d40f11daca0390a.json?expand=user&name=" + value;
+            sEch_Get(sech_url);
+
+        }
 
         function sEch_Get(url) {
             $.ajax({
@@ -52,7 +65,14 @@
                 url: url,
                 contentTaype: ' application/json',
                 success: function(data) {
-                    console.log(data);
+                    $.each(data, function(i) {
+                        console.log(data[i].user.name);
+                        console.log(data[i].user.picture);
+                        console.log(data[i].seconds);
+                        console.log(data[i].turns);
+                        console.log(data[i]);
+                    });
+
                 }
             });
         }
