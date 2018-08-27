@@ -27,10 +27,9 @@ function aUtoRization() {
             user.oneEighth = data.userRating.tasks;
 
             console.log(user);
-            ///console.log(data);
-            console.log('т отключен');
             clearInterval(user_get);
             iNfIll();
+            console.log('т отключен в аякс');
         }
     });
     console.log("Запрос");
@@ -38,13 +37,15 @@ function aUtoRization() {
 
 
 function tImEruSer() {
+    сount_aut = 0;
     user_get = setInterval(function() {
         if (сount_aut < 13) {
             aUtoRization();
             сount_aut++;
         } else {
             clearInterval(user_get);
-            console.log('т отключен');
+            console.log('т отключен таймере');
+
         }
     }, 2000);
 }
@@ -54,6 +55,9 @@ function iNfIll() {
         '");></div><div class="use_name"><p>' + user.name + '</p></div><div class="times">Время<br/><span>' + user.time +
         '</span></div><div class="stepss">Шаги<br/><span>' + user.step +
         '</span></div><div class="oneEighth">Задания:<br/><span>' + user.oneEighth + ' из 8</span></div>');
+
+    $('.urus').append('<div class="us_phptp" style="background-image: url(' + user.picture +
+        '");></div><div class="use_name ur"><p>' + user.name + '</p></div>');
     TweenMax.to(".block_info", 0.5, {
         autoAlpha: 0
     });
@@ -64,6 +68,7 @@ function iNfIll() {
         autoAlpha: 1,
         delay: 0.8
     });
+    console.log(user);
 }
 
 function userApruv() {

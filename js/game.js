@@ -6,24 +6,30 @@ var fiveMinutes, display, stat, pos_z = 0;
 var way_topics;
 var b_zadach;
 var status_game = 'resaul';
-$(function() {
+var game_obj;
+
+function iniGame() {
+    game_obj = {
+        id_tasc: '',
+        answers: ''
+    }
+
 
     var tt = $.ajax({
         url: 'https://api.msk-day.ru/puzzle/poi-task/8e08f29980d54010e345e7feec269216.json',
         success: function(data) {
             b_zadach = data;
-            for (var i = 0; i < data.length; i++) {
+            $.each(data, function(i) {
                 $('.btn_box').append('<div class="nz nz' + data[i].taskNumber + '" id="' + data[i].taskNumber + '" ><div class="fon_zad blur" style="background-image:url(' + data[i].imageUrl + ')" ></div><div class="fi kz' + data[i].taskNumber + '"  style="background-image: url(../img/fish/f' + data[i].taskNumber + '.svg)"></div><div class="plash_bler"><span>ПРИСТУПИТЬ К ЗАДАНИЮ</span><div id="icon"></div></div></div>');
-            }
+            });
+            console.log(data);
+            console.log(game_obj);
         }
     });
 
     $(document).on('click', '.nz', function() {
         var im = Number.parseInt($(this).attr('id') - 1);
         vOiData(im);
-        console.log(im);
-        console.log(status_game);
-
     });
 
     function vOiData(n) {
@@ -177,15 +183,15 @@ $(function() {
                         $("#pos16").removeClass("pointer");
                         $("#image div").off("click");
                         TweenMax.to(".btn_box", 0.5, { autoAlpha: 1 });
-                        console.log('победа');
-                        console.log("Потрченно времени:" + dr);
-                        console.log("Количество шагов:" + moves);
+                        // console.log('победа');
+                        // console.log("Потрченно времени:" + dr);
+                        // console.log("Количество шагов:" + moves);
                     }
                 }
             }
         }
     }
-});
+}
 
 function startTimer(duration, display) {
     var timer = duration,
@@ -215,9 +221,9 @@ function isGameStop() {
     stat = 0;
     clearInterval(times_val);
     $("#image div").off("click");
-    console.log("Не победа");
-    console.log("Потрченно времени:" + dr);
-    console.log("Количество шагов:" + moves);
+    // console.log("Не победа");
+    // console.log("Потрченно времени:" + dr);
+    // console.log("Количество шагов:" + moves);
     $("#image").addClass('fiasco');
     TweenMax.to(".btn_box", 0.5, { autoAlpha: 1 });
 }

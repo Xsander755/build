@@ -88,9 +88,14 @@ p {
 .vremy {
     font-family: 'Kelson Sans';
     font-size: 38px;
-    font-weight: 400;
+    font-weight: 100;
     line-height: 50px;
     color: #271c5e;
+}
+
+.shag span,
+.vremy span {
+    font-weight: 400;
 }
 
 #image div {
@@ -103,16 +108,14 @@ p {
 
 #counter {
     position: absolute;
-    top: 10px;
     top: -170px;
-    left: 717px;
+    left: 635px;
 }
 
 #clock {
     position: absolute;
-    top: 10px;
     top: -170px;
-    left: 567px;
+    left: 465px;
 }
 
 #time,

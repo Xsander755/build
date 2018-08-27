@@ -6,13 +6,14 @@ $('.guest_games_btn').click(function() {
     });
     TweenMax.staggerFrom([".nz1", ".nz2", ".nz3", ".nz4", ".nz5", ".nz6", ".nz7", ".nz8"], 0.5, {
         autoAlpha: 0,
-        delay: 0.8
+        delay: 1
     }, 0.25);
     TweenMax.to(".global_window", 0.5, {
         autoAlpha: 0
     });
     usErHod();
 });
+
 $('.resaul_game_btn').click(function() {
     TweenMax.to(".block_info", 0.5, {
         autoAlpha: 1
@@ -79,16 +80,17 @@ $('.btn_bac').click(function() {
     console.log('Назад');
 });
 $('.btn_bac_s').click(function() {
-
+    oUtLOg();
     TweenMax.to(".bloc_user_id", 0.5, {
-        autoAlpha: 0
+        autoAlpha: 0,
+        onComplete: oUtLOg
     });
     TweenMax.to(".global_window", 0.5, {
         autoAlpha: 1,
         delay: 0.2
     });
     $(".user_bloc_zad_user_id> div").remove();
-    user = null;
+
     console.log('Назад', user);
 });
 $('.user_to_game').click(function() {
@@ -104,6 +106,7 @@ $('.user_to_game').click(function() {
         autoAlpha: 1,
         delay: 1
     });
+
     TweenMax.staggerFrom([".nz1", ".nz2", ".nz3", ".nz4", ".nz5", ".nz6", ".nz7", ".nz8"], 0.5, {
         autoAlpha: 0,
         delay: 1
@@ -112,19 +115,22 @@ $('.user_to_game').click(function() {
     usErHod();
 });
 $('.user_to_exit').click(function() {
-    console.log('Отменить и выйти');
-    $(".user_bloc_zad_user_id> div").remove();
-    user = null;
+
     TweenMax.to(".bloc_user_id", 0.5, {
         autoAlpha: 0
     });
     TweenMax.to(".global_window", 0.5, {
         autoAlpha: 1
     });
+
+    console.log('Отменить и выйти');
+    $(".user_bloc_zad_user_id> div").remove();
+    oUtLOg();
 });
 $('.btn_bac_n').click(function() {
     TweenMax.to(".zadanie_block", 0.5, {
-        autoAlpha: 0
+        autoAlpha: 0,
+        onComplete: oUtLOg
     });
     TweenMax.to(".global_window", 0.5, {
         autoAlpha: 1,
@@ -135,15 +141,30 @@ $('.btn_bac_n').click(function() {
         delay: 0.2
     });
     $(".user_bloc_zad_user_id> div").remove();
-    user = null;
-    console.log('В начало');
+
 });
 
 function usErHod() {
     if (status_game == 'guest') {
         TweenMax.set('.user_block_autor', { autoAlpha: 0 });
+        TweenMax.set('.user_bloc_guest', {
+            autoAlpha: 1
+        });
     }
     if (status_game == 'approved') {
+        TweenMax.set('.user_block_autor', {
+            autoAlpha: 1
+        });
         TweenMax.set('.user_bloc_guest', { autoAlpha: 0 });
     }
 };
+
+function stZaGame() {
+
+}
+
+function oUtLOg() {
+    user = null;
+    data = null;
+    console.log('Назад', user);
+}
