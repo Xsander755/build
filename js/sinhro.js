@@ -65,3 +65,10 @@ function iNfIll() {
         delay: 0.8
     });
 }
+
+function userApruv() {
+    $('.user_block_autor').append('<div class="ph_user_apr" style="background-image: url(' + user.picture +
+        '");></div><div class="name_user_apr"><p>' + user.name + '</p></div><div class="times_user_apr">Время<br/><span>' + user.time +
+        '</span></div><div class="step_user_apr">Шаги<br/><span>' + user.step +
+        '</span></div>');
+}

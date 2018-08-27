@@ -11,9 +11,7 @@ $('.guest_games_btn').click(function() {
     TweenMax.to(".global_window", 0.5, {
         autoAlpha: 0
     });
-
-    console.log('guest_game');
-    console.log(status_game);
+    usErHod();
 });
 $('.resaul_game_btn').click(function() {
     TweenMax.to(".block_info", 0.5, {
@@ -94,6 +92,8 @@ $('.btn_bac_s').click(function() {
     console.log('Назад', user);
 });
 $('.user_to_game').click(function() {
+    userApruv();
+    status_game = 'approved';
     TweenMax.to(".bloc_user_id", 0.5, {
         autoAlpha: 0
     });
@@ -109,6 +109,7 @@ $('.user_to_game').click(function() {
         delay: 1
     }, 0.25);
     console.log('Начать игру на стенде');
+    usErHod();
 });
 $('.user_to_exit').click(function() {
     console.log('Отменить и выйти');
@@ -137,3 +138,12 @@ $('.btn_bac_n').click(function() {
     user = null;
     console.log('В начало');
 });
+
+function usErHod() {
+    if (status_game == 'guest') {
+        TweenMax.set('.user_block_autor', { autoAlpha: 0 });
+    }
+    if (status_game == 'approved') {
+        TweenMax.set('.user_bloc_guest', { autoAlpha: 0 });
+    }
+};
