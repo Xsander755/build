@@ -63,6 +63,7 @@ $('.user_btn_back').click(function() {
     });
     clearInterval(times_val);
     $("#image> div").remove();
+    $(".game_quest_btn>p").remove();
 
     console.log('Заново ИГРУ');
 
@@ -73,6 +74,9 @@ $('.btn_bac').click(function() {
     });
     TweenMax.to(".bloc_user_id", 0.5, {
         autoAlpha: 0
+    });
+    TweenMax.to(".global_window", 0.5, {
+        autoAlpha: 1
     });
     clearInterval(user_get);
     $(".user_bloc_zad_user_id> div").remove();
@@ -114,7 +118,7 @@ $('.user_to_game').click(function() {
     console.log('Начать игру на стенде');
     usErHod();
 });
-$('.user_to_exit').click(function() {
+$('.user_btn_y').click(function() {
 
     TweenMax.to(".bloc_user_id", 0.5, {
         autoAlpha: 0
@@ -122,10 +126,39 @@ $('.user_to_exit').click(function() {
     TweenMax.to(".global_window", 0.5, {
         autoAlpha: 1
     });
+    TweenMax.to(".block_exit_wrapp", 0.5, {
+        autoAlpha: 0
+    });
 
     console.log('Отменить и выйти');
     $(".user_bloc_zad_user_id> div").remove();
     oUtLOg();
+});
+$('.btn_toResult_game').click(function() {
+    TweenMax.to(".block_info", 0.5, {
+        autoAlpha: 1
+    });
+    TweenMax.to(".zadanie_block", 0.5, {
+        autoAlpha: 0
+    });
+    tImEruSer();
+});
+
+$('.user_btn_n').click(function() {
+    TweenMax.to(".block_exit_wrapp", 0.5, {
+        autoAlpha: 0
+    });
+});
+
+$('.user_to_exit').click(function() {
+    TweenMax.to(".block_exit_wrapp", 0.5, {
+        autoAlpha: 1
+    });
+    TweenMax.from(".user_bloc_exit", 0.4, {
+        autoAlpha: 0,
+        scale: 1.2,
+        ease: Back.easeOut
+    });
 });
 $('.btn_bac_n').click(function() {
     TweenMax.to(".zadanie_block", 0.5, {
@@ -181,3 +214,15 @@ function oUtLOg() {
     data = null;
     console.log('Назад', user);
 }
+
+$('.game_quest_block>').on('click', function() {
+    var ns_valid = $(this).attr('valid');
+
+    if (ns_valid == 1) {
+        console.log("victori");
+        console.log(ns_valid);
+    } else {
+        console.log("fiasko");
+        console.log(ns_valid);
+    }
+});

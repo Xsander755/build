@@ -68,7 +68,7 @@ function iNfIll() {
         autoAlpha: 1,
         delay: 0.8
     });
-    console.log(user);
+
 }
 
 function userApruv() {

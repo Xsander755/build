@@ -14,13 +14,14 @@
      clearTimeout(timeOut);
 
  });
- input.on('blur', function() {
+ input.on('mouseover', function() {
      $('.lain_block_glw>div').remove();
      lOadTabsRey();
  });
  input.on('focus', function() {
-     input.value = '';
+     $(this).select();
  });
+
 
  function poIsk(value) {
 
@@ -37,11 +38,7 @@
          success: function(data) {
              $('.lain_block_glw>div').remove();
              $.each(data, function(i) {
-                 //  console.log(data[i].user.name);
-                 //  console.log(data[i].user.picture);
-                 //  console.log(data[i].seconds);
-                 //  console.log(data[i].turns);
-                 //  console.log(data[i]);
+
                  $('.lain_block_glw').append('<div class="lb"><div class="icon"><p>' + (i + 1) + '</p></div><div class = "us_phptp" style = "background-image: url(' +
                      data[i].user.picture + '");></div><div class="us_name"><p>' + data[i].user.name +
                      '</p></div><div class="time">Время<span>' + data[i].seconds + '</span></div><div class="steps">Шаги<span>' + data[i].turns + '</span></div></div>');

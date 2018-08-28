@@ -11,7 +11,10 @@ var game_obj;
 function iniGame() {
     game_obj = {
         id_tasc: '',
-        answers: ''
+        status: '',
+        answers: '',
+        qest_time: '',
+        answers_id: ''
     }
 
 
@@ -22,14 +25,24 @@ function iniGame() {
             $.each(data, function(i) {
                 $('.btn_box').append('<div class="nz nz' + data[i].taskNumber + '" id="' + data[i].taskNumber + '" ><div class="fon_zad blur" style="background-image:url(' + data[i].imageUrl + ')" ></div><div class="fi kz' + data[i].taskNumber + '"  style="background-image: url(../img/fish/f' + data[i].taskNumber + '.svg)"></div><div class="plash_bler"><span>ПРИСТУПИТЬ К ЗАДАНИЮ</span><div id="icon"></div></div></div>');
             });
-            console.log(data);
-            console.log(game_obj);
+
         }
     });
 
     $(document).on('click', '.nz', function() {
         var im = Number.parseInt($(this).attr('id') - 1);
         vOiData(im);
+        game_obj.id_tasc = b_zadach[im].taskNumber;
+        game_obj.status = b_zadach[im].result.completed;
+        game_obj.qest_time = b_zadach[im].maxAnswerSeconds;
+        game_obj.answers = b_zadach[im].answers;
+
+        $.each(game_obj.answers, function(i) {
+            console.log(game_obj.answers[i].content);
+            $(".game_quest_btn" + (i + 1)).html('<p>' + game_obj.answers[i].content + '</p>').attr('valid', game_obj.answers[i].valid).attr('awid', game_obj.answers[i].id);
+            $('.game_timer').html('<p>' + game_obj.qest_time + '</p>');
+        })
+        console.log(game_obj);
     });
 
     function vOiData(n) {
@@ -221,9 +234,23 @@ function isGameStop() {
     stat = 0;
     clearInterval(times_val);
     $("#image div").off("click");
-    // console.log("Не победа");
-    // console.log("Потрченно времени:" + dr);
-    // console.log("Количество шагов:" + moves);
     $("#image").addClass('fiasco');
     TweenMax.to(".btn_box", 0.5, { autoAlpha: 1 });
+}
+
+function initGame_timer() {
+    var cc = game_obj.qest_time;
+    console.log(cc);
+    var ge_tim = setInterval(function() {
+        if (cc > 0) {
+            cc--;
+            $('.game_timer>p').html(cc)
+            console.log(cc);
+        } else {
+            clearInterval(ge_tim);
+            console.log(ge_tim);
+            $(".game").addClass('fiasco');
+            $(".game_quest_block").addClass('fiasco');
+        }
+    }, 1000);
 }
