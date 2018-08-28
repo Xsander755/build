@@ -41,7 +41,7 @@ $('.user_btn_bac_zadach').click(function() {
     });
     TweenMax.staggerFrom([".nz1", ".nz2", ".nz3", ".nz4", ".nz5", ".nz6", ".nz7", ".nz8"], 0.5, {
         autoAlpha: 0,
-        delay: 0.5
+        delay: 0.8
     }, 0.25);
     TweenMax.to(".block_game", 0.5, {
         autoAlpha: 0
@@ -147,7 +147,13 @@ $('.btn_bac_n').click(function() {
 function usErHod() {
     if (status_game == 'guest') {
         TweenMax.set('.user_block_autor', { autoAlpha: 0 });
+        TweenMax.set('.urus', {
+            autoAlpha: 0
+        });
         TweenMax.set('.user_bloc_guest', {
+            autoAlpha: 1
+        });
+        TweenMax.set('.guest', {
             autoAlpha: 1
         });
     }
@@ -155,7 +161,13 @@ function usErHod() {
         TweenMax.set('.user_block_autor', {
             autoAlpha: 1
         });
+        TweenMax.set('.urus', {
+            autoAlpha: 1
+        });
         TweenMax.set('.user_bloc_guest', { autoAlpha: 0 });
+        TweenMax.set('.guest', {
+            autoAlpha: 0
+        });
     }
 };
 
@@ -164,6 +176,7 @@ function stZaGame() {
 }
 
 function oUtLOg() {
+    $(".user_block_autor> div").remove();
     user = null;
     data = null;
     console.log('Назад', user);

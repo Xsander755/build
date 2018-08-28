@@ -765,7 +765,7 @@
 
 .user_bloc_zad {
     position: absolute;
-    top: 156px;
+    top: 185px;
     left: 35px;
     width: 1030px;
     height: 280px;
@@ -900,7 +900,7 @@
 }
 
 .user_block_autor {
-    position: relative;
+    position: absolute;
     top: 0;
     width: 1015px;
     height: 230px;
@@ -997,4 +997,25 @@
     left: 529px;
     top: -21px;
     cursor: pointer;
+}
+
+.guest {
+    position: relative;
+    width: 350px;
+    height: 300px;
+    background: url(../img/guest_block.png)no-repeat;
+    background-size: contain;
+    margin-top: 50px;
+}
+
+.input[type] {
+    display: inline-block;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
