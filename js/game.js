@@ -7,6 +7,7 @@ var way_topics;
 var b_zadach;
 var status_game = 'resaul';
 var game_obj;
+var ge_tim;
 
 function iniGame() {
     game_obj = {
@@ -22,8 +23,10 @@ function iniGame() {
         url: 'https://api.msk-day.ru/puzzle/poi-task/8e08f29980d54010e345e7feec269216.json',
         success: function(data) {
             b_zadach = data;
+            console.log(data);
             $.each(data, function(i) {
                 $('.btn_box').append('<div class="nz nz' + data[i].taskNumber + '" id="' + data[i].taskNumber + '" ><div class="fon_zad blur" style="background-image:url(' + data[i].imageUrl + ')" ></div><div class="fi kz' + data[i].taskNumber + '"  style="background-image: url(../img/fish/f' + data[i].taskNumber + '.svg)"></div><div class="plash_bler"><span>ПРИСТУПИТЬ К ЗАДАНИЮ</span><div id="icon"></div></div></div>');
+
             });
 
         }
@@ -196,9 +199,11 @@ function iniGame() {
                         $("#pos16").removeClass("pointer");
                         $("#image div").off("click");
                         TweenMax.to(".btn_box", 0.5, { autoAlpha: 1 });
-                        // console.log('победа');
-                        // console.log("Потрченно времени:" + dr);
-                        // console.log("Количество шагов:" + moves);
+                        TweenMax.to(".game_quest_block", 0.5, {
+                            autoAlpha: 1,
+                            delay: 1,
+                            onComplete: initGame_timer
+                        });
                     }
                 }
             }
@@ -226,6 +231,7 @@ function startTimer(duration, display) {
         } else {
             clearInterval(times_val);
             isGameStop();
+
         }
     }, 1000);
 }
@@ -235,13 +241,17 @@ function isGameStop() {
     clearInterval(times_val);
     $("#image div").off("click");
     $("#image").addClass('fiasco');
-    TweenMax.to(".btn_box", 0.5, { autoAlpha: 1 });
+    TweenMax.to(".btn_box", 0.5, {
+        autoAlpha: 1,
+        onComplete: baCGame,
+        onCompleteParams: [8]
+    });
 }
 
 function initGame_timer() {
     var cc = game_obj.qest_time;
     console.log(cc);
-    var ge_tim = setInterval(function() {
+    ge_tim = setInterval(function() {
         if (cc > 0) {
             cc--;
             $('.game_timer>p').html(cc)
@@ -251,6 +261,29 @@ function initGame_timer() {
             console.log(ge_tim);
             $(".game").addClass('fiasco');
             $(".game_quest_block").addClass('fiasco');
+            baCGame(3);
         }
     }, 1000);
+}
+
+function baCGame(tm_in) {
+    setTimeout(function() {
+        TweenMax.to(".zadanie_block", 0.5, {
+            autoAlpha: 1,
+            delay: 0.6
+        });
+        TweenMax.staggerFrom([".nz1", ".nz2", ".nz3", ".nz4", ".nz5", ".nz6", ".nz7", ".nz8"], 0.5, {
+            autoAlpha: 0,
+            delay: 1
+        }, 0.25);
+        TweenMax.to([".block_game", ".game_quest_block"], 0.5, {
+            autoAlpha: 0
+        });
+        clearInterval(times_val);
+        $("#image> div").remove();
+        $(".game_quest_btn>p").remove();
+
+        console.log('Заново ИГРУ');
+        $('*').siblings().removeClass('fiasco');
+    }, tm_in * 1000);
 }

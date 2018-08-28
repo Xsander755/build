@@ -11,7 +11,8 @@ function aUtoRization() {
         source: '',
         step: '',
         time: '',
-        oneEighth: ''
+        oneEighth: '',
+        resault: ''
     }
     $.ajax({
         type: 'get',
@@ -25,8 +26,11 @@ function aUtoRization() {
             user.step = data.userRating.turns;
             user.time = data.userRating.seconds;
             user.oneEighth = data.userRating.tasks;
+            user.resault = data.tasks;
 
-            console.log(user);
+            console.log(user.resault[1].result);
+            console.log(user.resault[3].result);
+            console.log(user.resault[5].result);
             clearInterval(user_get);
             iNfIll();
             console.log('т отключен в аякс');

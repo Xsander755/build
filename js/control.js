@@ -12,6 +12,7 @@ $('.guest_games_btn').click(function() {
         autoAlpha: 0
     });
     usErHod();
+    user = null;
 });
 
 $('.resaul_game_btn').click(function() {
@@ -37,22 +38,8 @@ $('.user_btn_wtf').click(function() {
 });
 $('.user_btn_bac_zadach').click(function() {
     TweenMax.to(".zadanie_block", 0.5, {
-        autoAlpha: 1
-    });
-    TweenMax.staggerFrom([".nz1", ".nz2", ".nz3", ".nz4", ".nz5", ".nz6", ".nz7", ".nz8"], 0.5, {
-        autoAlpha: 0,
-        delay: 0.8
-    }, 0.25);
-    TweenMax.to(".block_game", 0.5, {
-        autoAlpha: 0
-    });
-    clearInterval(times_val);
-    $("#image> div").remove();
-    console.log('К списку задач');
-});
-$('.user_btn_back').click(function() {
-    TweenMax.to(".zadanie_block", 0.5, {
-        autoAlpha: 1
+        autoAlpha: 1,
+        delay: 0.5
     });
     TweenMax.staggerFrom([".nz1", ".nz2", ".nz3", ".nz4", ".nz5", ".nz6", ".nz7", ".nz8"], 0.5, {
         autoAlpha: 0,
@@ -61,11 +48,38 @@ $('.user_btn_back').click(function() {
     TweenMax.to(".block_game", 0.5, {
         autoAlpha: 0
     });
+    TweenMax.to([".splash_game ", '.game_quest_block', '.rex'], 0.3, {
+        autoAlpha: 0
+    });
     clearInterval(times_val);
     $("#image> div").remove();
     $(".game_quest_btn>p").remove();
 
     console.log('Заново ИГРУ');
+    $('*').siblings().removeClass('fiasco');
+
+});
+$('.user_btn_back').click(function() {
+    TweenMax.to(".zadanie_block", 0.5, {
+        autoAlpha: 1,
+        delay: 0.5
+    });
+    TweenMax.staggerFrom([".nz1", ".nz2", ".nz3", ".nz4", ".nz5", ".nz6", ".nz7", ".nz8"], 0.5, {
+        autoAlpha: 0,
+        delay: 0.5
+    }, 0.25);
+    TweenMax.to(".block_game", 0.5, {
+        autoAlpha: 0
+    });
+    TweenMax.to([".splash_game ", '.game_quest_block', '.rex'], 0.3, {
+        autoAlpha: 0
+    });
+    clearInterval(times_val);
+    $("#image> div").remove();
+    $(".game_quest_btn>p").remove();
+
+    console.log('Заново ИГРУ');
+    $('*').siblings().removeClass('fiasco');
 
 });
 $('.btn_bac').click(function() {
@@ -78,6 +92,7 @@ $('.btn_bac').click(function() {
     TweenMax.to(".global_window", 0.5, {
         autoAlpha: 1
     });
+
     clearInterval(user_get);
     $(".user_bloc_zad_user_id> div").remove();
     console.log('т отключен');
@@ -96,6 +111,14 @@ $('.btn_bac_s').click(function() {
     $(".user_bloc_zad_user_id> div").remove();
 
     console.log('Назад', user);
+    if (user !== null) {
+        TweenMax.from(".push_block", 0.4, {
+            autoAlpha: 0,
+            scale: 1.2,
+            ease: Back.easeOut
+        });
+    }
+
 });
 $('.user_to_game').click(function() {
     userApruv();
@@ -174,6 +197,13 @@ $('.btn_bac_n').click(function() {
         delay: 0.2
     });
     $(".user_bloc_zad_user_id> div").remove();
+    if (user !== null) {
+        TweenMax.from(".push_block", 0.4, {
+            autoAlpha: 0,
+            scale: 1.2,
+            ease: Back.easeOut
+        });
+    }
 
 });
 
@@ -216,13 +246,22 @@ function oUtLOg() {
 }
 
 $('.game_quest_block>').on('click', function() {
+    clearInterval(ge_tim);
     var ns_valid = $(this).attr('valid');
+    var awid = $(this).attr('awid');
 
     if (ns_valid == 1) {
         console.log("victori");
         console.log(ns_valid);
+        TweenMax.to(".splash_game", 1, {
+            autoAlpha: 1
+        });
+        $("#image div").off("click");
     } else {
         console.log("fiasko");
         console.log(ns_valid);
+        $(".game").addClass('fiasco');
+        $(".game_quest_block").addClass('fiasco');
+        baCGame(4);
     }
 });

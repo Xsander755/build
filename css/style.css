@@ -96,7 +96,7 @@
 }
 
 .block_info .btn_bac {
-    top: 1696px;
+    top: 1697px;
 }
 
 .block_window {
@@ -604,6 +604,7 @@
     width: 100%;
     height: 466px;
     background: #fff;
+    visibility: hidden;
 }
 
 .game_puzzle {
