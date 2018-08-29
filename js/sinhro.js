@@ -94,13 +94,13 @@ function iNfIll() {
         $('.user_to_exit').append('<div class="icon gog"></div > ');
     }
 
-    TweenMax.to(".block_info", 0.5, {
+    TweenMax.to(".block_info", 0.2, {
         autoAlpha: 0
     });
     TweenMax.set(".global_window", {
         autoAlpha: 0
     });
-    TweenMax.to(".bloc_user_id", 0.5, {
+    TweenMax.to(".bloc_user_id", 0.2, {
         autoAlpha: 1,
         delay: 0.8
     });

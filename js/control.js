@@ -3,14 +3,14 @@ var awid;
 
 $('.guest_games_btn').click(function() {
     status_game = 'guest';
-    TweenMax.to(".zadanie_block", 0.5, {
+    TweenMax.to(".zadanie_block", 0.2, {
         autoAlpha: 1,
         delay: 0.5,
         onComplete: anZadachI
     });
 
 
-    TweenMax.to(".global_window", 0.5, {
+    TweenMax.to(".global_window", 0.2, {
         autoAlpha: 0
     });
     usErHod();
@@ -24,16 +24,16 @@ function anZadachI() {
     var dm_zadach = $('.btn_box').children().length;
     if (dm_zadach !== 0) {
 
-        TweenMax.staggerFromTo([".nz1", ".nz2", ".nz3", ".nz4", ".nz5", ".nz6", ".nz7", ".nz8"], 0.5, {
+        TweenMax.staggerFromTo([".nz1", ".nz2", ".nz3", ".nz4", ".nz5", ".nz6", ".nz7", ".nz8"], 0.1, {
             autoAlpha: 0
         }, {
             autoAlpha: 1
-        }, 0.25);
+        }, 0.1);
 
     }
 }
 $('.resaul_game_btn').click(function() {
-    TweenMax.to(".block_info", 0.5, {
+    TweenMax.to(".block_info", 0.2, {
         autoAlpha: 1
     });
     tImEruSer();
@@ -41,30 +41,32 @@ $('.resaul_game_btn').click(function() {
     /*todo*/
 });
 $('.hi_works_btn').click(function() {
-    TweenMax.to(".block_info", 0.5, {
+    TweenMax.to(".block_info", 0.2, {
         autoAlpha: 1
     });
 
 });
 $('.user_btn_wtf').click(function() {
-    TweenMax.to(".block_info", 0.5, {
+    TweenMax.to(".block_info", 0.2, {
         autoAlpha: 1
     });
-
+    TweenMax.to(".global_window", 0.1, {
+        autoAlpha: 0
+    });
 });
 $('.user_btn_bac_zadach').click(function() {
-    TweenMax.to(".zadanie_block", 0.5, {
+    TweenMax.to(".zadanie_block", 0.2, {
         autoAlpha: 1,
         delay: 0.5
     });
-    TweenMax.staggerFrom([".nz1", ".nz2", ".nz3", ".nz4", ".nz5", ".nz6", ".nz7", ".nz8"], 0.5, {
+    TweenMax.staggerFrom([".nz1", ".nz2", ".nz3", ".nz4", ".nz5", ".nz6", ".nz7", ".nz8"], 0.1, {
         autoAlpha: 0,
         delay: 0.5
-    }, 0.25);
-    TweenMax.to(".block_game", 0.5, {
+    }, 0.1);
+    TweenMax.to(".block_game", 0.2, {
         autoAlpha: 0
     });
-    TweenMax.to([".splash_game ", '.game_quest_block', '.rex'], 0.3, {
+    TweenMax.to([".splash_game ", '.game_quest_block', '.rex'], 0.2, {
         autoAlpha: 0
     });
     clearInterval(times_val);
@@ -76,18 +78,18 @@ $('.user_btn_bac_zadach').click(function() {
 
 });
 $('.user_btn_back').click(function() {
-    TweenMax.to(".zadanie_block", 0.5, {
+    TweenMax.to(".zadanie_block", 0.2, {
         autoAlpha: 1,
         delay: 0.5
     });
-    TweenMax.staggerFrom([".nz1", ".nz2", ".nz3", ".nz4", ".nz5", ".nz6", ".nz7", ".nz8"], 0.5, {
+    TweenMax.staggerFrom([".nz1", ".nz2", ".nz3", ".nz4", ".nz5", ".nz6", ".nz7", ".nz8"], 0.2, {
         autoAlpha: 0,
         delay: 0.5
     }, 0.25);
-    TweenMax.to(".block_game", 0.5, {
+    TweenMax.to(".block_game", 0.2, {
         autoAlpha: 0
     });
-    TweenMax.to([".splash_game ", '.game_quest_block', '.rex'], 0.3, {
+    TweenMax.to([".splash_game ", '.game_quest_block', '.rex'], 0.2, {
         autoAlpha: 0
     });
     clearInterval(times_val);
@@ -98,28 +100,32 @@ $('.user_btn_back').click(function() {
     $('*').siblings().removeClass('fiasco');
 
 });
+var cos = 0;
 $('.btn_bac').click(function() {
-    TweenMax.to(".block_info", 0.5, {
+    TweenMax.to(".block_info", 0.2, {
         autoAlpha: 0
     });
-    TweenMax.to(".bloc_user_id", 0.5, {
-        autoAlpha: 0
-    });
-    TweenMax.to(".global_window", 0.5, {
-        autoAlpha: 1
-    });
-
     clearInterval(user_get);
-    $(".user_bloc_zad_user_id> div").remove();
 
+    if (cos == 1) {
+        TweenMax.to(".bloc_user_id", 0.2, {
+            autoAlpha: 0
+        });
+        TweenMax.to(".global_window", 0.2, {
+            autoAlpha: 1
+        });
+
+        $(".user_bloc_zad_user_id> div").remove();
+        cos = 0;
+    }
 });
 $('.btn_bac_s').click(function() {
 
     if (autor !== 0) {
-        TweenMax.to(".block_exit_wrapp", 0.5, {
+        TweenMax.to(".block_exit_wrapp", 0.2, {
             autoAlpha: 1
         });
-        TweenMax.from(".user_bloc_exit", 0.4, {
+        TweenMax.from(".user_bloc_exit", 0.2, {
             autoAlpha: 0,
             scale: 1.2,
             ease: Back.easeOut
@@ -129,25 +135,25 @@ $('.btn_bac_s').click(function() {
 });
 $('.btn_push_y').click(function() {
 
-    TweenMax.to(".bloc_user_id", 0.5, {
+    TweenMax.to(".bloc_user_id", 0.2, {
         autoAlpha: 0,
         onComplete: oUtLOg
     });
-    TweenMax.to(".global_window", 0.5, {
+    TweenMax.to(".global_window", 0.2, {
         autoAlpha: 1,
         delay: 0.2
     });
     $(".user_bloc_zad_user_id> div").remove();
-    TweenMax.to(".wrapp_push", 0.4, {
+    TweenMax.to(".wrapp_push", 0.2, {
         autoAlpha: 0
     });
-    TweenMax.to(".zadanie_block", 0.5, {
+    TweenMax.to(".zadanie_block", 0.2, {
         autoAlpha: 0
     });
 
 });
 $('.btn_push_n').click(function() {
-    TweenMax.to(".wrapp_push", 0.4, {
+    TweenMax.to(".wrapp_push", 0.2, {
         autoAlpha: 0
     });
 });
@@ -160,7 +166,7 @@ $('.user_to_game').click(function() {
     TweenMax.set(".global_window", {
         autoAlpha: 0
     });
-    TweenMax.to(".zadanie_block", 0.5, {
+    TweenMax.to(".zadanie_block", 0.2, {
         autoAlpha: 1,
         delay: 1,
         onComplete: anZadachI
@@ -172,13 +178,13 @@ $('.user_to_game').click(function() {
 });
 $('.user_btn_y').click(function() {
 
-    TweenMax.to(".bloc_user_id", 0.5, {
+    TweenMax.to(".bloc_user_id", 0.2, {
         autoAlpha: 0
     });
-    TweenMax.to(".global_window", 0.5, {
+    TweenMax.to(".global_window", 0.2, {
         autoAlpha: 1
     });
-    TweenMax.to(".block_exit_wrapp", 0.5, {
+    TweenMax.to(".block_exit_wrapp", 0.2, {
         autoAlpha: 0
     });
 
@@ -187,26 +193,27 @@ $('.user_btn_y').click(function() {
     oUtLOg();
 });
 $('.btn_toResult_game').click(function() {
-    TweenMax.to(".block_info", 0.5, {
+    TweenMax.to(".block_info", 0.2, {
         autoAlpha: 1
     });
-    TweenMax.to(".zadanie_block", 0.5, {
+    TweenMax.to(".zadanie_block", 0.2, {
         autoAlpha: 0
     });
     tImEruSer();
+    cos = 1;
 });
 
 $('.user_btn_n').click(function() {
-    TweenMax.to(".block_exit_wrapp", 0.5, {
+    TweenMax.to(".block_exit_wrapp", 0.2, {
         autoAlpha: 0
     });
 });
 
 $('.user_to_exit').click(function() {
-    TweenMax.to(".block_exit_wrapp", 0.5, {
+    TweenMax.to(".block_exit_wrapp", 0.2, {
         autoAlpha: 1
     });
-    TweenMax.from(".user_bloc_exit", 0.4, {
+    TweenMax.from(".user_bloc_exit", 0.2, {
         autoAlpha: 0,
         scale: 1.2,
         ease: Back.easeOut
@@ -215,20 +222,20 @@ $('.user_to_exit').click(function() {
 $('.btn_bac_n').click(function() {
 
     if (autor !== 0) {
-        TweenMax.from(".push_block", 0.4, {
+        TweenMax.from(".push_block", 0.2, {
             autoAlpha: 0,
             scale: 1.2,
             ease: Back.easeOut
         });
-        TweenMax.to(".wrapp_push", 0.4, {
+        TweenMax.to(".wrapp_push", 0.2, {
             autoAlpha: 1
         });
 
     } else {
-        TweenMax.to(".zadanie_block", 0.5, {
+        TweenMax.to(".zadanie_block", 0.2, {
             autoAlpha: 0
         });
-        TweenMax.to(".global_window", 0.5, {
+        TweenMax.to(".global_window", 0.2, {
             autoAlpha: 1,
             delay: 0.5
         });
@@ -283,7 +290,7 @@ $('.game_quest_block>').on('click', function() {
 
     if (ns_valid == 1) {
 
-        TweenMax.to(".splash_game", 1, {
+        TweenMax.to(".splash_game", 0.3, {
             autoAlpha: 1
         });
         $("#image div").off("click");

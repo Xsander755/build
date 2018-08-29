@@ -48,8 +48,8 @@ function iniGame() {
     });
 
     function vOiData(n) {
-        TweenMax.to("#images", 0.5, { autoAlpha: 1, delay: 0.5 });
-        TweenMax.from("#image", 0.5, { autoAlpha: 0, delay: 2 });
+        TweenMax.to("#images", 0.2, { autoAlpha: 1, delay: 0.5 });
+        TweenMax.from("#image", 0.2, { autoAlpha: 0, delay: 2 });
         if (stat == 0) {
             $("#image").removeClass('fiasco');
         }
@@ -57,17 +57,17 @@ function iniGame() {
         way_topics = b_zadach[n].imageUrl;
         $('#images').css('background-image', `url(${way_topics})`);
         $('#image div').css('background-image', `url(${way_topics})`);
-        TweenMax.fromTo('.rex', 0.6, {
+        TweenMax.fromTo('.rex', 0.2, {
             autoAlpha: 0
         }, {
             autoAlpha: 1,
             delay: 2,
             ease: Back.easeOut
         });
-        TweenMax.to(".zadanie_block", 0.5, {
+        TweenMax.to(".zadanie_block", 0.2, {
             autoAlpha: 0
         });
-        TweenMax.to(".block_game", 0.5, {
+        TweenMax.to(".block_game", 0.2, {
             autoAlpha: 1
         });
         if (pos_z == 0) {
@@ -80,12 +80,12 @@ function iniGame() {
 
     // конец получения данных
     $(".rex").on("click", function() {
-        TweenMax.to('.rex', 0.6, { autoAlpha: 0 });
+        TweenMax.to('.rex', 0.2, { autoAlpha: 0 });
         fiveMinutes = 60 * 10;
         display = document.querySelector('#time');
         startTimer(fiveMinutes, display);
-        TweenMax.to("#images", 0.5, { autoAlpha: 0 });
-        TweenMax.to("#image", 0.5, {
+        TweenMax.to("#images", 0.2, { autoAlpha: 0 });
+        TweenMax.to("#image", 0.2, {
             autoAlpha: 1
         });
 
@@ -200,8 +200,8 @@ function iniGame() {
                         stat = 1;
                         $("#pos16").removeClass("pointer");
                         $("#image div").off("click");
-                        TweenMax.to(".btn_box", 0.5, { autoAlpha: 1 });
-                        TweenMax.to(".game_quest_block", 0.5, {
+                        TweenMax.to(".btn_box", 0.2, { autoAlpha: 1 });
+                        TweenMax.to(".game_quest_block", 0.2, {
                             autoAlpha: 1,
                             delay: 1,
                             onComplete: initGame_timer
@@ -243,7 +243,7 @@ function isGameStop() {
     clearInterval(times_val);
     $("#image div").off("click");
     $("#image").addClass('fiasco');
-    TweenMax.to(".btn_box", 0.5, {
+    TweenMax.to(".btn_box", 0.2, {
         autoAlpha: 1,
         onComplete: baCGame,
         onCompleteParams: [8]
@@ -274,11 +274,8 @@ function baCGame(tm_in) {
             autoAlpha: 1,
             delay: 0.6
         });
-        TweenMax.staggerFrom([".nz1", ".nz2", ".nz3", ".nz4", ".nz5", ".nz6", ".nz7", ".nz8"], 0.5, {
-            autoAlpha: 0,
-            delay: 1
-        }, 0.25);
-        TweenMax.to([".block_game", ".game_quest_block"], 0.5, {
+
+        TweenMax.to([".block_game", ".game_quest_block"], 0.2, {
             autoAlpha: 0
         });
         clearInterval(times_val);
