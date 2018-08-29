@@ -11,7 +11,7 @@ $('.guest_games_btn').click(function() {
     TweenMax.to(".global_window", 0.5, {
         autoAlpha: 0
     });
-    usErHod();
+    //usErHod();
     user = null;
 });
 
