@@ -17,17 +17,16 @@ function iniGame() {
         qest_time: '',
         answers_id: ''
     }
-
-
     var tt = $.ajax({
         url: 'https://api.msk-day.ru/puzzle/poi-task/8e08f29980d54010e345e7feec269216.json',
         success: function(data) {
             b_zadach = data;
             console.log(data);
             $.each(data, function(i) {
-                $('.btn_box').append('<div class="nz nz' + data[i].taskNumber + '" id="' + data[i].taskNumber + '" ><div class="fon_zad blur" style="background-image:url(' + data[i].imageUrl + ')" ></div><div class="fi kz' + data[i].taskNumber + '"  style="background-image: url(img/fish/f' + data[i].taskNumber + '.svg)"></div><div class="plash_bler"><span>ПРИСТУПИТЬ К ЗАДАНИЮ</span><div id="icon"></div></div></div>');
+                $('.btn_box').append('<div class="nz urda' + [i] + ' nz' + data[i].taskNumber + '" id="' + data[i].taskNumber + '" ><div class="fon_zad blur" style="background-image:url(' + data[i].imageUrl + ')" ></div><div class="fi kz' + data[i].taskNumber + '"  style="background-image: url(img/fish/f' + data[i].taskNumber + '.svg)"></div><div class="plash_bler"><span>ПРИСТУПИТЬ К ЗАДАНИЮ</span><div id="icon"></div></div></div>');
 
             });
+            console.log(data);
 
         }
     });
@@ -86,6 +85,9 @@ function iniGame() {
         display = document.querySelector('#time');
         startTimer(fiveMinutes, display);
         TweenMax.to("#images", 0.5, { autoAlpha: 0 });
+        TweenMax.to("#image", 0.5, {
+            autoAlpha: 1
+        });
 
         dr = 0;
     });

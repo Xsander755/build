@@ -1,19 +1,25 @@
 var user_get;
 var сount_aut = 0;
 var user;
+var st_game = new Object();
+user = {
+    id: '',
+    name: '',
+    picture: '',
+    source: '',
+    step: '',
+    time: '',
+    oneEighth: '',
+    resault: '',
+    did: ''
 
+}
+st_game = {
+
+}
 
 function aUtoRization() {
-    user = {
-        id: '',
-        name: '',
-        picture: '',
-        source: '',
-        step: '',
-        time: '',
-        oneEighth: '',
-        resault: ''
-    }
+
     $.ajax({
         type: 'get',
         url: "https://api.msk-day.ru/puzzle/poi-poi/14391be72342662f13306081dd13c699/check-activation.json",
@@ -27,18 +33,33 @@ function aUtoRization() {
             user.time = data.userRating.seconds;
             user.oneEighth = data.userRating.tasks;
             user.resault = data.tasks;
+            user.did = data.deviceId;
+            autor = 1;
+            console.log(data.deviceId);
+            $.each(data.tasks, function(i) {
 
-            console.log(user.resault[1].result);
-            console.log(user.resault[3].result);
-            console.log(user.resault[5].result);
+                var lams = data.tasks[i].result;
+
+                if (lams == null) {
+                    st_game[i] = lams;
+                } else {
+
+                    st_game[i] = lams.completed;
+                }
+                stGame();
+            });
+            console.log(data);
             clearInterval(user_get);
             iNfIll();
-            console.log('т отключен в аякс');
+
         }
     });
-    console.log("Запрос");
+
 }
 
+function stGame() {
+
+}
 
 function tImEruSer() {
     сount_aut = 0;
@@ -48,11 +69,11 @@ function tImEruSer() {
             сount_aut++;
         } else {
             clearInterval(user_get);
-            console.log('т отключен таймере');
-
         }
     }, 2000);
 }
+
+
 
 function iNfIll() {
     $('.user_bloc_zad_user_id').append('<div class="us_phptp" style="background-image: url(' + user.picture +
@@ -62,6 +83,17 @@ function iNfIll() {
 
     $('.urus').append('<div class="us_phptp" style="background-image: url(' + user.picture +
         '");></div><div class="use_name ur"><p>' + user.name + '</p></div>');
+
+    if (user.source == 1) {
+        $('.user_to_exit').append('<div class="icon fb"></div>');
+    }
+    if (user.source == 2) {
+        $('.user_to_exit').append('<div class="icon vk"></div>');
+    }
+    if (user.source == "google") {
+        $('.user_to_exit').append('<div class="icon gog"></div > ');
+    }
+
     TweenMax.to(".block_info", 0.5, {
         autoAlpha: 0
     });
@@ -80,4 +112,196 @@ function userApruv() {
         '");></div><div class="name_user_apr"><p>' + user.name + '</p></div><div class="times_user_apr">Время<br/><span>' + user.time +
         '</span></div><div class="step_user_apr">Шаги<br/><span>' + user.step +
         '</span></div>');
+}
+
+function stZaDach() {
+
+    if (st_game[0] == false) {
+        console.log("gruzim");
+        TweenMax.set(".urda0 .plash_bler #icon", {
+            background: 'url(img/los.svg)'
+        });
+        TweenMax.set(".urda0 .plash_bler", {
+            backgroundColor: 'RGBA(237, 58, 95, 1)'
+        });
+        TweenMax.set(".urda0 .plash_bler span", {
+            color: '#fff'
+        });
+    } else if (st_game[0] == true) {
+        TweenMax.set(".urda0 .plash_bler #icon", {
+            background: 'url(img/yes_icon.png)'
+        });
+        TweenMax.set(".urda0 .plash_bler", {
+            backgroundColor: 'RGBA(37, 26, 93, 1)'
+        });
+        TweenMax.set(".urda0 .plash_bler span", {
+            color: '#fff'
+        });
+        $('.urda0 .fon_zad').removeClass('blur');
+    }
+
+
+    if (st_game[1] == false) {
+
+        TweenMax.set(".urda1 .plash_bler #icon", {
+            background: 'url(img/los.svg)'
+        });
+        TweenMax.set(".urda1 .plash_bler", {
+            backgroundColor: 'RGBA(237, 58, 95, 1)'
+        });
+        TweenMax.set(".urda1 .plash_bler span", {
+            color: '#fff'
+        });
+    } else if (st_game[1] == true) {
+        TweenMax.set(".urda1 .plash_bler #icon", {
+            background: 'url(img/yes_icon.png)'
+        });
+        TweenMax.set(".urda1 .plash_bler", {
+            backgroundColor: 'RGBA(37, 26, 93, 1)'
+        });
+        TweenMax.set(".urda1 .plash_bler span", {
+            color: '#fff'
+        });
+        $('.urda1 .fon_zad').removeClass('blur');
+    }
+    if (st_game[2] == false) {
+
+        TweenMax.set(".urda2 .plash_bler #icon", {
+            background: 'url(img/los.svg)'
+        });
+        TweenMax.set(".urda2 .plash_bler ", {
+            backgroundColor: 'RGBA(237, 58, 95, 1)'
+        });
+        TweenMax.set(".urda2 .plash_bler span", {
+            color: '#fff'
+        });
+    } else if (st_game[2] == true) {
+        TweenMax.set(".urda2 .plash_bler #icon", {
+            background: 'url(img/yes_icon.png)'
+        });
+        TweenMax.set(".urda2 .plash_bler", {
+            backgroundColor: 'RGBA(37, 26, 93, 1)'
+        });
+        TweenMax.set(".urda2 .plash_bler span", {
+            color: '#fff'
+        });
+        $('.urda2 .fon_zad').removeClass('blur');
+    }
+    if (st_game[3] == false) {
+
+        TweenMax.set(".urda3 .plash_bler #icon", {
+            background: 'url(img/los.svg)'
+        });
+        TweenMax.set(".urda3 .plash_bler", {
+            backgroundColor: 'RGBA(237, 58, 95, 1)'
+        });
+        TweenMax.set(".urda3 .plash_bler span", {
+            color: '#fff'
+        });
+    } else if (st_game[3] == true) {
+        TweenMax.set(".urda3 .plash_bler #icon", {
+            background: 'url(img/yes_icon.png)'
+        });
+        TweenMax.set(".urda3 .plash_bler ", {
+            backgroundColor: 'RGBA(37, 26, 93, 1)'
+        });
+        TweenMax.set(".urda3 .plash_bler span", {
+            color: '#fff'
+        });
+        $('.urda3 .fon_zad').removeClass('blur');
+    }
+
+    if (st_game[4] == false) {
+
+        TweenMax.set(".urda4 .plash_bler #icon", {
+            background: 'url(img/los.svg)'
+        });
+        TweenMax.set(".urda4 .plash_bler", {
+            backgroundColor: 'RGBA(237, 58, 95, 1)'
+        });
+        TweenMax.set(".urda4 .plash_bler span", {
+            color: '#fff'
+        });
+    } else if (st_game[4] == true) {
+        TweenMax.set(".urda4 .plash_bler #icon", {
+            background: 'url(img/yes_icon.png)'
+        });
+        TweenMax.set(".urda4 .plash_bler", {
+            backgroundColor: 'RGBA(37, 26, 93, 1)'
+        });
+        TweenMax.set(".urda4 .plash_bler span", {
+            color: '#fff'
+        });
+        $('.urda4 .fon_zad').removeClass('blur');
+    }
+    if (st_game[5] == false) {
+
+        TweenMax.set(".urda5 .plash_bler #icon", {
+            background: 'url(img/los.svg)'
+        });
+        TweenMax.set(".urda5 .plash_bler ", {
+            backgroundColor: 'RGBA(237, 58, 95, 1)'
+        });
+        TweenMax.set(".urda5 .plash_bler span", {
+            color: '#fff'
+        });
+    } else if (st_game[5] == true) {
+        TweenMax.set(".urda5 .plash_bler #icon", {
+            background: 'url(img/yes_icon.png)'
+        });
+        TweenMax.set(".urda5 .plash_bler", {
+            backgroundColor: 'RGBA(37, 26, 93, 1)'
+        });
+        TweenMax.set(".urda5 .plash_bler span", {
+            color: '#fff'
+        });
+        $('.urda5 .fon_zad').removeClass('blur');
+    }
+    if (st_game[6] == false) {
+
+        TweenMax.set(".urda6 .plash_bler #icon", {
+            background: 'url(img/los.svg)'
+        });
+        TweenMax.set(".urda6 .plash_bler ", {
+            backgroundColor: 'RGBA(237, 58, 95, 1)'
+        });
+        TweenMax.set(".urda6 .plash_bler span", {
+            color: '#fff'
+        });
+    } else if (st_game[6] == true) {
+        TweenMax.set(".urda6 .plash_bler #icon", {
+            background: 'url(img/yes_icon.png)'
+        });
+        TweenMax.set(".urda6 .plash_bler ", {
+            backgroundColor: 'RGBA(37, 26, 93, 1)'
+        });
+        TweenMax.set(".urda6 .plash_bler span", {
+            color: '#fff'
+        });
+        $('.urda6 .fon_zad').removeClass('blur');
+    }
+    if (st_game[7] == false) {
+
+        TweenMax.set(".urda7 .plash_bler #icon", {
+            background: 'url(img/los.svg)'
+        });
+        TweenMax.set(".urda7 .plash_bler ", {
+            backgroundColor: 'RGBA(237, 58, 95, 1)'
+        });
+        TweenMax.set(".urda7 .plash_bler span", {
+            color: '#fff'
+        });
+    } else if (st_game[7] == true) {
+        TweenMax.set(".urda7 .plash_bler #icon", {
+            background: 'url(img/yes_icon.png)'
+        });
+        TweenMax.set(".urda7 .plash_bler", {
+            backgroundColor: 'RGBA(37, 26, 93, 1)'
+        });
+        TweenMax.set(".urda7 .plash_bler span", {
+            color: '#fff'
+        });
+        $('.urda7 .fon_zad').removeClass('blur');
+    }
+
 }

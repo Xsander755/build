@@ -5,7 +5,8 @@ $(function() {
     if (now < date) {
         TweenMax.to(".zastavka", 1, {
             autoAlpha: 1,
-            delay: 1
+            delay: 1,
+            onComplete: iniGame
         });
         TweenMax.to(".zastavka", 1, {
             autoAlpha: 0,
@@ -13,8 +14,7 @@ $(function() {
         });
         TweenMax.to(".global_window", 1, {
             autoAlpha: 1,
-            delay: 5,
-            onComplete: iniGame
+            delay: 5
         });
         //console.log("розыгрыш продолжается");
     } else {

@@ -62,6 +62,7 @@ p {
     width: 50%;
     height: 475px;
     cursor: pointer;
+    opacity: 0;
 }
 
 .btn_box {
@@ -374,8 +375,13 @@ p {
     position: absolute;
     width: 98px;
     height: 98px;
-    border: 10px solid #271c5d;
-    border-radius: 34px;
     right: 45px;
-    top: 43px;
+    top: 55px;
+    /* background: url(../img/yes_icon.png); */
+    /* background: url(../img/los.svg); */
+    background-image: url(../img/nplay.svg);
+}
+
+.win .plash_bler #icon {
+    background-image: url(../img/yes_icon.png);
 }

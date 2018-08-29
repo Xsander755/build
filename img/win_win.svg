@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54">
+  <defs>
+    <style>
+      .a {
+        fill: none;
+        stroke: #b2d6f0;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 4px;
+      }
+    </style>
+  </defs>
+  <path class="a" d="M52.535 14v26.535a12.035 12.035 0 0 1-12 12H14a12.035 12.035 0 0 1-12-12V14A12.035 12.035 0 0 1 14 2h26.535"/>
+  <path class="a" d="M11.317 23.693l11.479 11.48L50.667 7.302"/>
+</svg>

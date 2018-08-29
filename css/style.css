@@ -527,6 +527,30 @@
     background-size: contain;
 }
 
+.user_to_exit .icon {
+    position: relative;
+    width: 196px;
+    left: 28px;
+    top: 22%;
+    /* margin-top: -56px; */
+    height: 196px;
+    /* background: url(../img/gogle.svg)no-repeat;
+    background: url(../img/vk.svg)no-repeat;
+    background: url(../img/fb.svg)no-repeat; */
+}
+
+.fb {
+    background: url(../img/fb.svg)no-repeat;
+}
+
+.vk {
+    background: url(../img/vk.svg)no-repeat;
+}
+
+.gog {
+    background: url(../img/gogle.svg)no-repeat;
+}
+
 .user_to_exit {
     position: absolute;
     top: 1089px;
@@ -640,7 +664,8 @@
     left: 5px;
 }
 
-.splash_game {
+.splash_game,
+.wrapp_push {
     position: absolute;
     top: 0;
     left: 0;
