@@ -1275,3 +1275,18 @@
     height: 108px;
     cursor: pointer;
 }
+
+#sec {
+    position: absolute;
+    position: absolute;
+    font-size: 142px;
+    font-family: "Kelson Sans";
+    color: #FF0035;
+    font-weight: bold;
+    line-height: 1.273;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    left: 43px;
+    top: 29px;
+}

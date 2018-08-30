@@ -304,6 +304,10 @@ $('.btn_out_yes').on('click', function() {
         scale: 1,
         ease: Back.easeOut
     });
+    sxh = 10;
+    spTm = 0;
+    $('#sec').html(sxh);
+    clearInterval(it);
 });
 $('.btn_out_net').on('click', function() {
     window.location.reload(false);
@@ -363,7 +367,7 @@ function poStData() {
 
     });
 }
-
+var sk = 0;
 var inactivityTime = function() {
     var t;
     window.onload = resetTimer;
@@ -372,6 +376,8 @@ var inactivityTime = function() {
     document.onkeypress = resetTimer;
 
     function logout() {
+
+        clearTimeout(t);
         TweenMax.to(".wrapp_out", 0.1, {
             autoAlpha: 1
         });
@@ -382,13 +388,25 @@ var inactivityTime = function() {
             scale: 1.2,
             ease: Back.easeOut
         });
-        clearTimeout(t);
+        tp();
+        console.log(sk++);
     }
 
     function resetTimer() {
         clearTimeout(t);
-        t = setTimeout(logout, 60000);
+        t = setTimeout(logout, 5000);
         console.log('timer stop');
     }
 };
-inactivityTime();
+
+var it;
+var sxh = 10;
+var tp = function() {
+    it = setInterval(function() {
+        sxh--;
+        $('#sec').html(sxh);
+        if (sxh < 1) {
+            window.location.reload(false);
+        }
+    }, 1000);
+}
