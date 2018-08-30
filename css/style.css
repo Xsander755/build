@@ -759,7 +759,6 @@
     float: left;
     width: 50%;
     height: 475px;
-    background: url(../img/grup_zadacha.png);
 }
 
 .z2 {
@@ -773,7 +772,6 @@
 .zadach .fon {
     width: 100%;
     height: 100%;
-    background: url(../img/sp15.jpg);
     background-size: 100%;
     -webkit-filter: blur(15px);
     -moz-filter: blur(15px);
@@ -1105,4 +1103,175 @@
     height: 100px;
     left: 43px;
     top: 43px;
+}
+
+#fon {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1080px;
+    height: 3824px;
+    background: url(../img/fon.png);
+    background-size: contain;
+    background-position: left top;
+    background-repeat: no-repeat
+}
+
+#header {
+    position: absolute;
+    left: 0px;
+    top: 23px;
+    width: 1080px;
+    height: 124px;
+    background: url(../img/header.png);
+    background-size: contain;
+    background-position: left top;
+    background-repeat: no-repeat
+}
+
+#g1::-webkit-scrollbar {
+    width: 0;
+}
+
+#g1 {
+    position: relative;
+    left: 0px;
+    top: 176px;
+    width: 1080px;
+    height: 1426px;
+    overflow-y: scroll;
+}
+
+#bloc4 {
+    position: absolute;
+    left: 0px;
+    top: 2181px;
+    width: 1080px;
+    height: 1049px;
+    background: url(../img/bloc4.png);
+    background-size: contain;
+    background-position: left top;
+    background-repeat: no-repeat;
+    margin-bottom: 300px;
+}
+
+#bloc3 {
+    position: absolute;
+    left: 0px;
+    top: 1507px;
+    width: 1080px;
+    height: 651px;
+    background: url(../img/bloc3.png);
+    background-size: contain;
+    background-position: left top;
+    background-repeat: no-repeat
+}
+
+#bloc2 {
+    position: absolute;
+    left: 0px;
+    top: 862px;
+    width: 1080px;
+    height: 606px;
+    background: url(../img/bloc2.png);
+    background-size: contain;
+    background-position: left top;
+    background-repeat: no-repeat
+}
+
+#bloc1 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1080px;
+    height: 841px;
+}
+
+#tex1 {
+    position: absolute;
+    left: 65px;
+    top: 140px;
+    width: 900px;
+    height: 701px;
+    background: url(../img/tex1.png);
+    background-size: contain;
+    background-position: left top;
+    background-repeat: no-repeat
+}
+
+#lain1 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1080px;
+    height: 97px;
+    background: url(../img/lain1.png);
+    background-size: contain;
+    background-position: left top;
+    background-repeat: no-repeat
+}
+
+.wtf {
+    position: absolute;
+    top: 124px;
+    width: 100%;
+    height: calc(100% - 218px);
+    overflow: hidden;
+    visibility: hidden;
+}
+
+.wtf_bac {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 98px;
+    cursor: pointer;
+    background: url(../img/bac.png)no-repeat;
+    background-size: cover;
+}
+
+.down {
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+.wrapp_out {
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, .8);
+}
+
+.btn_out {
+    position: absolute;
+    top: calc(50% - 168px);
+    left: 100px;
+    visibility: hidden;
+    width: 880px;
+    height: 336px;
+    background: url(../img/01.png) no-repeat;
+}
+
+.btn_out_yes {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 441px;
+    height: 108px;
+    cursor: pointer;
+}
+
+.btn_out_net {
+    position: absolute;
+    bottom: 0;
+    left: 441px;
+    width: 441px;
+    height: 108px;
+    cursor: pointer;
 }

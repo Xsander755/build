@@ -127,6 +127,8 @@ function stZaDach() {
         TweenMax.set(".urda0 .plash_bler span", {
             color: '#fff'
         });
+        $('.urda0 .plash_bler span').text('ЗАДАНИЕ НЕ ВЫПОЛНЕНО');
+        $('.urda0 .fon_zad').addClass('down');
     } else if (st_game[0] == true) {
         TweenMax.set(".urda0 .plash_bler #icon", {
             background: 'url(img/yes_icon.png)'
@@ -137,7 +139,9 @@ function stZaDach() {
         TweenMax.set(".urda0 .plash_bler span", {
             color: '#fff'
         });
+        $('.urda0 .plash_bler span').text('ЗАДАНИЕ ВЫПОЛНЕНО!');
         $('.urda0 .fon_zad').removeClass('blur');
+        $('.urda0 .fon_zad').removeClass('down');
     }
 
 
@@ -152,6 +156,8 @@ function stZaDach() {
         TweenMax.set(".urda1 .plash_bler span", {
             color: '#fff'
         });
+        $('.urda1 .plash_bler span').text('ЗАДАНИЕ НЕ ВЫПОЛНЕНО');
+        $('.urda1 .fon_zad').addClass('down');
     } else if (st_game[1] == true) {
         TweenMax.set(".urda1 .plash_bler #icon", {
             background: 'url(img/yes_icon.png)'
@@ -162,7 +168,9 @@ function stZaDach() {
         TweenMax.set(".urda1 .plash_bler span", {
             color: '#fff'
         });
-        $('.urda1 .fon_zad').removeClass('blur');
+        $('.urda1 .plash_bler span').text('ЗАДАНИЕ ВЫПОЛНЕНО!');
+        $('.urda1 .fon_zad').removeClass('blur').removeClass('down');
+
     }
     if (st_game[2] == false) {
 
@@ -175,6 +183,8 @@ function stZaDach() {
         TweenMax.set(".urda2 .plash_bler span", {
             color: '#fff'
         });
+        $('.urda2 .plash_bler span').text('ЗАДАНИЕ НЕ ВЫПОЛНЕНО');
+        $('.urda2 .fon_zad').addClass('down');
     } else if (st_game[2] == true) {
         TweenMax.set(".urda2 .plash_bler #icon", {
             background: 'url(img/yes_icon.png)'
@@ -185,7 +195,8 @@ function stZaDach() {
         TweenMax.set(".urda2 .plash_bler span", {
             color: '#fff'
         });
-        $('.urda2 .fon_zad').removeClass('blur');
+        $('.urda2 .plash_bler span').text('ЗАДАНИЕ ВЫПОЛНЕНО!');
+        $('.urda2 .fon_zad').removeClass('blur').removeClass('down');
     }
     if (st_game[3] == false) {
 
@@ -198,6 +209,8 @@ function stZaDach() {
         TweenMax.set(".urda3 .plash_bler span", {
             color: '#fff'
         });
+        $('.urda3 .plash_bler span').text('ЗАДАНИЕ НЕ ВЫПОЛНЕНО');
+        $('.urda3 .fon_zad').addClass('down');
     } else if (st_game[3] == true) {
         TweenMax.set(".urda3 .plash_bler #icon", {
             background: 'url(img/yes_icon.png)'
@@ -208,7 +221,8 @@ function stZaDach() {
         TweenMax.set(".urda3 .plash_bler span", {
             color: '#fff'
         });
-        $('.urda3 .fon_zad').removeClass('blur');
+        $('.urda3 .fon_zad').removeClass('blur').removeClass('down');
+        $('.urda3 .plash_bler span').text('ЗАДАНИЕ ВЫПОЛНЕНО!');
     }
 
     if (st_game[4] == false) {
@@ -222,6 +236,8 @@ function stZaDach() {
         TweenMax.set(".urda4 .plash_bler span", {
             color: '#fff'
         });
+        $('.urda4 .plash_bler span').text('ЗАДАНИЕ НЕ ВЫПОЛНЕНО');
+        $('.urda4 .fon_zad').addClass('down');
     } else if (st_game[4] == true) {
         TweenMax.set(".urda4 .plash_bler #icon", {
             background: 'url(img/yes_icon.png)'
@@ -232,7 +248,8 @@ function stZaDach() {
         TweenMax.set(".urda4 .plash_bler span", {
             color: '#fff'
         });
-        $('.urda4 .fon_zad').removeClass('blur');
+        $('.urda4 .fon_zad').removeClass('blur').removeClass('down');
+        $('.urda4 .plash_bler span').text('ЗАДАНИЕ ВЫПОЛНЕНО!');
     }
     if (st_game[5] == false) {
 
@@ -245,6 +262,8 @@ function stZaDach() {
         TweenMax.set(".urda5 .plash_bler span", {
             color: '#fff'
         });
+        $('.urda5 .plash_bler span').text('ЗАДАНИЕ НЕ ВЫПОЛНЕНО');
+        $('.urda5 .fon_zad').addClass('down');
     } else if (st_game[5] == true) {
         TweenMax.set(".urda5 .plash_bler #icon", {
             background: 'url(img/yes_icon.png)'
@@ -255,7 +274,8 @@ function stZaDach() {
         TweenMax.set(".urda5 .plash_bler span", {
             color: '#fff'
         });
-        $('.urda5 .fon_zad').removeClass('blur');
+        $('.urda5 .fon_zad').removeClass('blur').removeClass('down');
+        $('.urda5 .plash_bler span').text('ЗАДАНИЕ ВЫПОЛНЕНО!');
     }
     if (st_game[6] == false) {
 
@@ -268,6 +288,8 @@ function stZaDach() {
         TweenMax.set(".urda6 .plash_bler span", {
             color: '#fff'
         });
+        $('.urda6 .plash_bler span').text('ЗАДАНИЕ НЕ ВЫПОЛНЕНО');
+        $('.urda6 .fon_zad').addClass('down');
     } else if (st_game[6] == true) {
         TweenMax.set(".urda6 .plash_bler #icon", {
             background: 'url(img/yes_icon.png)'
@@ -278,7 +300,8 @@ function stZaDach() {
         TweenMax.set(".urda6 .plash_bler span", {
             color: '#fff'
         });
-        $('.urda6 .fon_zad').removeClass('blur');
+        $('.urda6 .fon_zad').removeClass('blur').removeClass('down');
+        $('.urda6 .plash_bler span').text('ЗАДАНИЕ ВЫПОЛНЕНО!');
     }
     if (st_game[7] == false) {
 
@@ -291,6 +314,8 @@ function stZaDach() {
         TweenMax.set(".urda7 .plash_bler span", {
             color: '#fff'
         });
+        $('.urda7 .plash_bler span').text('ЗАДАНИЕ НЕ ВЫПОЛНЕНО');
+        $('.urda7 .fon_zad').addClass('down');
     } else if (st_game[7] == true) {
         TweenMax.set(".urda7 .plash_bler #icon", {
             background: 'url(img/yes_icon.png)'
@@ -301,7 +326,8 @@ function stZaDach() {
         TweenMax.set(".urda7 .plash_bler span", {
             color: '#fff'
         });
-        $('.urda7 .fon_zad').removeClass('blur');
+        $('.urda7 .fon_zad').removeClass('blur').removeClass('down');
+        $('.urda7 .plash_bler span').text('ЗАДАНИЕ ВЫПОЛНЕНО!');
     }
 
 }

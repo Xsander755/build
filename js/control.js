@@ -1,14 +1,14 @@
 // var clickEvent = ((document.ontouchstart !== null) ? 'click' : 'touchstart');
 var awid;
 
-$('.guest_games_btn').click(function() {
+$('.guest_games_btn').on('touchstart click', function(event) {
     status_game = 'guest';
     TweenMax.to(".zadanie_block", 0.2, {
         autoAlpha: 1,
         delay: 0.5,
         onComplete: anZadachI
     });
-
+    // console.log(event.target);
 
     TweenMax.to(".global_window", 0.2, {
         autoAlpha: 0
@@ -41,10 +41,22 @@ $('.resaul_game_btn').click(function() {
     /*todo*/
 });
 $('.hi_works_btn').click(function() {
-    TweenMax.to(".block_info", 0.2, {
-        autoAlpha: 1
+    TweenMax.to(".wtf", 0.2, {
+        autoAlpha: 1,
+        delay: 0.2
     });
-
+    TweenMax.to(".global_window", 0.1, {
+        autoAlpha: 0
+    });
+});
+$('.wtf_bac').click(function() {
+    TweenMax.to(".wtf", 0.2, {
+        autoAlpha: 0
+    });
+    TweenMax.to(".global_window", 0.1, {
+        autoAlpha: 1,
+        delay: 0.2
+    });
 });
 $('.user_btn_wtf').click(function() {
     TweenMax.to(".block_info", 0.2, {
@@ -283,6 +295,22 @@ function oUtLOg() {
     console.log('Назад', user);
 }
 
+$('.btn_out_yes').on('click', function() {
+    TweenMax.to(".wrapp_out", 0.1, {
+        autoAlpha: 0
+    });
+    TweenMax.to(".btn_out", 0.2, {
+        autoAlpha: 0,
+        scale: 1,
+        ease: Back.easeOut
+    });
+});
+$('.btn_out_net').on('click', function() {
+    window.location.reload(false);
+});
+
+
+
 $('.game_quest_block>').on('click', function() {
     clearInterval(ge_tim);
     var ns_valid = $(this).attr('valid');
@@ -335,3 +363,32 @@ function poStData() {
 
     });
 }
+
+var inactivityTime = function() {
+    var t;
+    window.onload = resetTimer;
+    // DOM Events
+    document.onmousemove = resetTimer;
+    document.onkeypress = resetTimer;
+
+    function logout() {
+        TweenMax.to(".wrapp_out", 0.1, {
+            autoAlpha: 1
+        });
+        TweenMax.to(".btn_out", 0.1, {
+            autoAlpha: 1
+        });
+        TweenMax.from(".btn_out", 0.2, {
+            scale: 1.2,
+            ease: Back.easeOut
+        });
+        clearTimeout(t);
+    }
+
+    function resetTimer() {
+        clearTimeout(t);
+        t = setTimeout(logout, 60000);
+        console.log('timer stop');
+    }
+};
+inactivityTime();
