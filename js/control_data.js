@@ -14,7 +14,8 @@ $(function() {
         });
         TweenMax.to(".global_window", 1, {
             autoAlpha: 1,
-            delay: 5
+            delay: 5,
+            onComplete: inactivityTime
         });
         //console.log("розыгрыш продолжается");
     } else {
