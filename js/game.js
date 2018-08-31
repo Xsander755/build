@@ -104,8 +104,8 @@ function iniGame() {
             $("#hod").html(window.moves);
 
             // massiv
-            //var arr = new Array(14, 2, 10, 6, 12, 13, 9, 7, 15, 8, 5, 11, 4, 1, 3, 16);
-            var arr = new Array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16);
+            var arr = new Array(14, 2, 10, 6, 12, 13, 9, 7, 15, 8, 5, 11, 4, 1, 3, 16);
+            //var arr = new Array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16);
             var strClass = "";
             for (i = 0; i < arr.length; i++) {
                 if (i == (arr.length - 1))

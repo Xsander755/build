@@ -90,6 +90,7 @@ $('.user_btn_bac_zadach').click(function() {
 
 });
 $('.user_btn_back').click(function() {
+    //appGame();
     TweenMax.to(".zadanie_block", 0.2, {
         autoAlpha: 1,
         delay: 0.5
@@ -394,7 +395,7 @@ var inactivityTime = function() {
 
     function resetTimer() {
         clearTimeout(t);
-        t = setTimeout(logout, 5000);
+        t = setTimeout(logout, 60000);
         console.log('timer stop');
     }
 };

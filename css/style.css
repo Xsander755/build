@@ -1160,23 +1160,25 @@
     left: 0px;
     top: 1507px;
     width: 1080px;
-    height: 651px;
-    background: url(../img/bloc3.png);
+    height: 1863px;
+    background: url(../img/bloc2.png);
     background-size: contain;
     background-position: left top;
-    background-repeat: no-repeat
+    background-repeat: no-repeat;
+    margin-bottom: 80px;
 }
 
 #bloc2 {
     position: absolute;
     left: 0px;
-    top: 862px;
+    top: 884px;
     width: 1080px;
-    height: 606px;
-    background: url(../img/bloc2.png);
+    height: 531px;
+    background: url(../img/bloc3.png);
     background-size: contain;
     background-position: left top;
-    background-repeat: no-repeat
+    background-repeat: no-repeat;
+    margin-bottom: 80px;
 }
 
 #bloc1 {
@@ -1184,7 +1186,9 @@
     left: 0px;
     top: 0px;
     width: 1080px;
-    height: 841px;
+    height: 810px;
+    background: url(../img/bloc1.png);
+    margin-bottom: 80px;
 }
 
 #tex1 {
