@@ -109,26 +109,26 @@ $('.user_btn_bac_zadach').click(function() {
 });
 $('.user_btn_back').click(function() {
 
-    TweenMax.to(".zadanie_block", 0.2, {
-        autoAlpha: 1,
-        delay: 0.5
-    });
-    TweenMax.staggerFrom([".nz1", ".nz2", ".nz3", ".nz4", ".nz5", ".nz6", ".nz7", ".nz8"], 0.2, {
-        autoAlpha: 0,
-        delay: 0.5
-    }, 0.25);
-    TweenMax.to(".block_game", 0.2, {
-        autoAlpha: 0
-    });
-    TweenMax.to([".splash_game ", '.game_quest_block', '.rex'], 0.2, {
-        autoAlpha: 0
-    });
-    clearInterval(times_val);
-    $("#image> div").remove();
-    $(".game_quest_btn>p").remove();
+    // TweenMax.to(".zadanie_block", 0.2, {
+    //     autoAlpha: 1,
+    //     delay: 0.5
+    // });
+    // TweenMax.staggerFrom([".nz1", ".nz2", ".nz3", ".nz4", ".nz5", ".nz6", ".nz7", ".nz8"], 0.2, {
+    //     autoAlpha: 0,
+    //     delay: 0.5
+    // }, 0.25);
+    // TweenMax.to(".block_game", 0.2, {
+    //     autoAlpha: 0
+    // });
+    // TweenMax.to([".splash_game ", '.game_quest_block', '.rex'], 0.2, {
+    //     autoAlpha: 0
+    // });
+    // clearInterval(times_val);
+    // $("#image> div").remove();
+    // $(".game_quest_btn>p").remove();
 
 
-    $('*').siblings().removeClass('fiasco');
+    // $('*').siblings().removeClass('fiasco');
 
 });
 var cos = 0;

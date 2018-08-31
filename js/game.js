@@ -9,6 +9,7 @@ var status_game = 'resaul';
 var game_obj;
 var ge_tim;
 
+
 function iniGame() {
     game_obj = {
         id_tasc: '',
@@ -30,9 +31,10 @@ function iniGame() {
 
         }
     });
-
-    $(document).on('click', '.nz', function() {
+    var per_num;
+    $(document).on('click', '.nz', function rc() {
         var im = Number.parseInt($(this).attr('id') - 1);
+        per_num = im;
         vOiData(im);
         game_obj.id_tasc = b_zadach[im].taskNumber;
         game_obj.status = b_zadach[im].result.completed;
@@ -45,7 +47,22 @@ function iniGame() {
             $('.game_timer').html('<p>' + game_obj.qest_time + '</p>');
         })
         console.log(game_obj);
+        console.log(b_zadach[im].imageUrl);
         pages = 'geym';
+
+    });
+
+    $('.user_btn_back').click(function() {
+        $("#image> div").remove();
+        $(".game_quest_btn>p").remove();
+        var im = Number.parseInt($(this).attr('id') - 1);
+        vOiData(per_num);
+        dr = 0;
+        tems = 0;
+        window.moves = 0;
+        clearInterval(times_val);
+        $("#image div").on("click");
+        appGame();
     });
 
     function vOiData(n) {
@@ -56,6 +73,7 @@ function iniGame() {
         }
         appGame();
         way_topics = b_zadach[n].imageUrl;
+        console.log(way_topics);
         $('#images').css('background-image', `url(${way_topics})`);
         $('#image div').css('background-image', `url(${way_topics})`);
         TweenMax.fromTo('.rex', 0.2, {
@@ -127,9 +145,22 @@ function iniGame() {
             window.moves = 0;
             $("#hod").html(window.moves);
 
+            function shuffleArray(array) {
+                for (var i = array.length - 1; i > 0; i--) {
+                    var j = Math.floor(Math.random() * (i + 1));
+                    var temp = array[i];
+                    array[i] = array[j];
+                    array[j] = temp;
+                }
+                return array;
+            }
+
             // massiv
             //var arr = new Array(14, 2, 10, 6, 12, 13, 9, 7, 15, 8, 5, 11, 4, 1, 3, 16);
-            var arr = new Array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16);
+            var mm = new Array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16);
+
+
+            var arr = shuffleArray(mm);
             var strClass = "";
             for (i = 0; i < arr.length; i++) {
                 if (i == (arr.length - 1))
