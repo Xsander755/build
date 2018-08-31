@@ -96,17 +96,23 @@ function iniGame() {
             onComplete: tec
         });
         dr = 0;
+        tems = 0;
     });
+    var arrs;
+    var tems;
 
     function tec() {
-        setTimeout(function() {
-            TweenMax.to([".ars", '.strelka'], 0.4, {
-                autoAlpha: 0,
+        if (tems == 0) {
+            arrs = setTimeout(function() {
+                TweenMax.to([".ars", '.strelka'], 0.4, {
+                    autoAlpha: 0,
 
-                ease: Back.easeOut
-            });
-            startTimer(fiveMinutes, display);
-        }, 2000);
+                    ease: Back.easeOut
+                });
+                startTimer(fiveMinutes, display);
+            }, 2000);
+            tems = 1;
+        }
     }
 
     function appGame() {
@@ -154,6 +160,7 @@ function iniGame() {
                         b.removeClass(bClass).addClass(aClass);
 
                         window.moves++;
+
 
                         $("#hod").html(window.moves);
                         if (window.moves > TotallSteps)
@@ -259,6 +266,7 @@ function startTimer(duration, display) {
 }
 
 function isGameStop() {
+
     stat = 0;
     st_game[game_obj.id_tasc - 1] = false;
     stZaDach();
