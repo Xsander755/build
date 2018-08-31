@@ -83,14 +83,31 @@ function iniGame() {
         TweenMax.to('.rex', 0.2, { autoAlpha: 0 });
         fiveMinutes = 60 * 10;
         display = document.querySelector('#time');
-        startTimer(fiveMinutes, display);
+
         TweenMax.to("#images", 0.2, { autoAlpha: 0 });
         TweenMax.to("#image", 0.2, {
             autoAlpha: 1
         });
+        TweenMax.to([".ars", '.strelka'], 0.2, {
+            autoAlpha: 1,
 
+            ease: Back.easeOut,
+            delay: 0.2,
+            onComplete: tec
+        });
         dr = 0;
     });
+
+    function tec() {
+        setTimeout(function() {
+            TweenMax.to([".ars", '.strelka'], 0.4, {
+                autoAlpha: 0,
+
+                ease: Back.easeOut
+            });
+            startTimer(fiveMinutes, display);
+        }, 2000);
+    }
 
     function appGame() {
         //Start game
@@ -104,8 +121,8 @@ function iniGame() {
             $("#hod").html(window.moves);
 
             // massiv
-            var arr = new Array(14, 2, 10, 6, 12, 13, 9, 7, 15, 8, 5, 11, 4, 1, 3, 16);
-            //var arr = new Array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16);
+            //var arr = new Array(14, 2, 10, 6, 12, 13, 9, 7, 15, 8, 5, 11, 4, 1, 3, 16);
+            var arr = new Array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16);
             var strClass = "";
             for (i = 0; i < arr.length; i++) {
                 if (i == (arr.length - 1))
@@ -137,12 +154,15 @@ function iniGame() {
                         b.removeClass(bClass).addClass(aClass);
 
                         window.moves++;
+
                         $("#hod").html(window.moves);
                         if (window.moves > TotallSteps)
                             isGameStop();
+
                         // Check if the puzzle is complete
                         if (parseInt($moveTo) == 16)
                             isGameOver();
+
                     }
                 }
             });
@@ -240,6 +260,8 @@ function startTimer(duration, display) {
 
 function isGameStop() {
     stat = 0;
+    st_game[game_obj.id_tasc - 1] = false;
+    stZaDach();
     clearInterval(times_val);
     $("#image div").off("click");
     $("#image").addClass('fiasco');
@@ -248,6 +270,10 @@ function isGameStop() {
         onComplete: baCGame,
         onCompleteParams: [8]
     });
+
+    $(".game").addClass('fiasco');
+    $(".game_quest_block").addClass('fiasco');
+    baCGame(4);
 }
 
 function initGame_timer() {

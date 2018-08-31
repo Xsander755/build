@@ -383,3 +383,23 @@ p {
 .win .plash_bler #icon {
     background-image: url(../img/yes_icon.png);
 }
+
+.ars {
+    position: absolute;
+    left: 9%;
+    top: 26%;
+    background-image: url(../img/ars.png);
+    width: 889px;
+    height: 331px;
+    visibility: hidden;
+    z-index: 9999999;
+}
+
+.strelka {
+    position: absolute;
+    background-image: url(../img/strelka.png);
+    width: 308px;
+    height: 477px;
+    left: 699px;
+    top: 930px;
+}

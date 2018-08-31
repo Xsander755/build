@@ -15,8 +15,12 @@ $('.guest_games_btn').on('touchstart click', function(event) {
     });
     usErHod();
     st_game[0] = null;
-    stZaDach();
+
     autor = 0;
+
+    console.log(st_game);
+
+    stZaDach();
 });
 
 function anZadachI() {
@@ -90,7 +94,7 @@ $('.user_btn_bac_zadach').click(function() {
 
 });
 $('.user_btn_back').click(function() {
-    //appGame();
+
     TweenMax.to(".zadanie_block", 0.2, {
         autoAlpha: 1,
         delay: 0.5
@@ -292,7 +296,17 @@ function usErHod() {
 
 function oUtLOg() {
     $(".user_block_autor> div").remove();
-
+    st_game = {
+        0: null,
+        1: null,
+        2: null,
+        3: null,
+        4: null,
+        5: null,
+        6: null,
+        7: null
+    }
+    console.log(st_game);
     console.log('Назад', user);
 }
 

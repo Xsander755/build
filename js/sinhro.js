@@ -330,4 +330,26 @@ function stZaDach() {
         $('.urda7 .plash_bler span').text('ЗАДАНИЕ ВЫПОЛНЕНО!');
     }
 
+    for (var i = 0; i < 8; i++) {
+        if (st_game[i] == null) {
+            var text = '.urda' + [i] + ' .plash_bler span';
+            var fon = '.urda' + [i] + ' .fon_zad';
+            var icon = '.urda' + [i] + ' .plash_bler #icon';
+            var text = '.urda' + [i] + ' .plash_bler span';
+            $(text).text('ПРИСТУПИТЬ К ЗАДАНИЮ');
+            $(fon).addClass('blur').removeClass('down');
+
+            TweenMax.set(icon, {
+                background: 'url(img/nplay.svg)'
+            });
+            TweenMax.set('.urda' + [i] + ' .plash_bler', {
+                backgroundColor: 'RGBA(188, 213, 239, 1)'
+            });
+            TweenMax.set('.urda' + [i] + ' .plash_bler span', {
+                color: '#271c5d'
+            });
+        }
+    }
+
+
 }
