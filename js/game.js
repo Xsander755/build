@@ -1,6 +1,6 @@
 var dr;
-var TotallTime = 15; //всего времени на игру
-var TotallSteps = 15; //Шагов
+var TotallTime = 150; //всего времени на игру
+var TotallSteps = 150; //Шагов
 var times_val;
 var fiveMinutes, display, stat, pos_z = 0;
 var way_topics;
@@ -45,6 +45,7 @@ function iniGame() {
             $('.game_timer').html('<p>' + game_obj.qest_time + '</p>');
         })
         console.log(game_obj);
+        pages = 'geym';
     });
 
     function vOiData(n) {

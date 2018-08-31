@@ -18,6 +18,7 @@ $(function() {
             onComplete: inactivityTime
         });
         //console.log("розыгрыш продолжается");
+        pages = 'gs';
     } else {
 
 

@@ -1222,6 +1222,7 @@
     height: calc(100% - 218px);
     overflow: hidden;
     visibility: hidden;
+    z-index: 1999999;
 }
 
 .wtf_bac {

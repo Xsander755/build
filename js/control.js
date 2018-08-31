@@ -53,23 +53,37 @@ $('.hi_works_btn').click(function() {
         autoAlpha: 0
     });
 });
-$('.wtf_bac').click(function() {
+$('.user_btn_wtf').click(function() {
     TweenMax.to(".wtf", 0.2, {
-        autoAlpha: 0
-    });
-    TweenMax.to(".global_window", 0.1, {
         autoAlpha: 1,
         delay: 0.2
     });
-});
-$('.user_btn_wtf').click(function() {
-    TweenMax.to(".block_info", 0.2, {
-        autoAlpha: 1
-    });
-    TweenMax.to(".global_window", 0.1, {
+    TweenMax.to(".block_game", 0.1, {
         autoAlpha: 0
     });
 });
+var pages = '';
+$('.wtf_bac').click(function() {
+    if (pages == 'gs') {
+        TweenMax.to(".wtf", 0.2, {
+            autoAlpha: 0
+        });
+        TweenMax.to(".global_window", 0.1, {
+            autoAlpha: 1,
+            delay: 0.2
+        });
+    } else if (pages == 'geym') {
+        TweenMax.to(".wtf", 0.2, {
+            autoAlpha: 0
+        });
+        TweenMax.to(".block_game", 0.1, {
+            autoAlpha: 1,
+            delay: 0.2
+        });
+    }
+
+});
+
 $('.user_btn_bac_zadach').click(function() {
     TweenMax.to(".zadanie_block", 0.2, {
         autoAlpha: 1,
@@ -262,6 +276,7 @@ $('.btn_bac_n').click(function() {
         });
 
     }
+    pages = 'gs';
 });
 
 function usErHod() {
