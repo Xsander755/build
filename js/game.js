@@ -1,6 +1,6 @@
 var dr;
-var TotallTime = 150; //всего времени на игру
-var TotallSteps = 150; //Шагов
+var TotallTime = 1200; //всего времени на игру
+var TotallSteps = 250; //Шагов
 var times_val;
 var fiveMinutes, display, stat, pos_z = 0;
 var way_topics;
