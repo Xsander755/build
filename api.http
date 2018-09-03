@@ -21,19 +21,19 @@ content-type: application/json
 ###
 # Получить турнирную таблицу с постраничной навигацией
 
-GET https://api.msk-day.ru/puzzle/poi-rating/14391be72342662f13306081dd13c699.json?expand=user&page=2
+GET https://api.msk-day.ru/puzzle/poi-rating/8e08f29980d54010e345e7feec269216.json?expand=user&page=2
 content-type: application/json
 
 ###
 # Получить турнирную таблицу
 
-GET https://api.msk-day.ru/puzzle/poi-rating/14391be72342662f13306081dd13c699.json?expand=user
+GET https://api.msk-day.ru/puzzle/poi-rating/8e08f29980d54010e345e7feec269216.json?expand=user
 content-type: application/json
 
 ###
 # Проверка активации стенда
 
-GET https://api.msk-day.ru/puzzle/poi-poi/14391be72342662f13306081dd13c699/check-activation.json
+GET https://api.msk-day.ru/puzzle/poi-poi/8e08f29980d54010e345e7feec269216/check-activation.json
 content-type: application/json
 
 ###
