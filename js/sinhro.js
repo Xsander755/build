@@ -17,12 +17,13 @@ user = {
 st_game = {
 
 }
+var urls = 'https://api.msk-day.ru/puzzle/poi-poi/' + token + '/check-activation.json'
 
 function aUtoRization() {
-
+    console.log(urls);
     $.ajax({
         type: 'get',
-        url: "https://api.msk-day.ru/puzzle/poi-poi/14391be72342662f13306081dd13c699/check-activation.json",
+        url: urls,
         contentTaype: ' application/json',
         success: function(data) {
             user.id = data.user.id;
@@ -69,6 +70,9 @@ function tImEruSer() {
             сount_aut++;
         } else {
             clearInterval(user_get);
+            TweenMax.to(".block_info", 0.2, {
+                autoAlpha: 0
+            });
         }
     }, 2000);
 }

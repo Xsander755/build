@@ -21,6 +21,7 @@ $('.guest_games_btn').on('touchstart click', function(event) {
     console.log(st_game);
 
     stZaDach();
+    clearInterval(g_timer);
 });
 
 function anZadachI() {
@@ -41,7 +42,7 @@ $('.resaul_game_btn').click(function() {
         autoAlpha: 1
     });
     tImEruSer();
-
+    clearInterval(g_timer);
     /*todo*/
 });
 $('.hi_works_btn').click(function() {
@@ -107,30 +108,7 @@ $('.user_btn_bac_zadach').click(function() {
     $('*').siblings().removeClass('fiasco');
 
 });
-$('.user_btn_back').click(function() {
 
-    // TweenMax.to(".zadanie_block", 0.2, {
-    //     autoAlpha: 1,
-    //     delay: 0.5
-    // });
-    // TweenMax.staggerFrom([".nz1", ".nz2", ".nz3", ".nz4", ".nz5", ".nz6", ".nz7", ".nz8"], 0.2, {
-    //     autoAlpha: 0,
-    //     delay: 0.5
-    // }, 0.25);
-    // TweenMax.to(".block_game", 0.2, {
-    //     autoAlpha: 0
-    // });
-    // TweenMax.to([".splash_game ", '.game_quest_block', '.rex'], 0.2, {
-    //     autoAlpha: 0
-    // });
-    // clearInterval(times_val);
-    // $("#image> div").remove();
-    // $(".game_quest_btn>p").remove();
-
-
-    // $('*').siblings().removeClass('fiasco');
-
-});
 var cos = 0;
 $('.btn_bac').click(function() {
     TweenMax.to(".block_info", 0.2, {
@@ -341,6 +319,7 @@ $('.btn_out_yes').on('click', function() {
 });
 $('.btn_out_net').on('click', function() {
     window.location.reload(false);
+
 });
 
 
@@ -437,6 +416,17 @@ var tp = function() {
         $('#sec').html(sxh);
         if (sxh < 1) {
             window.location.reload(false);
+
         }
     }, 1000);
+}
+var gT = 300;
+var g_timer;
+
+function allReload() {
+    console.log('global_timer');
+    clearInterval(it);
+    g_timer = setInterval(function() {
+        window.location.reload(false);
+    }, gT * 1000);
 }

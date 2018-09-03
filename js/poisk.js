@@ -14,7 +14,7 @@
      clearTimeout(timeOut);
 
  });
- input.on('mouseover', function() {
+ input.on('mouseout', function() {
      $('.lain_block_glw>div').remove();
      lOadTabsRey();
  });

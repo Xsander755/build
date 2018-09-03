@@ -19,7 +19,7 @@ function iniGame() {
         answers_id: ''
     }
     var tt = $.ajax({
-        url: 'https://api.msk-day.ru/puzzle/poi-task/8e08f29980d54010e345e7feec269216.json',
+        url: 'https://api.msk-day.ru/puzzle/poi-task/' + token + '.json',
         success: function(data) {
             b_zadach = data;
             console.log(data);

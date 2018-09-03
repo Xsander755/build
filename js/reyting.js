@@ -2,7 +2,7 @@ function lOadTabsRey() {
     var s = 0;
     $.ajax({
         type: 'get',
-        url: "https://api.msk-day.ru/puzzle/poi-rating/14391be72342662f13306081dd13c699.json?expand=user",
+        url: "https://api.msk-day.ru/puzzle/poi-rating/" + token + ".json?expand=user",
         contentTaype: ' application/json',
         success: function(data) {
             $.each(data, function(i) {

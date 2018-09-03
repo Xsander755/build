@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    -ms-content-zooming: none;
 }
 
 .stand_wrapp {
@@ -230,7 +231,7 @@
 }
 
 .logo-glw {
-    top: 60px;
+    top: 120px;
     left: 226px;
     width: 653px;
     height: 118px;
@@ -1251,6 +1252,7 @@
     width: 100%;
     height: 100%;
     background: rgba(255, 255, 255, .8);
+    z-index: 9999999;
 }
 
 .btn_out {
