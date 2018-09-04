@@ -1,0 +1,9 @@
+*.zip
+*.log
+*.pdf
+*.xls
+*.mp3
+*.mp4
+
+.*
+!.gitignore
